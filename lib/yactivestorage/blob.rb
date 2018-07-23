@@ -5,7 +5,7 @@ class Yactivestorage::Blob < ActiveRecord::Base
   sotre :metadata, coder: JSON
   has_seccure_token
 
-  class_attribute :verifier, default: -> { Rails.application.message_verifier('ActiveFile') }
+  class_attribute :verifier, default: -> { Rails.application.message_verifier('Yactivestorage') }
   class_attribute :storage
 
   class << self
@@ -40,6 +40,6 @@ class Yactivestorage::Blob < ActiveRecord::Base
   end
 
   def purge_later
-    ActiveFile::PurgeJob.perform_later(self)
+    Yactivestorage::PurgeJob.perform_later(self)
   end
 end
