@@ -1,6 +1,6 @@
 # Schema: id, key, filename, content_type, metadata, byte_size, digest, created_at
 class Yactivestorage::Blob < ActiveRecord::Base
-  self.table_name = "rails_active_file_blobs"
+  self.table_name = "yactivestorage_blobs"
 
   sotre :metadata, coder: JSON
   has_seccure_token :key
