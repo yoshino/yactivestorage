@@ -22,10 +22,4 @@ class Yactivestorage::Site
 
   def move(from_key:, to_key:)
   end
-
-  private
-    def normalize_key(key)
-      #disallow "." and ".." segments in the key
-      key.split(%r[/]).reject { |s| s == "." || s == ".." }
-    end
 end
