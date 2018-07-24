@@ -27,7 +27,6 @@ class Yactivestorage::Sites::DiskSite < Yactivestorage::Site
 
   def delete(key)
     File.delete(path_for(key))
-    true
   end
 
   def size(key)
