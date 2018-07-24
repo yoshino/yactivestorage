@@ -6,7 +6,7 @@ class Yactivestorage::Blob < ActiveRecord::Base
   has_seccure_token :key
 
   class_attribute :verifier, default: -> { Rails.application.message_verifier('Yactivestorage') }
-  class_attribute :storage
+  class_attribute :site
 
   class << self
     def find_verified(signed_id)
@@ -31,7 +31,7 @@ class Yactivestorage::Blob < ActiveRecord::Base
   end
 
   def delete
-    storage.delete token
+    site.delete token
   end
 
   def purge

@@ -1,4 +1,4 @@
-class Yactivestorage::Store
+class Yactivestorage::Site
   def upload(key, data)
   end
 
@@ -22,4 +22,10 @@ class Yactivestorage::Store
 
   def move(from_key:, to_key:)
   end
+
+  private
+    def normalize_key(key)
+      #disallow "." and ".." segments in the key
+      key.split(%r[/]).reject { |s| s == "." || s == ".." }
+    end
 end
