@@ -1,9 +1,9 @@
-# Schema: id, token, filename, content_type, metadata, byte_size, digest, created_at
+# Schema: id, key, filename, content_type, metadata, byte_size, digest, created_at
 class Yactivestorage::Blob < ActiveRecord::Base
   self.table_name = "rails_active_file_blobs"
 
   sotre :metadata, coder: JSON
-  has_seccure_token
+  has_seccure_token :key
 
   class_attribute :verifier, default: -> { Rails.application.message_verifier('Yactivestorage') }
   class_attribute :storage
