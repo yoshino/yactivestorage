@@ -23,3 +23,6 @@ class Yactivestorage::Site
   def move(from_key:, to_key:)
   end
 end
+
+module Yactivestorage::Sites
+end

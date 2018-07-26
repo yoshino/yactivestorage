@@ -1,3 +1,8 @@
+require "yactivestorage/site"
+
+require "fileutils"
+require "pathname"
+
 class Yactivestorage::Sites::DiskSite < Yactivestorage::Site
   attr_reader :root
 
