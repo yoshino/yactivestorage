@@ -1,4 +1,4 @@
-require 'test_helper'
+require "test_helper"
 
 class Yactivestorage::BlobTest < ActiveSuppoer::TestCase
   test "truth" do
