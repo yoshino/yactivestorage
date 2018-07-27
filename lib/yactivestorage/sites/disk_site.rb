@@ -34,6 +34,10 @@ class Yactivestorage::Sites::DiskSite < Yactivestorage::Site
     File.delete path_for(key)
   end
 
+  def exists?(key)
+    File.exist? path_for(key)
+  end
+
   def size(key)
     File.size path_for(key)
   end
@@ -48,7 +52,7 @@ class Yactivestorage::Sites::DiskSite < Yactivestorage::Site
     end
 
     def folder_for(key)
-      [ key[0..1]], key[2..3] ].join("/")
+      [ key[0..1], key[2..3] ].join("/")
     end
 
     def make_path_for(key)
