@@ -4,13 +4,14 @@
 
 ## Example
 
+```ruby
 class Person < ApplicationRecord
   has_one :avatar
 end
 
 class Avatar < ApplicationRecord
   belongs_to :person
-  belongs_to :imagem class_name: 'Yactivestorage::Blob'
+  belongs_to :image, class_name: 'Yactivestorage::Blob'
 
   has_file :image
 end
@@ -19,7 +20,7 @@ avatar.image_url(expires_in: 5.minuites)
 
 class Yactivestorage::DownloadsController < ApplicationController::Base
   def show
-    head :ok, ActiveFile::Blob.locate(params[:id]).download_headers
+    head :ok, Yactivestorage::Blob.locate(params[:id]).download_headers
   end
 end
 
@@ -30,6 +31,13 @@ class AvatarsController < ApplicationController
     @avatar = Avatar.create! image: Avatar.image.extract_from(request)
   end
 end
+
+def ProfilesController < ApplicationController
+  def update
+    @person.update! avatar: @person.avatar.update!(:image )
+  end
+end
+```
 
 ## License
 
