@@ -5,4 +5,5 @@ module Yactivestorage
   extend ActiveSupport::Autoload
 
   autoload :Blob
+  autoload :Site
 end
