@@ -2,8 +2,8 @@
 class Yactivestorage::Blob < ActiveRecord::Base
   self.table_name = "yactivestorage_blobs"
 
-  sotre :metadata, coder: JSON
-  has_seccure_token :key
+  store :metadata, coder: JSON
+  has_secure_token :key
 
   class_attribute :verifier, default: -> { Rails.application.message_verifier('Yactivestorage') }
   class_attribute :site
@@ -15,19 +15,33 @@ class Yactivestorage::Blob < ActiveRecord::Base
 
     def build_after_upload(data:, filename:, content_type: nil, metadata: nil)
       new.tap do |blob|
-        blob.filename = table_name
-        blob.content_type = Marcel::MimeType.for(data, name: name, declared_type: content_type)
-        blob.data = data
+        blob.filename = filename
+        blob.content_type = content_type # Marcel::MimeType.for(data, name: name, declared_type: content_type)
+        blob.upload data
       end
     end
 
     def create_after_upload!(data:, filename:, content_type: nil, metadata: nil)
+      binding.pry
       build_after_upload(data: data, filename: filename, content_type: content_type, metadata: metadata).tap(&:save!)
     end
   end
 
+  # We can't wait until thre record is first saved to have a key for it
+  def key
+    self[:key] ||= self.class.generate_unique_secure_token
+  end
+
   def filename
     Filename.new(filename)
+  end
+
+  def upload(data)
+    site.upload key, data
+  end
+
+  def download
+    site.upload key
   end
 
   def delete
