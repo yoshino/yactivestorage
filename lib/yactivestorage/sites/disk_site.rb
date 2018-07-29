@@ -1,5 +1,3 @@
-require "yactivestorage/site"
-
 require "fileutils"
 require "pathname"
 

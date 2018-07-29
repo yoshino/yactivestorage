@@ -38,3 +38,5 @@ end
 
 module Yactivestorage::Sites
 end
+
+require "yactivestorage/sites/disk_site"

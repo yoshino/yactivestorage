@@ -2,7 +2,7 @@ require "test_helper"
 require "fileutils"
 require "tmpdir"
 require "active_support/core_ext/securerandom"
-require "yactivestorage/sites/disk_site"
+require "yactivestorage/site"
 
 class Yactivestorage::DiskSiteTest < ActiveSupport::TestCase
   FIXTURE_KEY = SecureRandom.base58(24)
