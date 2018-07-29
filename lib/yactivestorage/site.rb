@@ -27,11 +27,11 @@ class Yactivestorage::Site
     raise NoImplementadError
   end
 
-  def copy(key:, key:)
+  def copy(from:, to:)
     raise NoImplementadError
   end
 
-  def move(key:, key:)
+  def move(from:, to:)
     raise NoImplementadError
   end
 end
