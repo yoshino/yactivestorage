@@ -1,3 +1,5 @@
+require "yactivestorage/site"
+
 # Schema: id, key, filename, content_type, metadata, byte_size, checksum, created_at
 class Yactivestorage::Blob < ActiveRecord::Base
   self.table_name = "yactivestorage_blobs"
@@ -22,7 +24,6 @@ class Yactivestorage::Blob < ActiveRecord::Base
     end
 
     def create_after_upload!(data:, filename:, content_type: nil, metadata: nil)
-      binding.pry
       build_after_upload(data: data, filename: filename, content_type: content_type, metadata: metadata).tap(&:save!)
     end
   end
@@ -41,7 +42,7 @@ class Yactivestorage::Blob < ActiveRecord::Base
   end
 
   def download
-    site.upload key
+    site.download key
   end
 
   def delete

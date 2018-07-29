@@ -40,4 +40,12 @@ class Yactivestorage::DiskSiteTest < ActiveSupport::TestCase
   test "checksumming" do
     assert_equal Digest::MD5.hexdigest(FIXTURE_FILE.read), @site.checksum(FIXTURE_KEY)
   end
+
+  test "uploading" do
+    key = SecureRandom.base58(24)
+    data = "Something else entirely!"
+    @site.upload(key, StringIO.new(data))
+
+    assert_equal data, @site.download(key)
+  end
 end
