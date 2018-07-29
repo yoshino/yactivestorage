@@ -1,4 +1,4 @@
-# Schema: id, key, filename, content_type, metadata, byte_size, digest, created_at
+# Schema: id, key, filename, content_type, metadata, byte_size, checksum, created_at
 class Yactivestorage::Blob < ActiveRecord::Base
   self.table_name = "yactivestorage_blobs"
 
