@@ -4,4 +4,6 @@ gemspec
 
 gem 'rake'
 gem 'pry-byebug'
+
 gem 'sqlite3'
+gem 'aws-sdk'
