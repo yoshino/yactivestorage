@@ -39,6 +39,9 @@ class Yactivestorage::Blob < ActiveRecord::Base
 
   def upload(data)
     site.upload key, data
+
+    self.checksum = site.checksum(key)
+    self.byte_size = site.byte_size(key)
   end
 
   def download
