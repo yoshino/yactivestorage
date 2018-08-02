@@ -41,4 +41,4 @@ end
 
 ## License
 
-Google Sign-In for Rails is released under the [MIT License](https://opensource.org/licenses/MIT).
+Yactivestorage is released under the [MIT License](https://opensource.org/licenses/MIT).
