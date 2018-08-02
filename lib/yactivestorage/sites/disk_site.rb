@@ -4,7 +4,7 @@ require "pathname"
 class Yactivestorage::Sites::DiskSite < Yactivestorage::Site
   attr_reader :root
 
-  def initialize(root)
+  def initialize(root:)
     @root = root
   end
 

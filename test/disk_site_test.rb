@@ -9,7 +9,7 @@ class Yactivestorage::DiskSiteTest < ActiveSupport::TestCase
   FIXTURE_FILE = StringIO.new("Hello world!")
 
   setup do
-    @site = Yactivestorage::Sites::DiskSite.new(File.join(Dir.tmpdir, "yactivestorage"))
+    @site = Yactivestorage::Sites::DiskSite.new(root: File.join(Dir.tmpdir, "yactivestorage"))
     @site.upload FIXTURE_KEY, FIXTURE_FILE
     FIXTURE_FILE.rewind
   end
