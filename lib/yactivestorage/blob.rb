@@ -1,4 +1,5 @@
 require "yactivestorage/site"
+require "yactivestorage/filename"
 
 # Schema: id, key, filename, content_type, metadata, byte_size, checksum, created_at
 class Yactivestorage::Blob < ActiveRecord::Base
@@ -30,7 +31,7 @@ class Yactivestorage::Blob < ActiveRecord::Base
   end
 
   def filename
-    Filename.new(filename)
+    Yactivestorage::Filename.new(self[:filename])
   end
 
   def upload(data)
