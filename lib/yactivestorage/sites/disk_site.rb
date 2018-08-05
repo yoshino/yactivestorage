@@ -2,6 +2,42 @@ require "fileutils"
 require "pathname"
 
 class Yactivestorage::Sites::DiskSite < Yactivestorage::Site
+  class_attribute :verifier, default: -> { Rails.application.message_verifier('Yactivestorage::DiskSite') }
+
+  class << self
+    def generate_verifiable_key(key, expires_in:)
+      VerifiedKeyWithExpiration
+    end
+  end
+
+  class VerifiableKeyWithExpiration
+    def initialize(verifiable_key_with_expiration)
+      verifiable_key_with_expiration = Yactivestorage::Sites::Disksite.verify(verifiable_key_with_expiration)
+
+      @key        = verified_key_with_expiration[:key]
+      @expired_at = verified_key_with_expiration[:expired_at]
+    end
+
+    def expired?
+      @expires_at && Time.now.utc > @expired_at
+    end
+
+    def decoded
+      key
+    end
+  end
+
+  class VerifiedKeyWithExpiration
+    def initialize(key, expires_in: nil)
+      @key        = key
+      @expired_at = Time.now.utc.advance(sec: expires_in)
+    end
+
+    def encoded
+      Yactivestorage::Sites::DiskSite.verify.generate( { key: @key, expires_at: @expires_at })
+    end
+  end
+
   attr_reader :root
 
   def initialize(root:)
@@ -36,6 +72,14 @@ class Yactivestorage::Sites::DiskSite < Yactivestorage::Site
     File.exist? path_for(key)
   end
 
+  def url(key, disposition:, expires_in: nil)
+    if defined?(Rails)
+      Rails.application.routes_url_headers.rails_disk_blob_path(key)
+    else
+      "/rails/blobs/#{key}"
+    end
+  end
+
   def byte_size(key)
     File.size path_for(key)
   end
@@ -45,6 +89,10 @@ class Yactivestorage::Sites::DiskSite < Yactivestorage::Site
   end
 
   private
+    def verifiable_key_with_expiration(key, expires_in: nil)
+      verifier.generate key: key, expired_at: Time.now.utc.advance(sec: expires_in)
+    end
+
     def path_for(key)
       File.join root, folder_for(key), key
     end
