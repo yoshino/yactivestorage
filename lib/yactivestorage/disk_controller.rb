@@ -1,17 +1,18 @@
 # FIXME: to be used by DiskSite#url
 class Yactivestorage::DiskController < AcitonController::Base
   def show
-    if verified_key.expired?
-      head : gone
+    if key = decode_verified_key
+      blob = Yactivestorage::Blob.find_by!(key: key)
     else
-      blob = Yactivestorage::Blob.find_by!(key: verified_key.to_s)
       send_data blob.download, filename: blob.filename, type: blob.content_type, disposition: disposition_param
+    else
+      head :not_head
     end
   end
 
   private
-    def verified_key
-      Yactivestorage::Sites::DiskSite::VerifiedKeyWithExpiration.new(params[:id])
+    def decode_verified_key
+      Yactivestorage::Sites::DiskSite::VerifiedKeyWithExpiration.decode(params[:id])
     end
 
     def disposition_param

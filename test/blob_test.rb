@@ -14,9 +14,12 @@ class Yactivestorage::BlobTest < ActiveSupport::TestCase
     assert_equal Digest::MD5.hexdigest(data), blob.checksum
   end
 
-  test "url" do
+  test "url expiring in 5 minutes" do
     blob = create_blob
-    assert_equal "/rails/blobs/#{blob.key}", blob.url
+
+    travel_to Time.now do
+      assert_equal "/rails/blobs/#{Yactivestorage::VerifiedKeyWithExpiration.encode(blob.key, expires_in: 5.minutes)}", blob.url
+    end
   end
 
   private
