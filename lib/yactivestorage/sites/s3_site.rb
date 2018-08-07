@@ -24,8 +24,8 @@ class Yactivestorage::Sites::S3Site < Yactivestorage::Site
     object_for(key).delete
   end
 
-  def exists?(key)
-    object_for(key).exists?
+  def exist?(key)
+    object_for(key).exist?
   end
 
   def byte_size(key)

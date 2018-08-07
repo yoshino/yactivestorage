@@ -17,8 +17,8 @@ class Yactivestorage::Sites::MirrorSite < Yactivestorage::Site
     perform_across_site :delete, key
   end
 
-  def exists?(key)
-    perform_across_site(:exists?, key).any?
+  def exist?(key)
+    perform_across_site(:exist?, key).any?
   end
 
   def byte_size(key)

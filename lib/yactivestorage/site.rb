@@ -15,7 +15,7 @@ class Yactivestorage::Site
     raise NoImplementadError
   end
 
-  def exists?(key)
+  def exist?(key)
     raise NoImplementadError
   end
 

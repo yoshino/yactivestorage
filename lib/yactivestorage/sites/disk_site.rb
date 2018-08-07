@@ -32,7 +32,7 @@ class Yactivestorage::Sites::DiskSite < Yactivestorage::Site
     File.delete path_for(key)
   end
 
-  def exists?(key)
+  def exist?(key)
     File.exist? path_for(key)
   end
 
