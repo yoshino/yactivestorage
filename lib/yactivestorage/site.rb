@@ -40,3 +40,4 @@ module Yactivestorage::Sites
 end
 
 require "yactivestorage/sites/disk_site"
+require "yactivestorage/sites/s3_site"
