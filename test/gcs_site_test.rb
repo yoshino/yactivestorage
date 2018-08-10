@@ -1,7 +1,7 @@
 require "test_helper"
 require "fileutils"
 require "tmpdir"
-require "acive_support/cote_ext/securerandom"
+require "active_support/core_ext/securerandom"
 require "yactivestorage/site"
 
 if ENV["GCS_PROJECT"] && ENV["GCS_KEYFILE"] && ENV["GCS_BUCKET"]
@@ -11,8 +11,8 @@ if ENV["GCS_PROJECT"] && ENV["GCS_KEYFILE"] && ENV["GCS_BUCKET"]
 
     setup do
       @site = Yactivestorage::Sites::GCSSite.new(
-        project: ENV["GCS_PROJECT"]
-        keyfile: ENV["GCS_KEYFILE"]
+        project: ENV["GCS_PROJECT"],
+        keyfile: ENV["GCS_KEYFILE"],
         bucket: ENV["GCS_BUCKET"]
       )
 
