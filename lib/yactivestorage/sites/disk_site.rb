@@ -29,7 +29,7 @@ class Yactivestorage::Sites::DiskSite < Yactivestorage::Site
   end
 
   def delete(key)
-    File.delete path_for(key)
+    File.delete path_for(key) rescue Errno::ENOENT # Ignore files already deleted
   end
 
   def exist?(key)
