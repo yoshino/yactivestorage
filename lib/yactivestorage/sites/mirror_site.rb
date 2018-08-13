@@ -5,8 +5,8 @@ class Yactivestorage::Sites::MirrorSite < Yactivestorage::Site
     @sites = sites
   end
 
-  def upload(key, data)
-    perform_across_site :upload, key, data
+  def upload(key, io)
+    perform_across_site :upload, key, io
   end
 
   def download(key)

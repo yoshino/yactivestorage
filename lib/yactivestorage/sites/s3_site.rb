@@ -8,8 +8,8 @@ class Yactivestorage::Sites::S3Site < Yactivestorage::Site
     @bucket = @client.bucket(bucket)
   end
 
-  def upload(key, data)
-    object_for(key).put(body: data)
+  def upload(key, io)
+    object_for(key).put(body: io)
   end
 
   def download(key)

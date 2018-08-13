@@ -12,16 +12,16 @@ class Yactivestorage::Blob < ActiveRecord::Base
 
   class << self
 
-    def build_after_upload(data:, filename:, content_type: nil, metadata: nil)
+    def build_after_upload(io:, filename:, content_type: nil, metadata: nil)
       new.tap do |blob|
         blob.filename = filename
         blob.content_type = content_type # Marcel::MimeType.for(data, name: name, declared_type: content_type)
-        blob.upload data
+        blob.upload io
       end
     end
 
-    def create_after_upload!(data:, filename:, content_type: nil, metadata: nil)
-      build_after_upload(data: data, filename: filename, content_type: content_type, metadata: metadata).tap(&:save!)
+    def create_after_upload!(io:, filename:, content_type: nil, metadata: nil)
+      build_after_upload(io: io, filename: filename, content_type: content_type, metadata: metadata).tap(&:save!)
     end
   end
 
@@ -38,8 +38,8 @@ class Yactivestorage::Blob < ActiveRecord::Base
     site.url key, disposition: disposition, expires_in: expires_in
   end
 
-  def upload(data)
-    site.upload key, data
+  def upload(io)
+    site.upload key, io
 
     self.checksum = site.checksum(key)
     self.byte_size = site.byte_size(key)

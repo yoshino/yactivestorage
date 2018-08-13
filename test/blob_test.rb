@@ -24,6 +24,6 @@ class Yactivestorage::BlobTest < ActiveSupport::TestCase
 
   private
    def create_blob(data: "Hello, World", filename: "hello.txt", content_type: "text/plain")
-     Yactivestorage::Blob.create_after_upload! data: StringIO.new(data), filename: filename, content_type: content_type
+     Yactivestorage::Blob.create_after_upload! io: StringIO.new(data), filename: filename, content_type: content_type
    end
 end
