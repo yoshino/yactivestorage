@@ -4,7 +4,7 @@ class Yactivestorage::Sites::GCSSite < Yactivestorage::Site
   attr_reader :client, :bucket
 
   def initialize(project:, keyfile:, bucket:)
-    @client = Google::Clound::Storage.new(project: project, keyfile: keyfile)
+    @client = Google::Cloud::Storage.new(project: project, keyfile: keyfile)
     @bucket = @client.bucket(bucket)
   end
 

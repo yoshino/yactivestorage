@@ -1,6 +1,6 @@
 require "sites/shared_site_tests"
 
-if SITE_CONFIGURATIONS [:s3]
+if SITE_CONFIGURATIONS[:s3]
   class Yactivestorage::Sites::S3SiteTest < ActiveSupport::TestCase
     SITE = Yactivestorage::Sites::S3Site.new(SITE_CONFIGURATIONS[:s3])
 

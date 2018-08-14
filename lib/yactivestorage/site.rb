@@ -41,3 +41,4 @@ end
 
 require "yactivestorage/sites/disk_site"
 require "yactivestorage/sites/s3_site"
+require "yactivestorage/sites/gcs_site"

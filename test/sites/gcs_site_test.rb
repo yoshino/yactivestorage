@@ -1,7 +1,7 @@
 require "sites/shared_site_tests"
 
-if SITE_CONFIGURATIONS [:gcs]
-  class Yactivestorage::Sites::GCSSiteTest < Yactivestorage::TestCase
+if SITE_CONFIGURATIONS[:gcs]
+  class Yactivestorage::Sites::GCSSiteTest < ActiveSupport::TestCase
     SITE = Yactivestorage::Sites::GCSSite.new(SITE_CONFIGURATIONS[:gcs])
 
     include Yactivestorage::Sites::SharedSiteTests
