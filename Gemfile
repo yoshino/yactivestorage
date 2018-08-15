@@ -5,6 +5,6 @@ gemspec
 gem 'rake'
 gem 'pry-byebug'
 
-gem 'sqlite3'
-gem 'aws-sdk'
+gem 'sqlite3', require: false
+gem 'aws-sdk', require: false
 gem 'google-cloud'

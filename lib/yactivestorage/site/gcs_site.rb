@@ -1,6 +1,6 @@
 require "google/cloud/storage"
 
-class Yactivestorage::Sites::GCSSite < Yactivestorage::Site
+class Yactivestorage::Site::GCSSite < Yactivestorage::Site
   attr_reader :client, :bucket
 
   def initialize(project:, keyfile:, bucket:)

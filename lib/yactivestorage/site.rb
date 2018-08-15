@@ -1,5 +1,12 @@
 # Abstract class serving as an interface for concrete sites.
 class Yactivestorage::Site
+  def self.configure(site, **options)
+    begin
+      require "yactivestorage/site/#{site.to_s.downcase}_site"
+      Yactivestorage::Site.const_get(:"#{site}Site").new(**options)
+    end
+  end
+
   def initialize
   end
 
@@ -35,10 +42,3 @@ class Yactivestorage::Site
     raise NoImplementadError
   end
 end
-
-module Yactivestorage::Sites
-end
-
-require "yactivestorage/sites/disk_site"
-require "yactivestorage/sites/s3_site"
-require "yactivestorage/sites/gcs_site"

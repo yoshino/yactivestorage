@@ -1,7 +1,7 @@
 require "fileutils"
 require "pathname"
 
-class Yactivestorage::Sites::DiskSite < Yactivestorage::Site
+class Yactivestorage::Site::DiskSite < Yactivestorage::Site
   attr_reader :root
 
   def initialize(root:)

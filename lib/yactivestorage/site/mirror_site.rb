@@ -1,4 +1,4 @@
-class Yactivestorage::Sites::MirrorSite < Yactivestorage::Site
+class Yactivestorage::Site::MirrorSite < Yactivestorage::Site
   attr_reader :sites
 
   def initialize(:sites)
