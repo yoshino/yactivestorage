@@ -14,7 +14,7 @@ class Yactivestorage::Filename
   end
 
   def sanitized
-    @filename.encode(Encoding::UTF-8, invalid: :replace, undef: :replace, replace: "").strip.tr("\u{202E}%$|:;/\t\r\n\\","-")
+    @filename.encode(Encoding::UTF_8, invalid: :replace, undef: :replace, replace: "�").strip.tr("\u{202E}%$|:;/\t\r\n\\", "-")
   end
 
   def to_s
