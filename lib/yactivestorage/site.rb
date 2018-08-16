@@ -7,9 +7,6 @@ class Yactivestorage::Site
     end
   end
 
-  def initialize
-  end
-
   def upload(key, data)
     raise NoImplementadError
   end
@@ -26,7 +23,7 @@ class Yactivestorage::Site
     raise NoImplementadError
   end
 
-  def url(key)
+  def url(key, expires_in: nil)
     raise NoImplementadError
   end
 
@@ -38,7 +35,7 @@ class Yactivestorage::Site
     raise NoImplementadError
   end
 
-  def move(from:, to:)
+  def bytesize(key)
     raise NoImplementadError
   end
 end
