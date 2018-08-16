@@ -36,7 +36,7 @@ class Yactivestorage::Site::DiskSite < Yactivestorage::Site
     File.exist? path_for(key)
   end
 
-  def url(key, disposition:, expires_in: nil)
+  def url(key, expires_in: nil)
     verified_key_with_expiration = Yactivestorage::VerifiedKeyWithExpiration.encode(key, expires_in: expires_in)
 
     if defined?(Rails)
