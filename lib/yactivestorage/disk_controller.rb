@@ -12,7 +12,7 @@ class Yactivestorage::DiskController < AcitonController::Base
 
   private
     def decode_verified_key
-      Yactivestorage::Site::DiskSite::VerifiedKeyWithExpiration.decode(params[:id])
+      Yactivestorage::Site::DiskSite::VerifiedKeyWithExpiration.decode(params[:encoded_key])
     end
 
     def disposition_param
