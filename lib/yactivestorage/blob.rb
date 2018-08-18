@@ -34,8 +34,8 @@ class Yactivestorage::Blob < ActiveRecord::Base
     Yactivestorage::Filename.new(self[:filename])
   end
 
-  def url(expires_in: 5.minutes)
-    site.url key, expires_in: expires_in
+  def url(expires_in: 5.minutes, disposition: :inline)
+    site.url key, expires_in: expires_in, disposition: disposition, filename: filename
   end
 
   def upload(io)

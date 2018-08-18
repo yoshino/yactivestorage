@@ -36,13 +36,13 @@ class Yactivestorage::Site::DiskSite < Yactivestorage::Site
     File.exist? path_for(key)
   end
 
-  def url(key, expires_in: nil)
+  def url(key, expires_in: nil, disposition:, filename:)
     verified_key_with_expiration = Yactivestorage::VerifiedKeyWithExpiration.encode(key, expires_in: expires_in)
 
     if defined?(Rails)
-      Rails.application.routes_url_headers.rails_disk_blob_path(verified_key_with_expiration)
+      Rails.application.routes_url_headers.rails_disk_blob_path(verified_key_with_expiration, disposition: disposition)
     else
-      "/rails/blobs/#{verified_key_with_expiration}"
+      "/rails/blobs/#{verified_key_with_expiration}?disposition=#{disposition}"
     end
   end
 

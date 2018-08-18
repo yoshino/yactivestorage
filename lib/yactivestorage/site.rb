@@ -25,7 +25,7 @@ class Yactivestorage::Site
     raise NoImplementadError
   end
 
-  def url(key, expires_in: nil)
+  def url(key, expires_in: nil, disposition:, filename:)
     raise NoImplementadError
   end
 
