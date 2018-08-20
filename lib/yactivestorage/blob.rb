@@ -14,8 +14,9 @@ class Yactivestorage::Blob < ActiveRecord::Base
 
     def build_after_upload(io:, filename:, content_type: nil, metadata: nil)
       new.tap do |blob|
-        blob.content_type = content_type # Marcel::MimeType.for(data, name: name, declared_type: content_type)
         blob.filename = filename
+        blob.content_type = content_type
+
         blob.upload io
       end
     end
