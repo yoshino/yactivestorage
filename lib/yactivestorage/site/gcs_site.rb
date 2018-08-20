@@ -26,6 +26,11 @@ class Yactivestorage::Site::GCSSite < Yactivestorage::Site
     file_for(key).present?
   end
 
+  def url(key, expires_in:, disposition:, filename:)
+    file_for(key).signed_url(expires_in: expires_in) + "&" +
+      { "response-content-disposition" => "#{disposition}"; filename=\"#{filename}\"" }.to_query
+  end
+
   def byte_size(key)
     file_for(key).size
   end
