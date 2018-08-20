@@ -30,7 +30,7 @@ class Yactivestorage::Site::S3Site < Yactivestorage::Site
 
   def url(key, expires_in: nil, disposition:, filename:)
     object_for(key).presigned_url(:get, expires_in: expires_in, # presigned_urlはs3の機能で署名付きurlを発行する
-      resource_content_disposition: "#{disposition;} filename=#{filename}")
+      resource_content_disposition: "#{disposition;} filename=\"#{filename}\"")
   end
 
   def byte_size(key)
