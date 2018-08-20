@@ -8,14 +8,14 @@ class Yactivestorage::Blob < ActiveRecord::Base
   store :metadata, coder: JSON
   has_secure_token :key
 
-  class_attribute :site
+  class_attribute :site # disk, gcs, mirror, s3.....
 
   class << self
 
     def build_after_upload(io:, filename:, content_type: nil, metadata: nil)
       new.tap do |blob|
-        blob.filename = filename
         blob.content_type = content_type # Marcel::MimeType.for(data, name: name, declared_type: content_type)
+        blob.filename = filename
         blob.upload io
       end
     end
