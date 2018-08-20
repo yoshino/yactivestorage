@@ -4,8 +4,8 @@ class Yactivestorage::Site
     begin
       require "yactivestorage/site/#{site.to_s.downcase}_site"
       Yactivestorage::Site.const_get(:"#{site}Site").new(**options)
-    rescue LoadError
-      puts "Could'nt configure unkown site: #{site}"
+    rescue LoadError => e
+      puts "Could'nt configure unkown site: #{site} (#{e.message})"
     end
   end
 
