@@ -27,8 +27,8 @@ class Yactivestorage::Site::GCSSite < Yactivestorage::Site
   end
 
   def url(key, expires_in:, disposition:, filename:)
-    file_for(key).signed_url(expires_in: expires_in) + "&" +
-      { "response-content-disposition" => "#{disposition}"; filename=\"#{filename}\"" }.to_query
+    file_for(key).signed_url(expires: expires_in) + "&" +
+      { "response-content-disposition" => "#{disposition}; filename=\"#{filename}\"" }.to_query
   end
 
   def byte_size(key)
@@ -45,6 +45,6 @@ class Yactivestorage::Site::GCSSite < Yactivestorage::Site
     end
 
     def convert_to_hex(base64:)
-      bsae64.unpack("m0").first.unpack("H*").first
+      base64.unpack("m0").first.unpack("H*").first
     end
 end
