@@ -1,6 +1,6 @@
 class Yactivestorage::CreateBlobs < ActiveRecord::Migration[5.2]
   def change
-    create_table :rails_blobs do |t|
+    create_table :yactivestorage_blobs do |t|
       t.string :key
       t.string :filename
       t.string :content_type

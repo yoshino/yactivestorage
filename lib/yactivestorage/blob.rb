@@ -3,7 +3,7 @@ require "yactivestorage/filename"
 
 # Schema: id, key, filename, content_type, metadata, byte_size, checksum, created_at
 class Yactivestorage::Blob < ActiveRecord::Base
-  self.table_name = "rails_blobs"
+  self.table_name = "yactivestorage_blobs"
 
   store :metadata, coder: JSON
   has_secure_token :key
