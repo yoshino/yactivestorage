@@ -4,6 +4,7 @@ class Yactivestorage::CreateBlobs < ActiveRecord::Migration[5.2]
       t.string :key
       t.string :filename
       t.string :content_type
+      t.text :metadata
       t.integer :byte_size
       t.string :checksum
       t.time :created_at

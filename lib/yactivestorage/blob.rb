@@ -17,7 +17,6 @@ class Yactivestorage::Blob < ActiveRecord::Base
         blob.filename = filename
         blob.content_type = content_type
         blob.metadata = metadata
-
         blob.upload io
       end
     end
