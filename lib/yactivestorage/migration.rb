@@ -1,4 +1,4 @@
-class Yactivestorage::CreateBlobs < ActiveRecord::Migration[5.2]
+class Yactivestorage::CreateTables < ActiveRecord::Migration[5.2]
   def change
     create_table :yactivestorage_blobs do |t|
       t.string :key
@@ -10,6 +10,19 @@ class Yactivestorage::CreateBlobs < ActiveRecord::Migration[5.2]
       t.time :created_at
 
       t.index [ :key ], unique: true
+    end
+
+    create_table :yactivestorage_attachments do |t|
+      t.string :name
+      t.string :record_gid
+      t.string :blob_id
+
+      t.time :created_at
+
+      t.index :record_gid
+      t.index :blob_id
+      t.index [ :record_gid, :name ]
+      t.index [ :record_gid, :blob_id ], unique: true
     end
   end
 end

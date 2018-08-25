@@ -6,23 +6,10 @@
 
 ```ruby
 class Person < ApplicationRecord
-  has_one :avatar
-end
-
-class Avatar < ApplicationRecord
-  belongs_to :person
-  belongs_to :image, class_name: 'Yactivestorage::Blob'
-
-  has_file :image
+  has_file :avatar
 end
 
 avatar.image_url(expires_in: 5.minuites)
-
-class Yactivestorage::DownloadsController < ApplicationController::Base
-  def show
-    head :ok, Yactivestorage::Blob.locate(params[:id]).download_headers
-  end
-end
 
 class AvatarsController < ApplicationController
   def create

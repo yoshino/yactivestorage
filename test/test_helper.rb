@@ -18,3 +18,10 @@ class ActiveSupport::TestCase
       Yactivestorage::Blob.create_after_upload! io: StringIO.new(data), filename: filename, content_type: content_type
     end
 end
+
+require "yactivestorage/attachments"
+ActiveRecord::Base.send :extend, Yactivestorage::Attachments
+
+require "global_id"
+GlobalID.app = "YactivestorageExampleApp"
+ActiveRecord::Base.send :include, GlobalID::Identification
