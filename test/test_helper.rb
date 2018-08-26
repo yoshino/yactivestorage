@@ -19,8 +19,8 @@ class ActiveSupport::TestCase
     end
 end
 
-require "yactivestorage/attachments"
-ActiveRecord::Base.send :extend, Yactivestorage::Attachments
+require "yactivestorage/attached"
+ActiveRecord::Base.send :extend, Yactivestorage::Attached::Macros
 
 require "global_id"
 GlobalID.app = "YactivestorageExampleApp"

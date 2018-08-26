@@ -21,6 +21,5 @@ class Yactivestorage::Attachment < ActiveRecord::Base
   def purge
     blob.purge
     destroy
-    record.public_send "#{name}=", nil
   end
 end

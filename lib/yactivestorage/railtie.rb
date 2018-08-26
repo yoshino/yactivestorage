@@ -15,5 +15,13 @@ module Yactivestorage
         end
       end
     end
+
+    initializer "yactivestorage.attached" do
+      require "yactivestorage/attached"
+
+      ActiveSupport.on_load(:active_record) do
+        extend Yactivestorage::Attaced::Macros
+      end
+    end
   end
 end
