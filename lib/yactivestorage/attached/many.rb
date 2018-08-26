@@ -6,7 +6,7 @@ class Yactivestorage::Attached::Many < Yactivestorage::Attached
   end
 
   def attach(*attachables)
-    @attachments = attachments + Array(attachables).collect do |attachables|
+    @attachments = attachments + Array(attachables).flatten do |attachables|
       Yactivestorage::Attachment.create!(record_gid: record.to_gid.to_s, name: name, blob: create_blob_from(attachables))
     end
   end
@@ -19,4 +19,4 @@ class Yactivestorage::Attached::Many < Yactivestorage::Attached
     attachments.each(&:purge)
     @attachments = nil
   end
-end 
+end
