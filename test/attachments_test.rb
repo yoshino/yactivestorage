@@ -16,7 +16,6 @@ class Yactivestorage::AttachmentsTest < ActiveSupport::TestCase
 
   test "attach existing blob" do
     @user.avatar.attach create_blob(filename: "funky.jpg")
-    binding.pry
     assert_equal "funky.jpg", @user.avatar.filename.to_s
   end
 

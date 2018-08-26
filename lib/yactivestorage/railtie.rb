@@ -2,11 +2,11 @@ require "rails/railtie"
 
 module Yactivestorage
   class Railtie < ::Rails::Railtie
-    config.action_file = ActiveSupport::OrderedOptions.new
+    config.yactivestorage = ActiveSupport::OrderedOptions.new
 
     config.eager_load_namespaces << Yactivestorage
 
-    initializer "action_file.routes" do
+    initializer "yactivestorage.routes" do
       require "yactivestorage/disk_controller"
 
       config,alter_initialize do |app|
