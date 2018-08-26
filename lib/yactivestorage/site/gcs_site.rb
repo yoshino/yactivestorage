@@ -1,4 +1,5 @@
 require "google/cloud/storage"
+require "active_support/core_ext/object/to_query"
 
 class Yactivestorage::Site::GCSSite < Yactivestorage::Site
   attr_reader :client, :bucket
