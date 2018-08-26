@@ -5,23 +5,22 @@
 ## Example
 
 ```ruby
-class Person < ApplicationRecord
-  has_file :avatar
+class User < ApplicationRecord
+  has_one_attached :avatar
 end
 
-avatar.image_url(expires_in: 5.minuites)
+user.avarar.attach io: File.open("~/face.jpg"), filename: "avatar.jpg", content_type: "image/jpg"
+user.avatar.exist? # => true
 
-class AvatarsController < ApplicationController
-  def create
-    # @avatar = Avatar.create \
-    #   image: Yactivestorage::Blob.save!(file_name: params.require(:name), content_type, request.content_type, data: request.body)
-    @avatar = Avatar.create! image: Avatar.image.extract_from(request)
-  end
-end
+user.avarar.purge
+user.avatar.exist? # => false
 
-def ProfilesController < ApplicationController
+user.image.url(expires_in: 5.minutes) #=> /rails/blobs/<encoded-key>
+
+def AvatarController < ApplicationController
   def update
-    @person.update! avatar: @person.avatar.update!(:image )
+    Current.user.avatar.attach(params.require(:avarar))
+    redirect_to Current.user
   end
 end
 ```
