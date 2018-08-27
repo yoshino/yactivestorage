@@ -16,7 +16,16 @@ class Yactivestorage::Attached::Many < Yactivestorage::Attached
   end
 
   def purge
-    attachments.each(&:purge)
-    @attachments = nil
+    if attached?
+      attachments.each(&:purge)
+      @attachments = nil
+    end
+  end
+
+  def purge_later
+    if attached?
+      attachments.each(&:purge_later)
+      @attachments = nil
+    end
   end
 end

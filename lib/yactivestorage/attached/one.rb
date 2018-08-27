@@ -12,8 +12,18 @@ class Yactivestorage::Attached::One < Yactivestorage::Attached
    def attached?
     attachment.present?
   end
+  
    def purge
-    attachment.purge
-    @attachment = nil
+     if attached?
+      attachment.purge
+      @attachment = nil
+    end
+  end
+
+  def purge_later
+    if attached?
+      attachment.purge_later
+      @attachment = nil
+    end
   end
 end
