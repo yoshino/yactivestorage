@@ -1,8 +1,13 @@
 # Yactivestorage
 
-...
+Yactivestorage makes it simple to upload and reference files in cloud sites, like Amazon S3 or Google Cloud Storage,
+and attach those files to Yactivestorage. It also provides a disk site for testing or local deployments, but the
+focus is on cloud storage.
+
 
 ## Example
+
+One attachment:
 
 ```ruby
 class User < ApplicationRecord
@@ -23,6 +28,29 @@ def AvatarController < ApplicationController
     redirect_to Current.user
   end
 end
+```
+
+Many attachements:
+
+```ruby
+class Message < ApplicationRecord
+  has_many_attached :images
+end
+
+<%= form_with model: @message do |form| %>
+  <%= form.text_field :title, placeholder: "Title" %><br>
+  <%= form.text_field :title, placeholder: "Title" %><br><br>
+
+  <%= form.file_field :images, multiple: true %><br>
+  <%= form.submit %>
+<% end %>
+```
+
+## Configuration
+
+Add `require "yactivestorage"`  to config/application.rb and create a `config/initializers/yactivestorage_sites.rb`  with the following:
+
+```ruby
 ```
 
 ## License
