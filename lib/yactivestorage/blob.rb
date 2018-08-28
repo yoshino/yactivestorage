@@ -1,5 +1,6 @@
 require "yactivestorage/site"
 require "yactivestorage/filename"
+require "yactivestorage/purge_job"
 
 # Schema: id, key, filename, content_type, metadata, byte_size, checksum, created_at
 class Yactivestorage::Blob < ActiveRecord::Base

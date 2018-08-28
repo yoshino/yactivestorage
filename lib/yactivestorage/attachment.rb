@@ -22,4 +22,8 @@ class Yactivestorage::Attachment < ActiveRecord::Base
     blob.purge
     destroy
   end
+
+  def purge_later
+    Yactivestorage::PurgeJob.perform_later(self)
+  end
 end

@@ -2,6 +2,10 @@ require "test_helper"
 require "database/setup"
 require "yactivestorage/blob"
 
+require "active_job"
+ActiveJob::Base.queue_adapter = :test
+ActiveJob::Base.logger = nil
+
 # ActiveRecord::Base.logger = Logger.new(STDOUT)
 
 class User < ActiveRecord::Base
@@ -10,6 +14,8 @@ class User < ActiveRecord::Base
 end
 
 class Yactivestorage::AttachmentsTest < ActiveSupport::TestCase
+  include ActiveJob::TestHelper
+
   setup { @user = User.create!(name: "DHH") }
 
   teardown { Yactivestorage::Blob.all.each(&:purge) }
@@ -31,6 +37,18 @@ class Yactivestorage::AttachmentsTest < ActiveSupport::TestCase
     @user.avatar.purge
     assert_not @user.avatar.attached?
     assert_not Yactivestorage::Blob.site.exist?(avatar_key)
+  end
+
+  test "purge attached blob later when record is destroyed" do
+    @user.avatar.attach create_blob(filename: "funkey.jpg")
+    avatar_key = @user.avatar.key
+
+    perform_enqueued_jobs do
+      @user.destroy
+
+      assert_nil Yactivestorage::Blob.find_by(key: avatar_key)
+      assert_not Yactivestorage::Blob.site.exist?(avatar_key)
+    end
   end
 
   test "attach existing blobs" do
@@ -57,5 +75,20 @@ class Yactivestorage::AttachmentsTest < ActiveSupport::TestCase
     assert_not @user.highlights.attached?
     assert_not Yactivestorage::Blob.site.exist?(highlight_keys.first)
     assert_not Yactivestorage::Blob.site.exist?(highlight_keys.second)
+  end
+
+  test "purge attached blobs later when the record is destroyed" do
+    @user.highlights.attach create_blob(filename: "funky.jpg"), create_blob(filename: "wonky.jpg")
+    highlight_keys = @user.highlights.collect(&:key)
+
+    perform_enqueued_jobs do
+      @user.destroy
+
+      assert_nil Yactivestorage::Blob.find_by(key: highlight_keys.first)
+      assert_not Yactivestorage::Blob.site.exist?(highlight_keys.first)
+
+      assert_nil Yactivestorage::Blob.find_by(key: highlight_keys.second)
+      assert_not Yactivestorage::Blob.site.exist?(highlight_keys.second)
+    end
   end
 end
