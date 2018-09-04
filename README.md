@@ -53,6 +53,18 @@ Add `require "yactivestorage"`  to config/application.rb and create a `config/in
 ```ruby
 ```
 
+## Todos
+
+- Strip Download of its responsibilities and delete class
+- Proper logging
+- MirrorSite
+- Read metadata via Marcel
+- Copy over migration to app via rake task
+- Add Migrator to copy/move between sites
+- Explore direct uploads to cloud
+- Extract VerifiedKeyWithExpiration into Rails as feature of MessageVerifier
+
+
 ## License
 
 Yactivestorage is released under the [MIT License](https://opensource.org/licenses/MIT).
