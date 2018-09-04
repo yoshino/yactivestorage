@@ -1,12 +1,15 @@
 class Yactivestorage::Site::MirrorSite < Yactivestorage::Site
   attr_reader :sites
 
-  def initialize(:sites)
+  def initialize(sites:)
     @sites = sites
   end
 
   def upload(key, io)
-    perform_across_site :upload, key, io
+    sites.collect do |site|
+      site.upload key, io
+      io.rewind
+    end
   end
 
   def download(key)
@@ -14,30 +17,31 @@ class Yactivestorage::Site::MirrorSite < Yactivestorage::Site
   end
 
   def delete(key)
-    perform_across_site :delete, key
+    perform_across_sites :delete, key
   end
 
   def exist?(key)
-    perform_across_site(:exist?, key).any?
+    perform_across_sites(:exist?, key).any?
   end
+
 
   def byte_size(key)
     primary_site.byte_size(key)
   end
 
   def checksum(key)
-    primary_site.byte_size(key)
+    primary_site.checksum(key)
   end
 
   private
     def primary_site
-      site.first
+      sites.first
     end
 
-    def perform_across_site(method, **args)
-      # FIXME: convert to be thread
+    def perform_across_sites(method, *args)
+      # FIXME: Convert to be threaded
       sites.collect do |site|
-        site.send merhod, **args
+        site.public_send method, *args
       end
     end
 end
