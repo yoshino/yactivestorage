@@ -1,4 +1,4 @@
-require "yactivestorage/site"
+require "yactivestorage/service"
 require "yactivestorage/filename"
 require "yactivestorage/purge_job"
 
@@ -9,7 +9,7 @@ class Yactivestorage::Blob < ActiveRecord::Base
   store :metadata, coder: JSON
   has_secure_token :key
 
-  class_attribute :site # disk, gcs, mirror, s3.....
+  class_attribute :service # disk, gcs, mirror, s3.....
 
   class << self
 
@@ -37,22 +37,22 @@ class Yactivestorage::Blob < ActiveRecord::Base
   end
 
   def url(expires_in: 5.minutes, disposition: :inline)
-    site.url key, expires_in: expires_in, disposition: disposition, filename: filename
+    service.url key, expires_in: expires_in, disposition: disposition, filename: filename
   end
 
   def upload(io)
-    site.upload key, io
+    service.upload key, io
 
-    self.checksum = site.checksum(key)
-    self.byte_size = site.byte_size(key)
+    self.checksum = service.checksum(key)
+    self.byte_size = service.byte_size(key)
   end
 
   def download
-    site.download key
+    service.download key
   end
 
   def delete
-    site.delete key
+    service.delete key
   end
 
   def purge

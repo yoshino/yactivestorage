@@ -1,6 +1,6 @@
 # Yactivestorage
 
-Yactivestorage makes it simple to upload and reference files in cloud sites, like Amazon S3 or Google Cloud Storage,
+Yactivestorage makes it simple to upload and reference files in cloud services, like Amazon S3 or Google Cloud Storage,
 and attach those files to Yactivestorage. It also provides a disk site for testing or local deployments, but the
 focus is on cloud storage.
 
@@ -48,7 +48,7 @@ end
 
 ## Configuration
 
-Add `require "yactivestorage"`  to config/application.rb and create a `config/initializers/yactivestorage_sites.rb`  with the following:
+Add `require "yactivestorage"`  to config/application.rb and create a `config/initializers/yactivestorage_services.rb`  with the following:
 
 ```ruby
 ```
@@ -57,10 +57,10 @@ Add `require "yactivestorage"`  to config/application.rb and create a `config/in
 
 - Strip Download of its responsibilities and delete class
 - Proper logging
-- Convert MirrorSite to use threading
+- Convert MirrorService to use threading
 - Read metadata via Marcel
 - Copy over migration to app via rake task
-- Add Migrator to copy/move between sites
+- Add Migrator to copy/move between services
 - Explore direct uploads to cloud
 - Extract VerifiedKeyWithExpiration into Rails as feature of MessageVerifier
 

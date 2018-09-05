@@ -1,11 +1,11 @@
-# Abstract class serving as an interface for concrete sites.
-class Yactivestorage::Site
-  def self.configure(site, **options)
+# Abstract class serving as an interface for concrete services.
+class Yactivestorage::Service
+  def self.configure(service, **options)
     begin
-      require "yactivestorage/site/#{site.to_s.downcase}_site"
-      Yactivestorage::Site.const_get(:"#{site}Site").new(**options)
+      require "yactivestorage/service/#{service.to_s.downcase}_service"
+      Yactivestorage::Service.const_get(:"#{service}Service").new(**options)
     rescue LoadError => e
-      puts "Could'nt configure unkown site: #{site} (#{e.message})"
+      puts "Could'nt configure unkown service: #{service} (#{e.message})"
     end
   end
 

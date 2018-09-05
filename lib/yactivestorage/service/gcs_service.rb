@@ -1,7 +1,7 @@
 require "google/cloud/storage"
 require "active_support/core_ext/object/to_query"
 
-class Yactivestorage::Site::GCSSite < Yactivestorage::Site
+class Yactivestorage::Service::GCSService < Yactivestorage::Service
   attr_reader :client, :bucket
 
   def initialize(project:, keyfile:, bucket:)

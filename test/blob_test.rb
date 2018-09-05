@@ -2,7 +2,7 @@ require "test_helper"
 require "database/setup"
 require "yactivestorage/blob"
 
-Yactivestorage::Blob.site = Yactivestorage::Site.configure(:Disk, root: File.join(Dir.tmpdir, "yactivestorage"))
+Yactivestorage::Blob.service = Yactivestorage::Service.configure(:Disk, root: File.join(Dir.tmpdir, "yactivestorage"))
 
 class Yactivestorage::BlobTest < ActiveSupport::TestCase
   test "create after upload sets byte size and checksum" do

@@ -6,8 +6,8 @@ require "pry"
 
 require "yactivestorage"
 
-require "yactivestorage/site"
-Yactivestorage::Blob.site = Yactivestorage::Site.configure(:Disk, root: File.join(Dir.tmpdir, "yactivestorage"))
+require "yactivestorage/service"
+Yactivestorage::Blob.service = Yactivestorage::Service.configure(:Disk, root: File.join(Dir.tmpdir, "yactivestorage"))
 
 require "yactivestorage/verified_key_with_expiration"
 Yactivestorage::VerifiedKeyWithExpiration.verifier = ActiveSupport::MessageVerifier.new("Testing")
