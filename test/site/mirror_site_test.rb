@@ -28,4 +28,11 @@ class Yactivestorage::Site::MirrorSiteTest < ActiveSupport::TestCase
     assert PRIMARY_DISK_SITE.exist?(FIXTURE_KEY)
     assert SECONDARY_DISK_SITE.exist?(FIXTURE_KEY)
   end
+
+  test "URL generation for primary site" do
+    travel_to Time.now do
+      assert_equal PRIMARY_DISK_SITE.url(FIXTURE_KEY, expires_in: 5.minutes, disposition: :inline, filename: "test.txt"),
+        SITE.url(FIXTURE_KEY, eipires_in: 5.minutes, disposition: :inline, filename: "test.txt")
+    end
+  end
 end

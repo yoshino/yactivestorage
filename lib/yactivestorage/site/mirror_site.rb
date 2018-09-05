@@ -16,6 +16,10 @@ class Yactivestorage::Site::MirrorSite < Yactivestorage::Site
     sites.detect { |site| site.exist?(key) }.download(key)
   end
 
+  def url(key, **options)
+    primary_site.url(key, **options)
+  end
+
   def delete(key)
     perform_across_sites :delete, key
   end
