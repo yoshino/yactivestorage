@@ -16,10 +16,6 @@ class Yactivestorage::Service::MirrorService < Yactivestorage::Service
     end
   end
 
-  def url(key, **options)
-    primary_service.url(key, **options)
-  end
-
   def delete(key)
     perform_across_services :delete, key
   end
