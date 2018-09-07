@@ -16,7 +16,7 @@ module Yactivestorage::Service::SharedServiceTests
 
   included do
     setup do
-      @service = self.class.const_get(:SITE)
+      @service = self.class.const_get(:SERVICE)
       @service.upload FIXTURE_KEY, FIXTURE_FILE
       FIXTURE_FILE.rewind
     end

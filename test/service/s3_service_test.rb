@@ -2,7 +2,7 @@ require "service/shared_service_tests"
 
 if SITE_CONFIGURATIONS[:s3]
   class Yactivestorage::Service::S3ServiceTest < ActiveSupport::TestCase
-    SITE = Yactivestorage::Service.configure(:S3, SITE_CONFIGURATIONS[:s3])
+    SERVICE = Yactivestorage::Service.configure(:S3, SITE_CONFIGURATIONS[:s3])
 
     include Yactivestorage::Service::SharedServiceTests
   end
