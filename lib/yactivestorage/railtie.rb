@@ -1,7 +1,7 @@
 require "rails/railtie"
 
 module Yactivestorage
-  class Railtie < ::Rails::Railtie
+  class Engine < ::Rails::Engine
     config.yactivestorage = ActiveSupport::OrderedOptions.new
 
     config.eager_load_namespaces << Yactivestorage
