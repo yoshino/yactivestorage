@@ -13,6 +13,7 @@ class Yactivestorage::Service::GCSService < Yactivestorage::Service
     bucket.create_file(io, key)
   end
 
+  # FIXME Add streaming when given a block
   def download(key)
     io = file_for(key).download
     io.rewind
