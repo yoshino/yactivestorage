@@ -1,4 +1,5 @@
 require "aws-sdk"
+require "active_support/core_ext/numeric/bytes"
 
 class Yactivestorage::Service::S3Service < Yactivestorage::Service
   attr_reader :client, :bucket

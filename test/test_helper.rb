@@ -14,7 +14,7 @@ Yactivestorage::VerifiedKeyWithExpiration.verifier = ActiveSupport::MessageVerif
 
 class ActiveSupport::TestCase
   private
-    def create_blob(data: "Hello, World", filename: "hello.txt", content_type: "text/plain")
+    def create_blob(data: "Hello world!", filename: "hello.txt", content_type: "text/plain")
       Yactivestorage::Blob.create_after_upload! io: StringIO.new(data), filename: filename, content_type: content_type
     end
 end

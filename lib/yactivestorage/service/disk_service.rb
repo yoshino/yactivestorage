@@ -1,5 +1,6 @@
 require "fileutils"
 require "pathname"
+require "active_support/core_ext/numeric/bytes"
 
 class Yactivestorage::Service::DiskService < Yactivestorage::Service
   attr_reader :root
