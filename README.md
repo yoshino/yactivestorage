@@ -5,7 +5,7 @@ and attach those files to Yactivestorage. It also provides a disk site for testi
 focus is on cloud storage.
 
 
-## Example
+## Examples
 
 One attachment:
 
