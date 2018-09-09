@@ -3,7 +3,7 @@ Gem::Specification.new do |s|
   s.version       = "0.1"
   s.authors       = ["Taiki Yoshino"]
   s.email         = ["test@example.com"]
-  s.summary       = "Store files in Rails applications"
+  s.summary       = "Attach cloud and local files in Rails applicaitions"
   s.homepage      = "https://github.com/yoshino/activefile"
   s.license       = "MIT"
 
