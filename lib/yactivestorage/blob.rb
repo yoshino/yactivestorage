@@ -41,10 +41,10 @@ class Yactivestorage::Blob < ActiveRecord::Base
   end
 
   def upload(io)
-    service.upload key, io
+    self.checksum  = compute_checksum_in_chunks(io)
+    self.byte_size = io.size
 
-    self.checksum = service.checksum(key)
-    self.byte_size = service.byte_size(key)
+    service.upload(key, io)
   end
 
   def download
@@ -63,4 +63,15 @@ class Yactivestorage::Blob < ActiveRecord::Base
   def purge_later
     Yactivestorage::PurgeJob.perform_later(self)
   end
+
+  private
+    def compute_checksum_in_chunks(io)
+      Digest::MD5.new.tap do |checksum|
+        while chunk = io.read(5.megabytes)
+          checksum << chunk
+        end
+
+        io.rewind
+      end.base64digest
+    end
 end

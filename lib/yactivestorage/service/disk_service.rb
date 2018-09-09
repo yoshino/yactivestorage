@@ -46,14 +46,6 @@ class Yactivestorage::Service::DiskService < Yactivestorage::Service
     end
   end
 
-  def byte_size(key)
-    File.size path_for(key)
-  end
-
-  def checksum(key)
-    Digest::MD5.file(path_for(key)).hexdigest
-  end
-
   private
     def path_for(key)
       File.join root, folder_for(key), key

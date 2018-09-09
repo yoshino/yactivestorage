@@ -33,14 +33,6 @@ class Yactivestorage::Service::S3Service < Yactivestorage::Service
       resource_content_disposition: "#{disposition;} filename=\"#{filename}\"")
   end
 
-  def byte_size(key)
-    object_for(key).size
-  end
-
-  def checksum(key)
-    object_for(key).etag.remove(/"/)
-  end
-
   private
     def object_for(key)
       bucket.object(key)
