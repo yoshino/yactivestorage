@@ -1,13 +1,10 @@
-# Configuration should be somthing like this:
-#
-# config/environments/development.rb
-#   config.yactivestorage.service = :local
-# config/environments/production.rb
-#   config.yactivestorage.service = :amazon
+test:
+  service: Disk
+  root: <%= Rails.root.join("tmp/storage") %>
 
 local:
   service: Disk
-  root: <%= File.join(Dir.tmpdir, "yactivestorage") %>
+  root: <%= Rails.root.join("tmp/storage") %>
 
 amazon:
   service: S3
@@ -18,8 +15,11 @@ amazon:
 
 google:
   service: GCS
+  project: your_project
+  keyfile: <%= Rails.root.join("path/to/gcs.keyfile") %>
+  bucket: your_own_bucket
 
 mirror:
   service: Mirror
-  primary: amazon
-  secondaries: google
+  primary: local
+  secondaries: [ amazom, google ]

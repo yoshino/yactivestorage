@@ -46,12 +46,12 @@ end
 <% end %>
 ```
 
-## Configuration
+## Installation
 
-Add `require "yactivestorage"`  to config/application.rb and create a `config/initializers/yactivestorage_services.rb`  with the following:
+1. Add `require yactivestorage`  to config/application.rb
+2. Run rails yactivestorage::install to create needed directories, migrations, and configuration.
+3. Configure the storage services in config/environements/* with `config.yactivestorage.service = :local`  that references the services configured in config/yactivestorage.yml
 
-```ruby
-```
 
 ## Todos
 
