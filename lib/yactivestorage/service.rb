@@ -1,5 +1,7 @@
 # Abstract class serving as an interface for concrete services.
 class Yactivestorage::Service
+  class Yactivestorage::IntegrityError < StandardError; end
+
   def self.configure(service, **options)
     begin
       require "yactivestorage/service/#{service.to_s.downcase}_service"
@@ -9,7 +11,7 @@ class Yactivestorage::Service
     end
   end
 
-  def upload(key, data)
+  def upload(key, data, checksum: nil)
     raise NoImplementadError
   end
 
