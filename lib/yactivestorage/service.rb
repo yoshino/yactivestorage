@@ -29,15 +29,7 @@ class Yactivestorage::Service
     raise NoImplementadError
   end
 
-  def checksum(key)
-    raise NoImplementadError
-  end
-
   def copy(from:, to:)
-    raise NoImplementadError
-  end
-
-  def bytesize(key)
     raise NoImplementadError
   end
 end
