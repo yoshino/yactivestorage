@@ -10,8 +10,11 @@ class Yactivestorage::Service::GCSService < Yactivestorage::Service
   end
 
   def upload(key, io, checksum: nil)
-    # FIXME: Ensure integrity by sending the checksum for service side verificarion
-    bucket.create_file(io, key)
+    begin
+      bucket.create_file(io, key, md5: checksum)
+    rescue Google::Cloud::InvalidArgumentError
+      raise Yactivestorage::IntegrityError
+    end 
   end
 
   # FIXME Add streaming when given a block
