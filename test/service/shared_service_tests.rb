@@ -44,7 +44,7 @@ module Yactivestorage::Service::SharedServiceTests
         data = "Something else entirely!"
 
         assert_raises(Yactivestorage::IntegrityError) do
-          @service.upload(key, StringIO.new(data), checksum: "BAD_CHECKSUM")
+          @service.upload(key, StringIO.new(data), checksum: Digest::MD5.base64digest("bad data"))
         end
       ensure
         @service.delete key
