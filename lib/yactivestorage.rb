@@ -1,5 +1,5 @@
 require "active_record"
-require "yactivestorage/railtie" if defined?(Rails)
+require "yactivestorage/engine" if defined?(Rails)
 
 module Yactivestorage
   extend ActiveSupport::Autoload

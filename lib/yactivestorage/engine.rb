@@ -1,4 +1,4 @@
-require "rails/railtie"
+require "rails/engine"
 
 module Yactivestorage
   class Engine < ::Rails::Engine
@@ -51,6 +51,6 @@ module Yactivestorage
           raise e, "Cannnot load `Rails.config.yactivestorage.service` :\n#{e.message}", e.backtrace
         end
       end
-    end 
+    end
   end
 end
