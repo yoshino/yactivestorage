@@ -11,6 +11,7 @@ namespace :yactivestorage do
     puts "Copied default configuration to config/yactivestorage.yml"
 
     migration_file_path = "db/migrate/#{Time.now.utc.strftime("%Y%m%d%H%M%S")}_active_storage_create_tables.rb"
+    FileUtils.mkdir_p Rails.root.join("db/migrate")
     FileUtils.cp File.expand_path("../../yactivestorage/storage_services.yml", __FILE__), Rails.root.join(migration_file_path)
     puts "Copied migration to #{migration_file_path}"
 
