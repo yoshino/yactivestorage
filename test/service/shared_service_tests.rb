@@ -64,5 +64,9 @@ module Yactivestorage::Service::SharedServiceTests
       @service.delete FIXTURE_KEY
       assert_not @service.exist?(FIXTURE_KEY)
     end
+
+    test "deleting nonexistent key" do
+      @service.delete SecureRandom.base58(24)
+    end
   end
 end
