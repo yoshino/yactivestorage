@@ -3,7 +3,7 @@ require "active_support/core_ext/module/delegation"
 class Yactivestorage::Service::MirrorService < Yactivestorage::Service
   attr_reader :services
 
-  delegate :download, :exist?, :url, :byte_size, :checksum, to: :primary_service
+  delegate :download, :exist?, :url, to: :primary_service
 
   def initialize(services:)
     @services = services
