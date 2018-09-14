@@ -1,4 +1,4 @@
-class Yactivestorage::CreateTables < ActiveRecord::Migration[5.2]
+class YactivestorageCreateTables < ActiveRecord::Migration[5.2]
   def change
     create_table :yactivestorage_blobs do |t|
       t.string :key
