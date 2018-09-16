@@ -4,6 +4,16 @@ require "yactivestorage/verified_key_with_expiration"
 
 require "active_support/core_ext/object/inclusion"
 
+# This controller is a wrapper around local file downloading. It allows you to
+# make abstraction of the URL generation logic and to serve files with expiry
+# if you are using the +Disk+ service.
+#
+# By default, mounting the Active Storage engine inside your application will
+# define a +/rails/blobs/:encoded_key+ route that will reference this controller's
+# +show+ action and will be used to serve local files.
+#
+# A URL for an attachment can be generated through its +#url+ method, that
+# will use the aforementioned route.
 class Yactivestorage::DiskController < ActionController::Base
   def show
     if key = decode_verified_key
