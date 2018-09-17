@@ -9,7 +9,7 @@ require "active_support/core_ext/object/inclusion"
 # if you are using the +Disk+ service.
 #
 # By default, mounting the Active Storage engine inside your application will
-# define a +/rails/blobs/:encoded_key+ route that will reference this controller's
+# define a +/rails/blobs/:encoded_key/*filename+ route that will reference this controller's
 # +show+ action and will be used to serve local files.
 #
 # A URL for an attachment can be generated through its +#url+ method, that

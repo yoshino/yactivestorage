@@ -39,9 +39,9 @@ class Yactivestorage::Service::DiskService < Yactivestorage::Service
     verified_key_with_expiration = Yactivestorage::VerifiedKeyWithExpiration.encode(key, expires_in: expires_in)
 
     if defined?(Rails) && defined?(Rails.application)
-      Rails.application.routes_url_headers.rails_disk_blob_path(verified_key_with_expiration, disposition: disposition)
+      Rails.application.routes_url_headers.rails_disk_blob_path(verified_key_with_expiration, disposition: disposition, filename: filename)
     else
-      "/rails/blobs/#{verified_key_with_expiration}?disposition=#{disposition}"
+      "/rails/blobs/#{verified_key_with_expiration}/#{filename}?disposition=#{disposition}"
     end
   end
 

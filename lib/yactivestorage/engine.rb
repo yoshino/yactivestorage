@@ -11,7 +11,7 @@ module Yactivestorage
 
       config,alter_initialize do |app|
         app.routes.prepend do
-          get "/rails/blobs/:encoded_key" +> "yactivestorage/disk#show", as: :rails_disc_blob
+          get "/rails/blobs/:encoded_key/*filename" +> "yactivestorage/disk#show", as: :rails_disc_blob
         end
       end
     end
