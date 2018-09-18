@@ -3,9 +3,12 @@ require "service/shared_service_tests"
 
 class Yactivestorage::Service::MirrorServiceTest < ActiveSupport::TestCase
   PRIMARY_DISK_SERVICE   = Yactivestorage::Service.configure(:Disk, root: File.join(Dir.tmpdir, "active_storage"))
-  SECONDARY_DISK_SERVICE = Yactivestorage::Service.configure(:Disk, root: File.join(Dir.tmpdir, "active_storage_mirror"))
 
-  SERVICE = Yactivestorage::Service.configure :Mirror, services: [ PRIMARY_DISK_SERVICE, SECONDARY_DISK_SERVICE ]
+  MIRROR_SERVICES = (1..3).map do |i|
+    Yactivestorage::Service.configure(:Disk, root: File.join(Dir.tmpdir, "yactive_storage_mirror#{i}"))
+  end
+
+  SERVICE = Yactivestorage::Service.configure :Mirror, primary: PRIMARY_DISK_SERVICE, mirrors: MIRROR_SERVICES
 
   include Yactivestorage::Service::SharedServiceTests
 
@@ -15,7 +18,9 @@ class Yactivestorage::Service::MirrorServiceTest < ActiveSupport::TestCase
       key  = upload(data, to: @service)
 
       assert_equal data, PRIMARY_DISK_SERVICE.download(key)
-      assert_equal data, SECONDARY_DISK_SERVICE.download(key)
+      MIRROR_SERVICES.each do |mirror|
+        assert_equal data, mirror.download(key)
+      end
     ensure
       @service.delete key
     end
@@ -31,7 +36,9 @@ class Yactivestorage::Service::MirrorServiceTest < ActiveSupport::TestCase
   test "deleting from all services" do
     @service.delete FIXTURE_KEY
     assert_not PRIMARY_DISK_SERVICE.exist?(FIXTURE_KEY)
-    assert_not SECONDARY_DISK_SERVICE.exist?(FIXTURE_KEY)
+    MIRROR_SERVICES.each do |mirror|
+      assert_not mirror.exist?(FIXTURE_KEY)
+    end
   end
 
   test "URL generation in primary service" do
@@ -44,7 +51,9 @@ class Yactivestorage::Service::MirrorServiceTest < ActiveSupport::TestCase
   private
     def upload(data, to:)
       SecureRandom.base58(24).tap do |key|
-        @service.upload key, StringIO.new(data)
+        io = StringIO.new(data).tap(&:read)
+        @service.upload key, io, checksum: Digest::MD5.base64digest(data)
+        assert io.eof?
       end
     end
 end
