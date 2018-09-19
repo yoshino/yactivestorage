@@ -2,13 +2,16 @@ require "tmpdir"
 require "service/shared_service_tests"
 
 class Yactivestorage::Service::MirrorServiceTest < ActiveSupport::TestCase
-  PRIMARY_DISK_SERVICE   = Yactivestorage::Service.configure(:Disk, root: File.join(Dir.tmpdir, "active_storage"))
+  mirror_config = (1..3).map do |i|
+    [ "mirror_#{i}",
+      service: "Disk",
+      root: File.join(Dir.tmpdir, "yactivestorage_mirror_#{i}") ]
+  end.to_h
+   config = mirror_config.merge \
+    mirror:   { service: "Mirror", primary: 'primary', mirrors: mirror_config.keys },
+    primary:  { service: "Disk", root: File.join(Dir.tmpdir, "yactivestorage") }
 
-  MIRROR_SERVICES = (1..3).map do |i|
-    Yactivestorage::Service.configure(:Disk, root: File.join(Dir.tmpdir, "yactive_storage_mirror#{i}"))
-  end
-
-  SERVICE = Yactivestorage::Service.configure :Mirror, primary: PRIMARY_DISK_SERVICE, mirrors: MIRROR_SERVICES
+  SERVICE = Yactivestorage::Service.configure(:mirror, config)
 
   include Yactivestorage::Service::SharedServiceTests
 
@@ -17,8 +20,8 @@ class Yactivestorage::Service::MirrorServiceTest < ActiveSupport::TestCase
       data = "Something else entirely!"
       key  = upload(data, to: @service)
 
-      assert_equal data, PRIMARY_DISK_SERVICE.download(key)
-      MIRROR_SERVICES.each do |mirror|
+      assert_equal data, SERVICE.primary.download(key)
+      SERVICE.mirrors.each do |mirror|
         assert_equal data, mirror.download(key)
       end
     ensure
@@ -28,22 +31,22 @@ class Yactivestorage::Service::MirrorServiceTest < ActiveSupport::TestCase
 
   test "downloading from primary service" do
     data = "Something else entirely!"
-    key  = upload(data, to: PRIMARY_DISK_SERVICE)
+    key  = upload(data, to: SERVICE.primary)
 
     assert_equal data, @service.download(key)
   end
 
   test "deleting from all services" do
     @service.delete FIXTURE_KEY
-    assert_not PRIMARY_DISK_SERVICE.exist?(FIXTURE_KEY)
-    MIRROR_SERVICES.each do |mirror|
+    assert_not SERVICE.primary.exist?(FIXTURE_KEY)
+    SERVICE.mirrors.each do |mirror|
       assert_not mirror.exist?(FIXTURE_KEY)
     end
   end
 
   test "URL generation in primary service" do
     travel_to Time.now do
-      assert_equal PRIMARY_DISK_SERVICE.url(FIXTURE_KEY, expires_in: 2.minutes, disposition: :inline, filename: "test.txt"),
+      assert_equal SERVICE.primary.url(FIXTURE_KEY, expires_in: 2.minutes, disposition: :inline, filename: "test.txt"),
         @service.url(FIXTURE_KEY, expires_in: 2.minutes, disposition: :inline, filename: "test.txt")
     end
   end

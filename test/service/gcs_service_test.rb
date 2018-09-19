@@ -2,7 +2,7 @@ require "service/shared_service_tests"
 
 if SITE_CONFIGURATIONS[:gcs]
   class Yactivestorage::Service::GCSServiceTest < ActiveSupport::TestCase
-    SERVICE   = Yactivestorage::Service.configure(:GCS, SITE_CONFIGURATIONS[:gcs])
+    SERVICE   = Yactivestorage::Service.configure(:gcs, SITE_CONFIGURATIONS)
 
     include Yactivestorage::Service::SharedServiceTests
 
@@ -18,4 +18,3 @@ if SITE_CONFIGURATIONS[:gcs]
 else
   puts "Skipping GCS Service tests because no GCS configuration was supplied"
 end
-    

@@ -22,4 +22,4 @@ google:
 mirror:
   service: Mirror
   primary: local
-  secondaries: [ amazom, google ]
+  mirrors: [ amazom, google ]

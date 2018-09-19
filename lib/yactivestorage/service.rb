@@ -32,13 +32,15 @@
 class Yactivestorage::Service
   class Yactivestorage::IntegrityError < StandardError; end
 
-  def self.configure(service, **options)
-    begin
-      require "yactivestorage/service/#{service.to_s.downcase}_service"
-      Yactivestorage::Service.const_get(:"#{service}Service").new(**options)
-    rescue LoadError => e
-      puts "Could'nt configure unkown service: #{service} (#{e.message})"
-    end
+  def self.configure(service_name, configurations)
+    require 'yactivestorage/service/configurator'
+    Configurator.new(service_name, configurations).build
+  end
+
+  # Override in subclasses that stitch together multiple services and hence
+  # need to do additional lookups form configurations. See MirrorService.
+  def self.build(config, configurations) #:nodoc:
+    new(config)
   end
 
   def upload(key, data, checksum: nil)
