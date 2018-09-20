@@ -39,8 +39,8 @@ class Yactivestorage::Service
 
   # Override in subclasses that stitch together multiple services and hence
   # need to do additional lookups form configurations. See MirrorService.
-  def self.build(config, configurations) #:nodoc:
-    new(config)
+  def self.build(service_config, all_configurations) #:nodoc:
+    new(service_config)
   end
 
   def upload(key, data, checksum: nil)
