@@ -32,15 +32,24 @@
 class Yactivestorage::Service
   class Yactivestorage::IntegrityError < StandardError; end
 
+  extend ActiveSupport::Autoload
+  autoload :Configurator
+
+  # Configure an Active sotrage service bu name from a set of configurations,
+  # typically loaded from a YAML file. The Active Storage engine uses this
+  # to set the global Active Storage service when the app boots.
   def self.configure(service_name, configurations)
-    require 'yactivestorage/service/configurator'
-    Configurator.new(service_name, configurations).build
+    Configurator.build(service_name, configurations)
   end
 
   # Override in subclasses that stitch together multiple services and hence
   # need to do additional lookups form configurations. See MirrorService.
-  def self.build(service_config, all_configurations) #:nodoc:
-    new(service_config)
+  #
+  # Passes the configurator and all of the service's config as keyword args.
+  #
+  # See MirrorService for an example.
+  def self.build(configurator:, service: nil, **service_config) #:nodoc:
+    new(**service_config)
   end
 
   def upload(key, data, checksum: nil)
