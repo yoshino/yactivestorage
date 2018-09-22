@@ -1,12 +1,12 @@
 class Yactivestorage::Service::Configurator #:nodoc:
   attr_reader :configurations
-  
+
   def self.build(service_name, configurations)
     new(configurations).build(service_name)
   end
 
   def initialize(configurations)
-    @configurations = configurations.symbolize_keys
+    @configurations = configurations.deep_symbolize_keys # 再帰的にhash化する
   end
 
   def build(service_name)
