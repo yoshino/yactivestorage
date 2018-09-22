@@ -19,7 +19,7 @@ class Yactivestorage::Service::S3Service < Yactivestorage::Service
     if block_given?
       stream(key, &block)
     else
-      object_for(key).get.body.read
+      object_for(key).get.body.read.force_encoding(Encoding::BINARY)
     end
   end
 
