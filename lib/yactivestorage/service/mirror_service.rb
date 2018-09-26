@@ -7,9 +7,9 @@ class Yactivestorage::Service::MirrorService < Yactivestorage::Service
 
   # Stitch together from named services.
   def self.build(primary:, mirrors:, configurator:, **options) #:nodoc:
-     new \
-       primary: configurator.build(primary),
-       mirrors: mirrors.collect { |name| configurator.build name }
+    new \
+      primary: configurator.build(primary),
+      mirrors: mirrors.collect { |name| configurator.build name }
   end
 
   def initialize(primary:, mirrors:)

@@ -23,7 +23,7 @@ class Yactivestorage::Attached
           content_type: attachable.content_type
       when Hash
         Yactivestorage::Blob.create_after_upload!(attachable)
-      when NilClass
+      else
         nil
       end
     end

@@ -5,8 +5,12 @@ class Yactivestorage::Filename
     @filename = filename
   end
 
+  def extname
+    File.extname(@filename)
+  end
+
   def extension
-    extname.form(1)
+    extname.from(1)
   end
 
   def base

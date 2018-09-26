@@ -6,7 +6,7 @@ class Yactivestorage::Service::Configurator #:nodoc:
   end
 
   def initialize(configurations)
-    @configurations = configurations.deep_symbolize_keys # 再帰的にhash化する
+    @configurations = configurations.deep_symbolize_keys
   end
 
   def build(service_name)
@@ -14,10 +14,10 @@ class Yactivestorage::Service::Configurator #:nodoc:
     resolve(config.fetch(:service)).build(**config, configurator: self)
   end
 
-   private
+  private
     def config_for(name)
       configurations.fetch name do
-        raise "Missing configuration for the #{name.inspect} Active Storage service."
+        raise "Missing configuration for the #{name.inspect} Active Storage service. Configurations available for #{configurations.keys.inspect}"
       end
     end
 

@@ -1,5 +1,7 @@
-# Abstract class serving as an interface for concrete services.
+require_relative "log_subscriber"
 
+# Abstract class serving as an interface for concrete services.
+#
 # The available services are:
 #
 # * +Disk+, to manage attachments saved directly on the hard drive.
@@ -20,12 +22,12 @@
 # Then, in your application's configuration, you can specify the service to
 # use like this:
 #
-#   config.active_storage.service = :local
+#   config.yactivestorage.service = :local
 #
 # If you are using Active Storage outside of a Ruby on Rails application, you
 # can configure the service to use like this:
 #
-#   ActiveStorage::Blob.service = ActiveStorage::Service.configure(
+#   Yactivestorage::Blob.service = Yactivestorage::Service.configure(
 #     :Disk,
 #     root: Pathname("/foo/bar/storage")
 #   )
@@ -35,8 +37,10 @@ class Yactivestorage::Service
   extend ActiveSupport::Autoload
   autoload :Configurator
 
+  class_attribute :logger
+
   class << self
-    # Configure an Active sotrage service bu name from a set of configurations,
+    # Configure an Active Storage service by name from a set of configurations,
     # typically loaded from a YAML file. The Active Storage engine uses this
     # to set the global Active Storage service when the app boots.
     def configure(service_name, configurations)
@@ -44,7 +48,7 @@ class Yactivestorage::Service
     end
 
     # Override in subclasses that stitch together multiple services and hence
-    # need to do additional lookups form configurations. See MirrorService.
+    # need to build additional services using the configurator.
     #
     # Passes the configurator and all of the service's config as keyword args.
     #
@@ -52,29 +56,37 @@ class Yactivestorage::Service
     def build(configurator:, service: nil, **service_config) #:nodoc:
       new(**service_config)
     end
-  end 
+  end
 
-  def upload(key, data, checksum: nil)
-    raise NoImplementadError
+  def upload(key, io, checksum: nil)
+    raise NotImplementedError
   end
 
   def download(key)
-    raise NoImplementadError
+    raise NotImplementedError
   end
 
   def delete(key)
-    raise NoImplementadError
+    raise NotImplementedError
   end
 
   def exist?(key)
-    raise NoImplementadError
+    raise NotImplementedError
   end
 
-  def url(key, expires_in: nil, disposition:, filename:)
-    raise NoImplementadError
+  def url(key, expires_in:, disposition:, filename:)
+    raise NotImplementedError
   end
 
-  def copy(from:, to:)
-    raise NoImplementadError
-  end
+  private
+    def instrument(operation, key, payload = {}, &block)
+      ActiveSupport::Notifications.instrument(
+        "service_#{operation}.yactivestorage",
+        payload.merge(key: key, service: service_name), &block)
+    end
+
+    def service_name
+      # Yactivestorage::Service::DiskService => Disk
+      self.class.name.split("::").third.remove("Service")
+    end
 end

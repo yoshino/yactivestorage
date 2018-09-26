@@ -2,6 +2,7 @@ require "yactivestorage/blob"
 require "global_id"
 require "active_support/core_ext/module/delegation"
 
+# Schema: id, record_gid, blob_id, created_at
 class Yactivestorage::Attachment < ActiveRecord::Base
   self.table_name = "yactivestorage_attachments"
 

@@ -9,8 +9,8 @@ require "active_support/core_ext/object/inclusion"
 # if you are using the +Disk+ service.
 #
 # By default, mounting the Active Storage engine inside your application will
-# define a +/rails/blobs/:encoded_key/*filename+ route that will reference this controller's
-# +show+ action and will be used to serve local files.
+# define a +/rails/blobs/:encoded_key/*filename+ route that will reference this
+# controller's +show+ action and will be used to serve local files.
 #
 # A URL for an attachment can be generated through its +#url+ method, that
 # will use the aforementioned route.
@@ -23,7 +23,7 @@ class Yactivestorage::DiskController < ActionController::Base
         send_data blob.download, filename: blob.filename, type: blob.content_type, disposition: disposition_param
       end
     else
-      head :not_head
+      head :not_found
     end
   end
 
@@ -35,4 +35,4 @@ class Yactivestorage::DiskController < ActionController::Base
     def disposition_param
       params[:disposition].presence_in(%w( inline attachment )) || 'inline'
     end
-  end
+end

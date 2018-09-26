@@ -2,10 +2,10 @@ require "test_helper"
 require "active_support/core_ext/securerandom"
 require "yaml"
 
-SITE_CONFIGURATIONS = begin
+SERVICE_CONFIGURATIONS = begin
   YAML.load_file(File.expand_path("../configurations.yml", __FILE__)).deep_symbolize_keys
 rescue Errno::ENOENT
-  puts "Missing service configurations file in test/service/configurations.yml"
+  puts "Missing service configuration file in test/service/configurations.yml"
   {}
 end
 
@@ -39,7 +39,7 @@ module Yactivestorage::Service::SharedServiceTests
 
     test "upload without integrity" do
       begin
-        key = SecureRandom.base58(24)
+        key  = SecureRandom.base58(24)
         data = "Something else entirely!"
 
         assert_raises(Yactivestorage::IntegrityError) do
@@ -65,7 +65,9 @@ module Yactivestorage::Service::SharedServiceTests
     end
 
     test "deleting nonexistent key" do
-      @service.delete SecureRandom.base58(24)
+      assert_nothing_raised do
+        @service.delete SecureRandom.base58(24)
+      end
     end
   end
 end

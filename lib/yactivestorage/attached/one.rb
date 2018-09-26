@@ -6,14 +6,14 @@ class Yactivestorage::Attached::One < Yactivestorage::Attached
   #
   # You don't have to call this method to access the attachment's methods as
   # they are all available at the model level.
-   def attachment
+  def attachment
     @attachment ||= Yactivestorage::Attachment.find_by(record_gid: record.to_gid.to_s, name: name)
   end
 
   # Associates a given attachment with the current record, saving it to the
   # database.
   def attach(attachable)
-     @attachment = Yactivestorage::Attachment.create!(record_gid: record.to_gid.to_s, name: name, blob: create_blob_from(attachable))
+    @attachment = Yactivestorage::Attachment.create!(record_gid: record.to_gid.to_s, name: name, blob: create_blob_from(attachable))
   end
 
   # Checks the presence of the attachment.
@@ -30,13 +30,13 @@ class Yactivestorage::Attached::One < Yactivestorage::Attached
   # Directly purges the attachment (i.e. destroys the blob and
   # attachment and deletes the file on the service).
   def purge
-     if attached?
+    if attached?
       attachment.purge
       @attachment = nil
     end
   end
-  
- # Purges the attachment through the queuing system.
+
+  # Purges the attachment through the queuing system.
   def purge_later
     if attached?
       attachment.purge_later

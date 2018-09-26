@@ -10,30 +10,50 @@ class Yactivestorage::Service::S3Service < Yactivestorage::Service
   end
 
   def upload(key, io, checksum: nil)
-    object_for(key).put(body: io, content_md5: checksum)
-  rescue Aws::S3::Errors::BadDigest
-    raise Yactivestorage::IntegrityError
+    instrument :upload, key, checksum: checksum do
+      begin
+        object_for(key).put(body: io, content_md5: checksum)
+      rescue Aws::S3::Errors::BadDigest
+        raise Yactivestorage::IntegrityError
+      end
+    end
   end
 
   def download(key)
     if block_given?
-      stream(key, &block)
+      instrument :steaming_download, key do
+        stream(key, &block)
+      end
     else
-      object_for(key).get.body.read.force_encoding(Encoding::BINARY)
+      instrument :download, key do
+        object_for(key).get.body.read.force_encoding(Encoding::BINARY)
+      end
     end
   end
 
   def delete(key)
-    object_for(key).delete
+    instrument :delete, key do
+      object_for(key).delete
+    end
   end
 
   def exist?(key)
-    object_for(key).exists?
+    instrument :exist, key do |payload|
+      answer = object_for(key).exists?
+      payload[:exist] = answer
+      answer
+    end
   end
 
   def url(key, expires_in: nil, disposition:, filename:)
-    object_for(key).presigned_url(:get, expires_in: expires_in, # presigned_urlはs3の機能で署名付きurlを発行する
-      resource_content_disposition: "#{disposition;} filename=\"#{filename}\"")
+    instrument :url, key do |payload|
+      generated_url = object_for(key).presigned_url(:get, expires_in: expires_in, # presigned_urlはs3の機能で署名付きurlを発行する
+        resource_content_disposition: "#{disposition;} filename=\"#{filename}\"")
+
+      payload[:url] = generated_url
+
+      generated_url
+    end 
   end
 
   private

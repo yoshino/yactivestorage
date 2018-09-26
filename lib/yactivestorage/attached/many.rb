@@ -13,8 +13,8 @@ class Yactivestorage::Attached::Many < Yactivestorage::Attached
   # Associates one or several attachments with the current record, saving
   # them to the database.
   def attach(*attachables)
-    @attachments = attachments | Array(attachables).flatten.collect do |attachables|
-      Yactivestorage::Attachment.create!(record_gid: record.to_gid.to_s, name: name, blob: create_blob_from(attachables))
+    @attachments = attachments | Array(attachables).flatten.collect do |attachable|
+      Yactivestorage::Attachment.create!(record_gid: record.to_gid.to_s, name: name, blob: create_blob_from(attachable))
     end
   end
 
@@ -38,7 +38,7 @@ class Yactivestorage::Attached::Many < Yactivestorage::Attached
     end
   end
 
- # Purges each associated attachment through the queuing system.
+  # Purges each associated attachment through the queuing system.
   def purge_later
     if attached?
       attachments.each(&:purge_later)

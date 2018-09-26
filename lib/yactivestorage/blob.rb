@@ -6,18 +6,18 @@ require "yactivestorage/purge_job"
 class Yactivestorage::Blob < ActiveRecord::Base
   self.table_name = "yactivestorage_blobs"
 
-  store :metadata, coder: JSON
   has_secure_token :key
+  store :metadata, coder: JSON
 
-  class_attribute :service # disk, gcs, mirror, s3.....
+  class_attribute :service
 
   class << self
-
     def build_after_upload(io:, filename:, content_type: nil, metadata: nil)
       new.tap do |blob|
-        blob.filename = filename
+        blob.filename     = filename
         blob.content_type = content_type
-        blob.metadata = metadata
+        blob.metadata     = metadata
+
         blob.upload io
       end
     end
@@ -27,7 +27,7 @@ class Yactivestorage::Blob < ActiveRecord::Base
     end
   end
 
-  # We can't wait until thre record is first saved to have a key for it
+  # We can't wait until the record is first saved to have a key for it
   def key
     self[:key] ||= self.class.generate_unique_secure_token
   end
@@ -40,6 +40,7 @@ class Yactivestorage::Blob < ActiveRecord::Base
     service.url key, expires_in: expires_in, disposition: disposition, filename: filename
   end
 
+
   def upload(io)
     self.checksum  = compute_checksum_in_chunks(io)
     self.byte_size = io.size
@@ -50,6 +51,7 @@ class Yactivestorage::Blob < ActiveRecord::Base
   def download
     service.download key
   end
+
 
   def delete
     service.delete key
@@ -63,6 +65,7 @@ class Yactivestorage::Blob < ActiveRecord::Base
   def purge_later
     Yactivestorage::PurgeJob.perform_later(self)
   end
+
 
   private
     def compute_checksum_in_chunks(io)

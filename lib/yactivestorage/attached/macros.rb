@@ -12,8 +12,8 @@ module Yactivestorage::Attached::Macros
   # (i.e. destroyed) whenever the record is destroyed.
   def has_one_attached(name, dependent: :purge_later)
     define_method(name) do
-      instance_variable_get("@yactivestorage_attached_#{name}") ||
-        instance_variable_set("@yactivestorage_attached_#{name}", Yactivestorage::Attached::One.new(name, self))
+      instance_variable_get("@active_storage_attached_#{name}") ||
+        instance_variable_set("@active_storage_attached_#{name}", Yactivestorage::Attached::One.new(name, self))
     end
 
     if dependent == :purge_later
@@ -34,8 +34,8 @@ module Yactivestorage::Attached::Macros
   # (i.e. destroyed) whenever the record is destroyed.
   def has_many_attached(name, dependent: :purge_later)
     define_method(name) do
-      instance_variable_get("@yactivestorage_attached_#{name}") ||
-        instance_variable_set("@yactivestorage_attached_#{name}", Yactivestorage::Attached::Many.new(name, self))
+      instance_variable_get("@active_storage_attached_#{name}") ||
+        instance_variable_set("@active_storage_attached_#{name}", Yactivestorage::Attached::Many.new(name, self))
     end
 
     if dependent == :purge_later

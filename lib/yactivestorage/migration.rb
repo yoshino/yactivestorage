@@ -1,4 +1,4 @@
-class YactivestorageCreateTables < ActiveRecord::Migration[5.2]
+class YactivestorageCreateTables < ActiveRecord::Migration[5.1] # :nodoc:
   def change
     create_table :yactivestorage_blobs do |t|
       t.string   :key
@@ -13,9 +13,9 @@ class YactivestorageCreateTables < ActiveRecord::Migration[5.2]
     end
 
     create_table :yactivestorage_attachments do |t|
-      t.string   :name
-      t.string   :record_gid
-      t.string   :blob_id
+      t.string  :name
+      t.string  :record_gid
+      t.integer :blob_id
 
       t.datetime :created_at
 

@@ -1,17 +1,25 @@
 require "rails/engine"
 
 module Yactivestorage
-  class Engine < ::Rails::Engine
+  class Engine < Rails::Engine # :nodoc:
     config.yactivestorage = ActiveSupport::OrderedOptions.new
 
     config.eager_load_namespaces << Yactivestorage
 
+    initializer "yactivestorage.logger" do
+      require "yactivestorage/service"
+
+      config.after_initialize do |app|
+        Yactivestorage::Service.logger = app.config.yactivestorage.logger || Rails.logger
+      end
+    end
+
     initializer "yactivestorage.routes" do
       require "yactivestorage/disk_controller"
 
-      config,alter_initialize do |app|
+      config.after_initialize do |app|
         app.routes.prepend do
-          get "/rails/blobs/:encoded_key/*filename" +> "yactivestorage/disk#show", as: :rails_disc_blob
+          get "/rails/blobs/:encoded_key/*filename" => "yactivestorage/disk#show", as: :rails_disk_blob
         end
       end
     end
@@ -20,14 +28,14 @@ module Yactivestorage
       require "yactivestorage/attached"
 
       ActiveSupport.on_load(:active_record) do
-        extend Yactivestorage::Attaced::Macros
+        extend Yactivestorage::Attached::Macros
       end
     end
 
     config.after_initialize do |app|
       if config_choice = app.config.yactivestorage.service
-        config_file   = Pathname.new(Rails.root.join("config/storage_services.yml"))
-        raise("Couldn't find Yactivestorage configuration in #{config_file}") unless config_file.exist?
+        config_file = Pathname.new(Rails.root.join("config/storage_services.yml"))
+        raise("Couldn't find Active Storage configuration in #{config_file}") unless config_file.exist?
 
         require "yaml"
         require "erb"
@@ -45,7 +53,7 @@ module Yactivestorage
           begin
             Yactivestorage::Service.configure config_choice, configs
           rescue => e
-            raise e, "Cannnot load `Rails.config.yactivestorage.service` :\n#{e.message}", e.backtrace
+            raise e, "Cannot load `Rails.config.yactivestorage.service`:\n#{e.message}", e.backtrace
           end
       end
     end

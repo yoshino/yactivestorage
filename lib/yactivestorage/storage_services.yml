@@ -4,15 +4,17 @@ test:
 
 local:
   service: Disk
-  root: <%= Rails.root.join("tmp/storage") %>
+  root: <%= Rails.root.join("storage") %>
 
+# Use rails secrets:edit to set the AWS secrets (as shared:aws:access_key_id|secret_access_key)
 amazon:
   service: S3
   access_key_id: <%= Rails.application.secrets.aws[:access_key_id] %>
   secret_access_key: <%= Rails.application.secrets.aws[:secret_access_key] %>
   region: us-east-1
-  bucket: <% Rails.application.class.name.remove(/::Application$/).underscore %>
+  bucket: your_own_bucket
 
+# Remember not to checkin your GCS keyfile to a repository
 google:
   service: GCS
   project: your_project
@@ -22,4 +24,4 @@ google:
 mirror:
   service: Mirror
   primary: local
-  mirrors: [ amazom, google ]
+  mirrors: [ amazon, google ]
