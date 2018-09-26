@@ -1,10 +1,10 @@
-require "yactivestorage/blob"
-require "yactivestorage/attachment"
+require "active_storage/blob"
+require "active_storage/attachment"
 
 require "action_dispatch/http/upload"
 require "active_support/core_ext/module/delegation"
 
-class Yactivestorage::Attached
+class ActiveStorage::Attached
   attr_reader :name, :record
 
   def initialize(name, record)
@@ -14,21 +14,21 @@ class Yactivestorage::Attached
   private
     def create_blob_from(attachable)
       case attachable
-      when Yactivestorage::Blob
+      when ActiveStorage::Blob
         attachable
       when ActionDispatch::Http::UploadedFile
-        Yactivestorage::Blob.create_after_upload! \
+        ActiveStorage::Blob.create_after_upload! \
           io: attachable.open,
           filename: attachable.original_filename,
           content_type: attachable.content_type
       when Hash
-        Yactivestorage::Blob.create_after_upload!(attachable)
+        ActiveStorage::Blob.create_after_upload!(attachable)
       else
         nil
       end
     end
 end
 
-require "yactivestorage/attached/one"
-require "yactivestorage/attached/many"
-require "yactivestorage/attached/macros"
+require "active_storage/attached/one"
+require "active_storage/attached/many"
+require "active_storage/attached/macros"

@@ -1,10 +1,10 @@
-require "yactivestorage/service"
-require "yactivestorage/filename"
-require "yactivestorage/purge_job"
+require "active_storage/service"
+require "active_storage/filename"
+require "active_storage/purge_job"
 
 # Schema: id, key, filename, content_type, metadata, byte_size, checksum, created_at
-class Yactivestorage::Blob < ActiveRecord::Base
-  self.table_name = "yactivestorage_blobs"
+class ActiveStorage::Blob < ActiveRecord::Base
+  self.table_name = "active_storage_blobs"
 
   has_secure_token :key
   store :metadata, coder: JSON
@@ -33,7 +33,7 @@ class Yactivestorage::Blob < ActiveRecord::Base
   end
 
   def filename
-    Yactivestorage::Filename.new(self[:filename])
+    ActiveStorage::Filename.new(self[:filename])
   end
 
   def url(expires_in: 5.minutes, disposition: :inline)
@@ -63,7 +63,7 @@ class Yactivestorage::Blob < ActiveRecord::Base
   end
 
   def purge_later
-    Yactivestorage::PurgeJob.perform_later(self)
+    ActiveStorage::PurgeJob.perform_later(self)
   end
 
 

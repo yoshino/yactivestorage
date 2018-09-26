@@ -9,7 +9,7 @@ rescue Errno::ENOENT
   {}
 end
 
-module Yactivestorage::Service::SharedServiceTests
+module ActiveStorage::Service::SharedServiceTests
   extend ActiveSupport::Concern
 
   FIXTURE_KEY  = SecureRandom.base58(24)
@@ -42,7 +42,7 @@ module Yactivestorage::Service::SharedServiceTests
         key  = SecureRandom.base58(24)
         data = "Something else entirely!"
 
-        assert_raises(Yactivestorage::IntegrityError) do
+        assert_raises(ActiveStorage::IntegrityError) do
           @service.upload(key, StringIO.new(data), checksum: Digest::MD5.base64digest("bad data"))
         end
       ensure

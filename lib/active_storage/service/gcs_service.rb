@@ -1,7 +1,7 @@
 require "google/cloud/storage"
 require "active_support/core_ext/object/to_query"
 
-class Yactivestorage::Service::GCSService < Yactivestorage::Service
+class ActiveStorage::Service::GCSService < ActiveStorage::Service
   attr_reader :client, :bucket
 
   def initialize(project:, keyfile:, bucket:)
@@ -14,7 +14,7 @@ class Yactivestorage::Service::GCSService < Yactivestorage::Service
       begin
         bucket.create_file(io, key, md5: checksum)
       rescue Google::Cloud::InvalidArgumentError
-        raise Yactivestorage::IntegrityError
+        raise ActiveStorage::IntegrityError
       end
     end
   end
@@ -46,13 +46,12 @@ class Yactivestorage::Service::GCSService < Yactivestorage::Service
     instrument :url, key do |payload|
       generated_url = file_for(key).signed_url(expires: expires_in) + "&" +
         { "response-content-disposition" => "#{disposition}; filename=\"#{filename}\"" }.to_query
-
+      
       payload[:url] = generated_url
-
+      
       generated_url
     end
   end
-
 
   private
     def file_for(key)

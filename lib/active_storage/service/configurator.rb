@@ -1,4 +1,4 @@
-class Yactivestorage::Service::Configurator #:nodoc:
+class ActiveStorage::Service::Configurator #:nodoc:
   attr_reader :configurations
 
   def self.build(service_name, configurations)
@@ -22,7 +22,7 @@ class Yactivestorage::Service::Configurator #:nodoc:
     end
 
     def resolve(class_name)
-      require "yactivestorage/service/#{class_name.to_s.downcase}_service"
-      Yactivestorage::Service.const_get(:"#{class_name}Service")
+      require "active_storage/service/#{class_name.to_s.downcase}_service"
+      ActiveStorage::Service.const_get(:"#{class_name}Service")
     end
 end

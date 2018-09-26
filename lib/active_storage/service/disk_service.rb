@@ -3,7 +3,7 @@ require "pathname"
 require "digest/md5"
 require "active_support/core_ext/numeric/bytes"
 
-class Yactivestorage::Service::DiskService < Yactivestorage::Service
+class ActiveStorage::Service::DiskService < ActiveStorage::Service
   attr_reader :root
 
   def initialize(root:)
@@ -53,9 +53,9 @@ class Yactivestorage::Service::DiskService < Yactivestorage::Service
 
   def url(key, expires_in:, disposition:, filename:)
     instrument :url, key do |payload|
-      verified_key_with_expiration = Yactivestorage::VerifiedKeyWithExpiration.encode(key, expires_in: expires_in)
+      verified_key_with_expiration = ActiveStorage::VerifiedKeyWithExpiration.encode(key, expires_in: expires_in)
 
-      generated_url =
+      generated_url = 
         if defined?(Rails) && defined?(Rails.application)
           Rails.application.routes.url_helpers.rails_disk_blob_path(verified_key_with_expiration, disposition: disposition, filename: filename)
         else
@@ -63,7 +63,7 @@ class Yactivestorage::Service::DiskService < Yactivestorage::Service
         end
 
       payload[:url] = generated_url
-
+      
       generated_url
     end
   end
@@ -83,7 +83,7 @@ class Yactivestorage::Service::DiskService < Yactivestorage::Service
 
     def ensure_integrity_of(key, checksum)
       unless Digest::MD5.file(path_for(key)).base64digest == checksum
-        raise Yactivestorage::IntegrityError
+        raise ActiveStorage::IntegrityError
       end
     end
 end

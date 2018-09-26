@@ -1,6 +1,6 @@
-class YactivestorageCreateTables < ActiveRecord::Migration[5.1] # :nodoc:
+class ActiveStorageCreateTables < ActiveRecord::Migration[5.1] # :nodoc:
   def change
-    create_table :yactivestorage_blobs do |t|
+    create_table :active_storage_blobs do |t|
       t.string   :key
       t.string   :filename
       t.string   :content_type
@@ -12,7 +12,7 @@ class YactivestorageCreateTables < ActiveRecord::Migration[5.1] # :nodoc:
       t.index [ :key ], unique: true
     end
 
-    create_table :yactivestorage_attachments do |t|
+    create_table :active_storage_attachments do |t|
       t.string  :name
       t.string  :record_gid
       t.integer :blob_id

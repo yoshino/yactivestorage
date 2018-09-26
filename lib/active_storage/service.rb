@@ -22,17 +22,17 @@ require_relative "log_subscriber"
 # Then, in your application's configuration, you can specify the service to
 # use like this:
 #
-#   config.yactivestorage.service = :local
+#   config.active_storage.service = :local
 #
 # If you are using Active Storage outside of a Ruby on Rails application, you
 # can configure the service to use like this:
 #
-#   Yactivestorage::Blob.service = Yactivestorage::Service.configure(
+#   ActiveStorage::Blob.service = ActiveStorage::Service.configure(
 #     :Disk,
 #     root: Pathname("/foo/bar/storage")
 #   )
-class Yactivestorage::Service
-  class Yactivestorage::IntegrityError < StandardError; end
+class ActiveStorage::Service
+  class ActiveStorage::IntegrityError < StandardError; end
 
   extend ActiveSupport::Autoload
   autoload :Configurator
@@ -81,12 +81,12 @@ class Yactivestorage::Service
   private
     def instrument(operation, key, payload = {}, &block)
       ActiveSupport::Notifications.instrument(
-        "service_#{operation}.yactivestorage",
+        "service_#{operation}.active_storage", 
         payload.merge(key: key, service: service_name), &block)
     end
 
     def service_name
-      # Yactivestorage::Service::DiskService => Disk
+      # ActiveStorage::Service::DiskService => Disk
       self.class.name.split("::").third.remove("Service")
     end
 end

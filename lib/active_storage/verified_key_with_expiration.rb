@@ -1,4 +1,4 @@
-class Yactivestorage::VerifiedKeyWithExpiration
+class ActiveStorage::VerifiedKeyWithExpiration
   class_attribute :verifier, default: defined?(Rails) ? Rails.application.message_verifier('ActiveStorage') : nil
 
   class << self

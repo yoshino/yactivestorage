@@ -1,19 +1,20 @@
 require "tmpdir"
 require "service/shared_service_tests"
 
-class Yactivestorage::Service::MirrorServiceTest < ActiveSupport::TestCase
+class ActiveStorage::Service::MirrorServiceTest < ActiveSupport::TestCase
   mirror_config = (1..3).map do |i|
     [ "mirror_#{i}",
       service: "Disk",
-      root: File.join(Dir.tmpdir, "yactivestorage_mirror_#{i}") ]
+      root: File.join(Dir.tmpdir, "active_storage_mirror_#{i}") ]
   end.to_h
-   config = mirror_config.merge \
+
+  config = mirror_config.merge \
     mirror:   { service: "Mirror", primary: 'primary', mirrors: mirror_config.keys },
-    primary:  { service: "Disk", root: File.join(Dir.tmpdir, "yactivestorage") }
+    primary:  { service: "Disk", root: File.join(Dir.tmpdir, "active_storage") }
 
-  SERVICE = Yactivestorage::Service.configure(:mirror, config)
+  SERVICE = ActiveStorage::Service.configure :mirror, config
 
-  include Yactivestorage::Service::SharedServiceTests
+  include ActiveStorage::Service::SharedServiceTests
 
   test "uploading to all services" do
     begin

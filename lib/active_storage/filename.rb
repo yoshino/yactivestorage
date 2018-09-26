@@ -1,4 +1,4 @@
-class Yactivestorage::Filename
+class ActiveStorage::Filename
   include Comparable
 
   def initialize(filename)

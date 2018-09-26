@@ -1,4 +1,4 @@
-module Yactivestorage::Attached::Macros
+module ActiveStorage::Attached::Macros
   # Specifies the relation between a single attachment and the model.
   #
   #   class User < ActiveRecord::Base
@@ -13,7 +13,7 @@ module Yactivestorage::Attached::Macros
   def has_one_attached(name, dependent: :purge_later)
     define_method(name) do
       instance_variable_get("@active_storage_attached_#{name}") ||
-        instance_variable_set("@active_storage_attached_#{name}", Yactivestorage::Attached::One.new(name, self))
+        instance_variable_set("@active_storage_attached_#{name}", ActiveStorage::Attached::One.new(name, self))
     end
 
     if dependent == :purge_later
@@ -35,7 +35,7 @@ module Yactivestorage::Attached::Macros
   def has_many_attached(name, dependent: :purge_later)
     define_method(name) do
       instance_variable_get("@active_storage_attached_#{name}") ||
-        instance_variable_set("@active_storage_attached_#{name}", Yactivestorage::Attached::Many.new(name, self))
+        instance_variable_set("@active_storage_attached_#{name}", ActiveStorage::Attached::Many.new(name, self))
     end
 
     if dependent == :purge_later

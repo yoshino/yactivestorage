@@ -1,7 +1,7 @@
 require "active_record"
-require "yactivestorage/engine" if defined?(Rails)
+require "active_storage/engine" if defined?(Rails)
 
-module Yactivestorage
+module ActiveStorage
   extend ActiveSupport::Autoload
 
   autoload :Blob

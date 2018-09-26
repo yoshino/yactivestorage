@@ -1,0 +1,1420 @@
+DEPRECATION WARNING: Leaving `ActiveRecord::ConnectionAdapters::SQLite3Adapter.represent_boolean_as_integer`
+set to false is deprecated. SQLite databases have used 't' and 'f' to serialize
+boolean values and must have old data converted to 1 and 0 (its native boolean
+serialization) before setting this flag to true. Conversion can be accomplished
+by setting up a rake task which runs
+
+  ExampleModel.where("boolean_column = 't'").update_all(boolean_column: 1)
+  ExampleModel.where("boolean_column = 'f'").update_all(boolean_column: 0)
+
+for all models and all boolean columns, after which the flag must be set to
+true by adding the following to your application.rb file:
+
+  Rails.application.config.active_record.sqlite3.represent_boolean_as_integer = true
+ (called from <top (required)> at /home/yoshino/code/activestorage/test/dummy/config/environment.rb:5)
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "active_storage_blobs" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "key" varchar, "filename" varchar, "content_type" varchar, "metadata" text, "byte_size" integer, "checksum" varchar, "created_at" datetime)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_active_storage_blobs_on_key" ON "active_storage_blobs" ("key")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "active_storage_attachments" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "record_type" varchar, "record_id" integer, "blob_id" integer, "created_at" datetime)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_active_storage_attachments_on_blob_id" ON "active_storage_attachments" ("blob_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_active_storage_attachments_uniqueness" ON "active_storage_attachments" ("record_type", "record_id", "name", "blob_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar)[0m
+DEPRECATION WARNING: Leaving `ActiveRecord::ConnectionAdapters::SQLite3Adapter.represent_boolean_as_integer`
+set to false is deprecated. SQLite databases have used 't' and 'f' to serialize
+boolean values and must have old data converted to 1 and 0 (its native boolean
+serialization) before setting this flag to true. Conversion can be accomplished
+by setting up a rake task which runs
+
+  ExampleModel.where("boolean_column = 't'").update_all(boolean_column: 1)
+  ExampleModel.where("boolean_column = 'f'").update_all(boolean_column: 0)
+
+for all models and all boolean columns, after which the flag must be set to
+true by adding the following to your application.rb file:
+
+  Rails.application.config.active_record.sqlite3.represent_boolean_as_integer = true
+ (called from <top (required)> at /home/yoshino/code/activestorage/test/dummy/config/environment.rb:5)
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "active_storage_blobs" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "key" varchar, "filename" varchar, "content_type" varchar, "metadata" text, "byte_size" integer, "checksum" varchar, "created_at" datetime)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_active_storage_blobs_on_key" ON "active_storage_blobs" ("key")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "active_storage_attachments" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "record_type" varchar, "record_id" integer, "blob_id" integer, "created_at" datetime)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_active_storage_attachments_on_blob_id" ON "active_storage_attachments" ("blob_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_active_storage_attachments_uniqueness" ON "active_storage_attachments" ("record_type", "record_id", "name", "blob_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar)[0m
+DEPRECATION WARNING: Leaving `ActiveRecord::ConnectionAdapters::SQLite3Adapter.represent_boolean_as_integer`
+set to false is deprecated. SQLite databases have used 't' and 'f' to serialize
+boolean values and must have old data converted to 1 and 0 (its native boolean
+serialization) before setting this flag to true. Conversion can be accomplished
+by setting up a rake task which runs
+
+  ExampleModel.where("boolean_column = 't'").update_all(boolean_column: 1)
+  ExampleModel.where("boolean_column = 'f'").update_all(boolean_column: 0)
+
+for all models and all boolean columns, after which the flag must be set to
+true by adding the following to your application.rb file:
+
+  Rails.application.config.active_record.sqlite3.represent_boolean_as_integer = true
+ (called from <top (required)> at /home/yoshino/code/activestorage/test/dummy/config/environment.rb:5)
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "active_storage_blobs" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "key" varchar, "filename" varchar, "content_type" varchar, "metadata" text, "byte_size" integer, "checksum" varchar, "created_at" datetime)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_active_storage_blobs_on_key" ON "active_storage_blobs" ("key")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "active_storage_attachments" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "record_type" varchar, "record_id" integer, "blob_id" integer, "created_at" datetime)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_active_storage_attachments_on_blob_id" ON "active_storage_attachments" ("blob_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_active_storage_attachments_uniqueness" ON "active_storage_attachments" ("record_type", "record_id", "name", "blob_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar)[0m
+DEPRECATION WARNING: Leaving `ActiveRecord::ConnectionAdapters::SQLite3Adapter.represent_boolean_as_integer`
+set to false is deprecated. SQLite databases have used 't' and 'f' to serialize
+boolean values and must have old data converted to 1 and 0 (its native boolean
+serialization) before setting this flag to true. Conversion can be accomplished
+by setting up a rake task which runs
+
+  ExampleModel.where("boolean_column = 't'").update_all(boolean_column: 1)
+  ExampleModel.where("boolean_column = 'f'").update_all(boolean_column: 0)
+
+for all models and all boolean columns, after which the flag must be set to
+true by adding the following to your application.rb file:
+
+  Rails.application.config.active_record.sqlite3.represent_boolean_as_integer = true
+ (called from <top (required)> at /home/yoshino/code/activestorage/test/dummy/config/environment.rb:5)
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "active_storage_blobs" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "key" varchar, "filename" varchar, "content_type" varchar, "metadata" text, "byte_size" integer, "checksum" varchar, "created_at" datetime)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_active_storage_blobs_on_key" ON "active_storage_blobs" ("key")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "active_storage_attachments" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "record_type" varchar, "record_id" integer, "blob_id" integer, "created_at" datetime)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_active_storage_attachments_on_blob_id" ON "active_storage_attachments" ("blob_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_active_storage_attachments_uniqueness" ON "active_storage_attachments" ("record_type", "record_id", "name", "blob_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar)[0m
+Sending HTTP get https://www.googleapis.com/storage/v1/b/yactivestorage?
+200
+#<HTTP::Message:0x0000563f4028fd90 @http_header=#<HTTP::Message::Headers:0x0000563f4028fd18 @http_version="1.1", @body_size=0, @chunked=false, @request_method="GET", @request_uri=#<Addressable::URI:0x2b1fa014a63c URI:https://www.googleapis.com/storage/v1/b/yactivestorage?>, @request_query=nil, @request_absolute_uri=nil, @status_code=200, @reason_phrase="OK", @body_type=nil, @body_charset=nil, @body_date=nil, @body_encoding=#<Encoding:UTF-8>, @is_request=false, @header_item=[["X-GUploader-UploadID", "AEnB2UpxD-QKRtfaeWhGR3aeY3JBBAEX97f9tQPo8eoy-TBIBYzBuwZICfcoMCbhXmOakhhtHfFBsArv7ezo76SKnX10O1_NNg"], ["ETag", "CAE="], ["Vary", "Origin"], ["Vary", "X-Origin"], ["Content-Type", "application/json; charset=UTF-8"], ["Expires", "Tue, 25 Sep 2018 21:38:00 GMT"], ["Date", "Tue, 25 Sep 2018 21:38:00 GMT"], ["Cache-Control", "private, max-age=0, must-revalidate, no-transform"], ["Content-Length", "368"], ["Server", "UploadServer"], ["Alt-Svc", "quic=\":443\"; ma=2592000; v=\"44,43,39,35\""]], @dumped=false>, @peer_cert=#<OpenSSL::X509::Certificate: subject=#<OpenSSL::X509::Name CN=*.googleapis.com,O=Google LLC,L=Mountain View,ST=California,C=US>, issuer=#<OpenSSL::X509::Name CN=Google Internet Authority G3,O=Google Trust Services,C=US>, serial=#<OpenSSL::BN:0x0000563f40277f38>, not_before=2018-08-28 18:23:00 UTC, not_after=2018-11-20 18:23:00 UTC>, @http_body=#<HTTP::Message::Body:0x0000563f4028fbb0 @body="{\n \"kind\": \"storage#bucket\",\n \"id\": \"yactivestorage\",\n \"selfLink\": \"https://www.googleapis.com/storage/v1/b/yactivestorage\",\n \"projectNumber\": \"392169281946\",\n \"name\": \"yactivestorage\",\n \"timeCreated\": \"2018-08-22T07:28:27.436Z\",\n \"updated\": \"2018-08-22T07:28:27.436Z\",\n \"metageneration\": \"1\",\n \"location\": \"ASIA\",\n \"storageClass\": \"MULTI_REGIONAL\",\n \"etag\": \"CAE=\"\n}\n", @size=0, @positions=nil, @chunk_size=nil>, @previous=nil>
+Success - #<Google::Apis::StorageV1::Bucket:0x0000563f40277308
+ @etag="CAE=",
+ @id="yactivestorage",
+ @kind="storage#bucket",
+ @location="ASIA",
+ @metageneration=1,
+ @name="yactivestorage",
+ @project_number=392169281946,
+ @self_link="https://www.googleapis.com/storage/v1/b/yactivestorage",
+ @storage_class="MULTI_REGIONAL",
+ @time_created=Wed, 22 Aug 2018 07:28:27 +0000,
+ @updated=Wed, 22 Aug 2018 07:28:27 +0000>
+
+----------------------------------------------------------------------------------------------------
+ActiveStorage::Service::ConfiguratorTest: test_builds_correct_service_instance_based_on_service_name
+----------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------
+ActiveStorage::Service::ConfiguratorTest: test_raises_error_when_passing_non-existent_service_name
+--------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------
+ActiveStorage::Service::GCSServiceTest: test_uploading_with_integrity
+---------------------------------------------------------------------
+Sending upload start command to https://www.googleapis.com/upload/storage/v1/b/yactivestorage/o?name=FpBpNqdSB8S1XZYtF8A1z2rP
+Upload status active
+Sending upload command to https://www.googleapis.com/upload/storage/v1/b/yactivestorage/o?name=FpBpNqdSB8S1XZYtF8A1z2rP&upload_id=AEnB2Uq_R0boslBCOV6DRk6-ZzZ4tJufOyS_lvEy7CHiJUsg_FFN8Ss3CA8CVNwnuSboAchwX0jHkzKum72AKLQgwpFRpekxkQ&upload_protocol=resumable
+Upload status final
+Success - #<Google::Apis::StorageV1::Object:0x0000563f40d55ab8
+ @bucket="yactivestorage",
+ @content_type="application/octet-stream",
+ @crc32c="Gp+aiQ==",
+ @etag="CPiXs9yO190CEAE=",
+ @generation=1537911481486328,
+ @id="yactivestorage/FpBpNqdSB8S1XZYtF8A1z2rP/1537911481486328",
+ @kind="storage#object",
+ @md5_hash="5M70xuJgN7z4FmkFIH6gmw==",
+ @media_link=
+  "https://www.googleapis.com/download/storage/v1/b/yactivestorage/o/FpBpNqdSB8S1XZYtF8A1z2rP?generation=1537911481486328&alt=media",
+ @metageneration=1,
+ @name="FpBpNqdSB8S1XZYtF8A1z2rP",
+ @self_link=
+  "https://www.googleapis.com/storage/v1/b/yactivestorage/o/FpBpNqdSB8S1XZYtF8A1z2rP",
+ @size=126,
+ @storage_class="MULTI_REGIONAL",
+ @time_created=Tue, 25 Sep 2018 21:38:01 +0000,
+ @time_storage_class_updated=Tue, 25 Sep 2018 21:38:01 +0000,
+ @updated=Tue, 25 Sep 2018 21:38:01 +0000>
+
+Sending upload start command to https://www.googleapis.com/upload/storage/v1/b/yactivestorage/o?name=GUXjXyobUDzB1op3FTd9Hfc3
+Upload status active
+Sending upload command to https://www.googleapis.com/upload/storage/v1/b/yactivestorage/o?name=GUXjXyobUDzB1op3FTd9Hfc3&upload_id=AEnB2UqAZrsJ_ob4jBkrwkM84QffpFTo9aA2XgE4ZI5pb_xHuB1BKBw9_1MdueVDJidffXt4lKi8CLxnm6acvjln0uVxvm_6qg&upload_protocol=resumable
+Upload status final
+Success - #<Google::Apis::StorageV1::Object:0x0000563f40dac340
+ @bucket="yactivestorage",
+ @content_type="application/octet-stream",
+ @crc32c="rrXupA==",
+ @etag="CIqS6NyO190CEAE=",
+ @generation=1537911482353930,
+ @id="yactivestorage/GUXjXyobUDzB1op3FTd9Hfc3/1537911482353930",
+ @kind="storage#object",
+ @md5_hash="sijgElrNmNQBpuz2xn8X7Q==",
+ @media_link=
+  "https://www.googleapis.com/download/storage/v1/b/yactivestorage/o/GUXjXyobUDzB1op3FTd9Hfc3?generation=1537911482353930&alt=media",
+ @metageneration=1,
+ @name="GUXjXyobUDzB1op3FTd9Hfc3",
+ @self_link=
+  "https://www.googleapis.com/storage/v1/b/yactivestorage/o/GUXjXyobUDzB1op3FTd9Hfc3",
+ @size=24,
+ @storage_class="MULTI_REGIONAL",
+ @time_created=Tue, 25 Sep 2018 21:38:02 +0000,
+ @time_storage_class_updated=Tue, 25 Sep 2018 21:38:02 +0000,
+ @updated=Tue, 25 Sep 2018 21:38:02 +0000>
+
+Sending HTTP get https://www.googleapis.com/storage/v1/b/yactivestorage/o/GUXjXyobUDzB1op3FTd9Hfc3?
+200
+#<HTTP::Message:0x0000563f40de2490 @http_header=#<HTTP::Message::Headers:0x0000563f40de2468 @http_version="1.1", @body_size=0, @chunked=false, @request_method="GET", @request_uri=#<Addressable::URI:0x2b1fa06f16f8 URI:https://www.googleapis.com/storage/v1/b/yactivestorage/o/GUXjXyobUDzB1op3FTd9Hfc3?>, @request_query=nil, @request_absolute_uri=nil, @status_code=200, @reason_phrase="OK", @body_type=nil, @body_charset=nil, @body_date=nil, @body_encoding=#<Encoding:UTF-8>, @is_request=false, @header_item=[["X-GUploader-UploadID", "AEnB2UrtIaimmjUnk0akABXcVfw6SmHDVxZD0Ah_LbDw24s3w8KWYtO-VDKwtI4g2JO9RtryylFmEAB6EjDbSoKop-9ySwOE7g"], ["ETag", "CIqS6NyO190CEAE="], ["Vary", "Origin"], ["Vary", "X-Origin"], ["Content-Type", "application/json; charset=UTF-8"], ["Cache-Control", "no-cache, no-store, max-age=0, must-revalidate"], ["Pragma", "no-cache"], ["Expires", "Mon, 01 Jan 1990 00:00:00 GMT"], ["Date", "Tue, 25 Sep 2018 21:38:02 GMT"], ["Content-Length", "792"], ["Server", "UploadServer"], ["Alt-Svc", "quic=\":443\"; ma=2592000; v=\"44,43,39,35\""]], @dumped=false>, @peer_cert=#<OpenSSL::X509::Certificate: subject=#<OpenSSL::X509::Name CN=*.googleapis.com,O=Google LLC,L=Mountain View,ST=California,C=US>, issuer=#<OpenSSL::X509::Name CN=Google Internet Authority G3,O=Google Trust Services,C=US>, serial=#<OpenSSL::BN:0x0000563f40df6c10>, not_before=2018-08-28 18:23:00 UTC, not_after=2018-11-20 18:23:00 UTC>, @http_body=#<HTTP::Message::Body:0x0000563f40de23f0 @body="{\n \"kind\": \"storage#object\",\n \"id\": \"yactivestorage/GUXjXyobUDzB1op3FTd9Hfc3/1537911482353930\",\n \"selfLink\": \"https://www.googleapis.com/storage/v1/b/yactivestorage/o/GUXjXyobUDzB1op3FTd9Hfc3\",\n \"name\": \"GUXjXyobUDzB1op3FTd9Hfc3\",\n \"bucket\": \"yactivestorage\",\n \"generation\": \"1537911482353930\",\n \"metageneration\": \"1\",\n \"contentType\": \"application/octet-stream\",\n \"timeCreated\": \"2018-09-25T21:38:02.353Z\",\n \"updated\": \"2018-09-25T21:38:02.353Z\",\n \"storageClass\": \"MULTI_REGIONAL\",\n \"timeStorageClassUpdated\": \"2018-09-25T21:38:02.353Z\",\n \"size\": \"24\",\n \"md5Hash\": \"sijgElrNmNQBpuz2xn8X7Q==\",\n \"mediaLink\": \"https://www.googleapis.com/download/storage/v1/b/yactivestorage/o/GUXjXyobUDzB1op3FTd9Hfc3?generation=1537911482353930&alt=media\",\n \"crc32c\": \"rrXupA==\",\n \"etag\": \"CIqS6NyO190CEAE=\"\n}\n", @size=0, @positions=nil, @chunk_size=nil>, @previous=nil>
+Success - #<Google::Apis::StorageV1::Object:0x0000563f40df64e0
+ @bucket="yactivestorage",
+ @content_type="application/octet-stream",
+ @crc32c="rrXupA==",
+ @etag="CIqS6NyO190CEAE=",
+ @generation=1537911482353930,
+ @id="yactivestorage/GUXjXyobUDzB1op3FTd9Hfc3/1537911482353930",
+ @kind="storage#object",
+ @md5_hash="sijgElrNmNQBpuz2xn8X7Q==",
+ @media_link=
+  "https://www.googleapis.com/download/storage/v1/b/yactivestorage/o/GUXjXyobUDzB1op3FTd9Hfc3?generation=1537911482353930&alt=media",
+ @metageneration=1,
+ @name="GUXjXyobUDzB1op3FTd9Hfc3",
+ @self_link=
+  "https://www.googleapis.com/storage/v1/b/yactivestorage/o/GUXjXyobUDzB1op3FTd9Hfc3",
+ @size=24,
+ @storage_class="MULTI_REGIONAL",
+ @time_created=Tue, 25 Sep 2018 21:38:02 +0000,
+ @time_storage_class_updated=Tue, 25 Sep 2018 21:38:02 +0000,
+ @updated=Tue, 25 Sep 2018 21:38:02 +0000>
+
+Success - #<StringIO:0x0000563f40e1a638>
+
+Sending HTTP get https://www.googleapis.com/storage/v1/b/yactivestorage/o/GUXjXyobUDzB1op3FTd9Hfc3?
+200
+#<HTTP::Message:0x0000563f40e43768 @http_header=#<HTTP::Message::Headers:0x0000563f40e43740 @http_version="1.1", @body_size=0, @chunked=false, @request_method="GET", @request_uri=#<Addressable::URI:0x2b1fa00795b4 URI:https://www.googleapis.com/storage/v1/b/yactivestorage/o/GUXjXyobUDzB1op3FTd9Hfc3?>, @request_query=nil, @request_absolute_uri=nil, @status_code=200, @reason_phrase="OK", @body_type=nil, @body_charset=nil, @body_date=nil, @body_encoding=#<Encoding:UTF-8>, @is_request=false, @header_item=[["X-GUploader-UploadID", "AEnB2UpSFVpG0PlfqfVZJ0BPXyx036K-VQQJ3uwgPU3KZSNP-ATQpI2sDTnHLif0l7sduTa591BedLBLKmLsGhrsIJZGC1qYqA"], ["ETag", "CIqS6NyO190CEAE="], ["Vary", "Origin"], ["Vary", "X-Origin"], ["Content-Type", "application/json; charset=UTF-8"], ["Cache-Control", "no-cache, no-store, max-age=0, must-revalidate"], ["Pragma", "no-cache"], ["Expires", "Mon, 01 Jan 1990 00:00:00 GMT"], ["Date", "Tue, 25 Sep 2018 21:38:02 GMT"], ["Content-Length", "792"], ["Server", "UploadServer"], ["Alt-Svc", "quic=\":443\"; ma=2592000; v=\"44,43,39,35\""]], @dumped=false>, @peer_cert=#<OpenSSL::X509::Certificate: subject=#<OpenSSL::X509::Name CN=*.googleapis.com,O=Google LLC,L=Mountain View,ST=California,C=US>, issuer=#<OpenSSL::X509::Name CN=Google Internet Authority G3,O=Google Trust Services,C=US>, serial=#<OpenSSL::BN:0x0000563f40e57f88>, not_before=2018-08-28 18:23:00 UTC, not_after=2018-11-20 18:23:00 UTC>, @http_body=#<HTTP::Message::Body:0x0000563f40e436c8 @body="{\n \"kind\": \"storage#object\",\n \"id\": \"yactivestorage/GUXjXyobUDzB1op3FTd9Hfc3/1537911482353930\",\n \"selfLink\": \"https://www.googleapis.com/storage/v1/b/yactivestorage/o/GUXjXyobUDzB1op3FTd9Hfc3\",\n \"name\": \"GUXjXyobUDzB1op3FTd9Hfc3\",\n \"bucket\": \"yactivestorage\",\n \"generation\": \"1537911482353930\",\n \"metageneration\": \"1\",\n \"contentType\": \"application/octet-stream\",\n \"timeCreated\": \"2018-09-25T21:38:02.353Z\",\n \"updated\": \"2018-09-25T21:38:02.353Z\",\n \"storageClass\": \"MULTI_REGIONAL\",\n \"timeStorageClassUpdated\": \"2018-09-25T21:38:02.353Z\",\n \"size\": \"24\",\n \"md5Hash\": \"sijgElrNmNQBpuz2xn8X7Q==\",\n \"mediaLink\": \"https://www.googleapis.com/download/storage/v1/b/yactivestorage/o/GUXjXyobUDzB1op3FTd9Hfc3?generation=1537911482353930&alt=media\",\n \"crc32c\": \"rrXupA==\",\n \"etag\": \"CIqS6NyO190CEAE=\"\n}\n", @size=0, @positions=nil, @chunk_size=nil>, @previous=nil>
+Success - #<Google::Apis::StorageV1::Object:0x0000563f40e57858
+ @bucket="yactivestorage",
+ @content_type="application/octet-stream",
+ @crc32c="rrXupA==",
+ @etag="CIqS6NyO190CEAE=",
+ @generation=1537911482353930,
+ @id="yactivestorage/GUXjXyobUDzB1op3FTd9Hfc3/1537911482353930",
+ @kind="storage#object",
+ @md5_hash="sijgElrNmNQBpuz2xn8X7Q==",
+ @media_link=
+  "https://www.googleapis.com/download/storage/v1/b/yactivestorage/o/GUXjXyobUDzB1op3FTd9Hfc3?generation=1537911482353930&alt=media",
+ @metageneration=1,
+ @name="GUXjXyobUDzB1op3FTd9Hfc3",
+ @self_link=
+  "https://www.googleapis.com/storage/v1/b/yactivestorage/o/GUXjXyobUDzB1op3FTd9Hfc3",
+ @size=24,
+ @storage_class="MULTI_REGIONAL",
+ @time_created=Tue, 25 Sep 2018 21:38:02 +0000,
+ @time_storage_class_updated=Tue, 25 Sep 2018 21:38:02 +0000,
+ @updated=Tue, 25 Sep 2018 21:38:02 +0000>
+
+Sending HTTP delete https://www.googleapis.com/storage/v1/b/yactivestorage/o/GUXjXyobUDzB1op3FTd9Hfc3?
+204
+#<HTTP::Message:0x0000563f40e871c0 @http_header=#<HTTP::Message::Headers:0x0000563f40e87198 @http_version="1.1", @body_size=0, @chunked=false, @request_method="DELETE", @request_uri=#<Addressable::URI:0x2b1fa0743d90 URI:https://www.googleapis.com/storage/v1/b/yactivestorage/o/GUXjXyobUDzB1op3FTd9Hfc3?>, @request_query=nil, @request_absolute_uri=nil, @status_code=204, @reason_phrase="No Content", @body_type=nil, @body_charset=nil, @body_date=nil, @body_encoding=#<Encoding:ASCII-8BIT>, @is_request=false, @header_item=[["X-GUploader-UploadID", "AEnB2UpYEj7_gGcDVdytxRiAC--oDFz_seLfExN-jdZRtVsd_Cht1gsr67oK-UW3FqSJQAAzr5GRULiau0NF0zo6WKGlDKCTsw"], ["Vary", "Origin"], ["Vary", "X-Origin"], ["Content-Type", "application/json"], ["Cache-Control", "no-cache, no-store, max-age=0, must-revalidate"], ["Pragma", "no-cache"], ["Expires", "Mon, 01 Jan 1990 00:00:00 GMT"], ["Date", "Tue, 25 Sep 2018 21:38:03 GMT"], ["Content-Length", "0"], ["Server", "UploadServer"], ["Alt-Svc", "quic=\":443\"; ma=2592000; v=\"44,43,39,35\""]], @dumped=false>, @peer_cert=#<OpenSSL::X509::Certificate: subject=#<OpenSSL::X509::Name CN=*.googleapis.com,O=Google LLC,L=Mountain View,ST=California,C=US>, issuer=#<OpenSSL::X509::Name CN=Google Internet Authority G3,O=Google Trust Services,C=US>, serial=#<OpenSSL::BN:0x0000563f400b8f08>, not_before=2018-08-28 18:23:00 UTC, not_after=2018-11-20 18:23:00 UTC>, @http_body=#<HTTP::Message::Body:0x0000563f40e87120 @body="", @size=0, @positions=nil, @chunk_size=nil>, @previous=nil>
+Success - ""
+
+Sending HTTP get https://www.googleapis.com/storage/v1/b/yactivestorage/o/FpBpNqdSB8S1XZYtF8A1z2rP?
+200
+#<HTTP::Message:0x0000563f400b0538 @http_header=#<HTTP::Message::Headers:0x0000563f400b04e8 @http_version="1.1", @body_size=0, @chunked=false, @request_method="GET", @request_uri=#<Addressable::URI:0x2b1fa00597a0 URI:https://www.googleapis.com/storage/v1/b/yactivestorage/o/FpBpNqdSB8S1XZYtF8A1z2rP?>, @request_query=nil, @request_absolute_uri=nil, @status_code=200, @reason_phrase="OK", @body_type=nil, @body_charset=nil, @body_date=nil, @body_encoding=#<Encoding:UTF-8>, @is_request=false, @header_item=[["X-GUploader-UploadID", "AEnB2UowZTLkTIkqkmRxEMCou64T3x5o8h1HNp4NZdbofgIcKB2p7th9J-hYjuI7EvIjM5qQbTpGW9V8CELv8IxRwIC3tLJAzA"], ["ETag", "CPiXs9yO190CEAE="], ["Vary", "Origin"], ["Vary", "X-Origin"], ["Content-Type", "application/json; charset=UTF-8"], ["Cache-Control", "no-cache, no-store, max-age=0, must-revalidate"], ["Pragma", "no-cache"], ["Expires", "Mon, 01 Jan 1990 00:00:00 GMT"], ["Date", "Tue, 25 Sep 2018 21:38:03 GMT"], ["Content-Length", "793"], ["Server", "UploadServer"], ["Alt-Svc", "quic=\":443\"; ma=2592000; v=\"44,43,39,35\""]], @dumped=false>, @peer_cert=#<OpenSSL::X509::Certificate: subject=#<OpenSSL::X509::Name CN=*.googleapis.com,O=Google LLC,L=Mountain View,ST=California,C=US>, issuer=#<OpenSSL::X509::Name CN=Google Internet Authority G3,O=Google Trust Services,C=US>, serial=#<OpenSSL::BN:0x0000563f400a54a8>, not_before=2018-08-28 18:23:00 UTC, not_after=2018-11-20 18:23:00 UTC>, @http_body=#<HTTP::Message::Body:0x0000563f400b03f8 @body="{\n \"kind\": \"storage#object\",\n \"id\": \"yactivestorage/FpBpNqdSB8S1XZYtF8A1z2rP/1537911481486328\",\n \"selfLink\": \"https://www.googleapis.com/storage/v1/b/yactivestorage/o/FpBpNqdSB8S1XZYtF8A1z2rP\",\n \"name\": \"FpBpNqdSB8S1XZYtF8A1z2rP\",\n \"bucket\": \"yactivestorage\",\n \"generation\": \"1537911481486328\",\n \"metageneration\": \"1\",\n \"contentType\": \"application/octet-stream\",\n \"timeCreated\": \"2018-09-25T21:38:01.485Z\",\n \"updated\": \"2018-09-25T21:38:01.485Z\",\n \"storageClass\": \"MULTI_REGIONAL\",\n \"timeStorageClassUpdated\": \"2018-09-25T21:38:01.485Z\",\n \"size\": \"126\",\n \"md5Hash\": \"5M70xuJgN7z4FmkFIH6gmw==\",\n \"mediaLink\": \"https://www.googleapis.com/download/storage/v1/b/yactivestorage/o/FpBpNqdSB8S1XZYtF8A1z2rP?generation=1537911481486328&alt=media\",\n \"crc32c\": \"Gp+aiQ==\",\n \"etag\": \"CPiXs9yO190CEAE=\"\n}\n", @size=0, @positions=nil, @chunk_size=nil>, @previous=nil>
+Success - #<Google::Apis::StorageV1::Object:0x0000563f400a4918
+ @bucket="yactivestorage",
+ @content_type="application/octet-stream",
+ @crc32c="Gp+aiQ==",
+ @etag="CPiXs9yO190CEAE=",
+ @generation=1537911481486328,
+ @id="yactivestorage/FpBpNqdSB8S1XZYtF8A1z2rP/1537911481486328",
+ @kind="storage#object",
+ @md5_hash="5M70xuJgN7z4FmkFIH6gmw==",
+ @media_link=
+  "https://www.googleapis.com/download/storage/v1/b/yactivestorage/o/FpBpNqdSB8S1XZYtF8A1z2rP?generation=1537911481486328&alt=media",
+ @metageneration=1,
+ @name="FpBpNqdSB8S1XZYtF8A1z2rP",
+ @self_link=
+  "https://www.googleapis.com/storage/v1/b/yactivestorage/o/FpBpNqdSB8S1XZYtF8A1z2rP",
+ @size=126,
+ @storage_class="MULTI_REGIONAL",
+ @time_created=Tue, 25 Sep 2018 21:38:01 +0000,
+ @time_storage_class_updated=Tue, 25 Sep 2018 21:38:01 +0000,
+ @updated=Tue, 25 Sep 2018 21:38:01 +0000>
+
+Sending HTTP delete https://www.googleapis.com/storage/v1/b/yactivestorage/o/FpBpNqdSB8S1XZYtF8A1z2rP?
+204
+#<HTTP::Message:0x0000563f40ee11c0 @http_header=#<HTTP::Message::Headers:0x0000563f40ee1198 @http_version="1.1", @body_size=0, @chunked=false, @request_method="DELETE", @request_uri=#<Addressable::URI:0x2b1fa0770d90 URI:https://www.googleapis.com/storage/v1/b/yactivestorage/o/FpBpNqdSB8S1XZYtF8A1z2rP?>, @request_query=nil, @request_absolute_uri=nil, @status_code=204, @reason_phrase="No Content", @body_type=nil, @body_charset=nil, @body_date=nil, @body_encoding=#<Encoding:ASCII-8BIT>, @is_request=false, @header_item=[["X-GUploader-UploadID", "AEnB2UrMsCI_Qz-nud4nF0tKnicz_0ov2uQXYR2bJZdBmr13o1-PVDJXiytWqE-zmDhw7Ygrh1FFmAloZ4288DBakNS7UpXdFA"], ["Vary", "Origin"], ["Vary", "X-Origin"], ["Content-Type", "application/json"], ["Cache-Control", "no-cache, no-store, max-age=0, must-revalidate"], ["Pragma", "no-cache"], ["Expires", "Mon, 01 Jan 1990 00:00:00 GMT"], ["Date", "Tue, 25 Sep 2018 21:38:03 GMT"], ["Content-Length", "0"], ["Server", "UploadServer"], ["Alt-Svc", "quic=\":443\"; ma=2592000; v=\"44,43,39,35\""]], @dumped=false>, @peer_cert=#<OpenSSL::X509::Certificate: subject=#<OpenSSL::X509::Name CN=*.googleapis.com,O=Google LLC,L=Mountain View,ST=California,C=US>, issuer=#<OpenSSL::X509::Name CN=Google Internet Authority G3,O=Google Trust Services,C=US>, serial=#<OpenSSL::BN:0x0000563f40eecae8>, not_before=2018-08-28 18:23:00 UTC, not_after=2018-11-20 18:23:00 UTC>, @http_body=#<HTTP::Message::Body:0x0000563f40ee1120 @body="", @size=0, @positions=nil, @chunk_size=nil>, @previous=nil>
+Success - ""
+
+---------------------------------------------------------------------
+ActiveStorage::Service::GCSServiceTest: test_deleting_nonexistent_key
+---------------------------------------------------------------------
+Sending upload start command to https://www.googleapis.com/upload/storage/v1/b/yactivestorage/o?name=FpBpNqdSB8S1XZYtF8A1z2rP
+Upload status active
+Sending upload command to https://www.googleapis.com/upload/storage/v1/b/yactivestorage/o?name=FpBpNqdSB8S1XZYtF8A1z2rP&upload_id=AEnB2UronB2lNDEOwjP2zbwIUYmzIqP-weTpC2ioDVBjXHaVHOxRRx310A91TF-xa7vHQa5pBRISuN5tFSeV-n1WC0OY0JaphA&upload_protocol=resumable
+Upload status final
+Success - #<Google::Apis::StorageV1::Object:0x0000563f4005b178
+ @bucket="yactivestorage",
+ @content_type="application/octet-stream",
+ @crc32c="Gp+aiQ==",
+ @etag="CIjO1t2O190CEAE=",
+ @generation=1537911484163848,
+ @id="yactivestorage/FpBpNqdSB8S1XZYtF8A1z2rP/1537911484163848",
+ @kind="storage#object",
+ @md5_hash="5M70xuJgN7z4FmkFIH6gmw==",
+ @media_link=
+  "https://www.googleapis.com/download/storage/v1/b/yactivestorage/o/FpBpNqdSB8S1XZYtF8A1z2rP?generation=1537911484163848&alt=media",
+ @metageneration=1,
+ @name="FpBpNqdSB8S1XZYtF8A1z2rP",
+ @self_link=
+  "https://www.googleapis.com/storage/v1/b/yactivestorage/o/FpBpNqdSB8S1XZYtF8A1z2rP",
+ @size=126,
+ @storage_class="MULTI_REGIONAL",
+ @time_created=Tue, 25 Sep 2018 21:38:04 +0000,
+ @time_storage_class_updated=Tue, 25 Sep 2018 21:38:04 +0000,
+ @updated=Tue, 25 Sep 2018 21:38:04 +0000>
+
+Sending HTTP get https://www.googleapis.com/storage/v1/b/yactivestorage/o/6rXKArRsFCW3C2qfCKW3Gtq7?
+404
+#<HTTP::Message:0x0000563f40f61780 @http_header=#<HTTP::Message::Headers:0x0000563f40f61758 @http_version="1.1", @body_size=0, @chunked=false, @request_method="GET", @request_uri=#<Addressable::URI:0x2b1fa07b1070 URI:https://www.googleapis.com/storage/v1/b/yactivestorage/o/6rXKArRsFCW3C2qfCKW3Gtq7?>, @request_query=nil, @request_absolute_uri=nil, @status_code=404, @reason_phrase="Not Found", @body_type=nil, @body_charset=nil, @body_date=nil, @body_encoding=#<Encoding:UTF-8>, @is_request=false, @header_item=[["X-GUploader-UploadID", "AEnB2UrTaYi3138Qj4PYu8jeJehfVv20-Z_KWjYo6FxVAjrf6xZX_Xb-AQ2eNqYf4Mgm_vLUC75FA5Wi8EF_wu86D-Dv5gGUGg"], ["Vary", "Origin"], ["Vary", "X-Origin"], ["Content-Type", "application/json; charset=UTF-8"], ["Date", "Tue, 25 Sep 2018 21:38:04 GMT"], ["Expires", "Tue, 25 Sep 2018 21:38:04 GMT"], ["Cache-Control", "private, max-age=0"], ["Content-Length", "257"], ["Server", "UploadServer"], ["Alt-Svc", "quic=\":443\"; ma=2592000; v=\"44,43,39,35\""]], @dumped=false>, @peer_cert=#<OpenSSL::X509::Certificate: subject=#<OpenSSL::X509::Name CN=*.googleapis.com,O=Google LLC,L=Mountain View,ST=California,C=US>, issuer=#<OpenSSL::X509::Name CN=Google Internet Authority G3,O=Google Trust Services,C=US>, serial=#<OpenSSL::BN:0x0000563f40f6d170>, not_before=2018-08-28 18:23:00 UTC, not_after=2018-11-20 18:23:00 UTC>, @http_body=#<HTTP::Message::Body:0x0000563f40f616e0 @body="{\n \"error\": {\n  \"errors\": [\n   {\n    \"domain\": \"global\",\n    \"reason\": \"notFound\",\n    \"message\": \"No such object: yactivestorage/6rXKArRsFCW3C2qfCKW3Gtq7\"\n   }\n  ],\n  \"code\": 404,\n  \"message\": \"No such object: yactivestorage/6rXKArRsFCW3C2qfCKW3Gtq7\"\n }\n}\n", @size=0, @positions=nil, @chunk_size=nil>, @previous=nil>
+Caught error notFound: No such object: yactivestorage/6rXKArRsFCW3C2qfCKW3Gtq7
+Error - #<Google::Apis::ClientError: notFound: No such object: yactivestorage/6rXKArRsFCW3C2qfCKW3Gtq7>
+
+Sending HTTP get https://www.googleapis.com/storage/v1/b/yactivestorage/o/FpBpNqdSB8S1XZYtF8A1z2rP?
+200
+#<HTTP::Message:0x0000563f40f84870 @http_header=#<HTTP::Message::Headers:0x0000563f40f84848 @http_version="1.1", @body_size=0, @chunked=false, @request_method="GET", @request_uri=#<Addressable::URI:0x2b1fa07c28e8 URI:https://www.googleapis.com/storage/v1/b/yactivestorage/o/FpBpNqdSB8S1XZYtF8A1z2rP?>, @request_query=nil, @request_absolute_uri=nil, @status_code=200, @reason_phrase="OK", @body_type=nil, @body_charset=nil, @body_date=nil, @body_encoding=#<Encoding:UTF-8>, @is_request=false, @header_item=[["X-GUploader-UploadID", "AEnB2UodMP3Ms9etuy5aHFsgEnoddR5kBFTtIWUNUEk53cbxSb7gpNTQggRE4K9dK0lDcqbr_NKzSA34yh6Gf3b5_XkQWD6NXA"], ["ETag", "CIjO1t2O190CEAE="], ["Vary", "Origin"], ["Vary", "X-Origin"], ["Content-Type", "application/json; charset=UTF-8"], ["Cache-Control", "no-cache, no-store, max-age=0, must-revalidate"], ["Pragma", "no-cache"], ["Expires", "Mon, 01 Jan 1990 00:00:00 GMT"], ["Date", "Tue, 25 Sep 2018 21:38:04 GMT"], ["Content-Length", "793"], ["Server", "UploadServer"], ["Alt-Svc", "quic=\":443\"; ma=2592000; v=\"44,43,39,35\""]], @dumped=false>, @peer_cert=#<OpenSSL::X509::Certificate: subject=#<OpenSSL::X509::Name CN=*.googleapis.com,O=Google LLC,L=Mountain View,ST=California,C=US>, issuer=#<OpenSSL::X509::Name CN=Google Internet Authority G3,O=Google Trust Services,C=US>, serial=#<OpenSSL::BN:0x0000563f40021b80>, not_before=2018-08-28 18:23:00 UTC, not_after=2018-11-20 18:23:00 UTC>, @http_body=#<HTTP::Message::Body:0x0000563f40f847d0 @body="{\n \"kind\": \"storage#object\",\n \"id\": \"yactivestorage/FpBpNqdSB8S1XZYtF8A1z2rP/1537911484163848\",\n \"selfLink\": \"https://www.googleapis.com/storage/v1/b/yactivestorage/o/FpBpNqdSB8S1XZYtF8A1z2rP\",\n \"name\": \"FpBpNqdSB8S1XZYtF8A1z2rP\",\n \"bucket\": \"yactivestorage\",\n \"generation\": \"1537911484163848\",\n \"metageneration\": \"1\",\n \"contentType\": \"application/octet-stream\",\n \"timeCreated\": \"2018-09-25T21:38:04.163Z\",\n \"updated\": \"2018-09-25T21:38:04.163Z\",\n \"storageClass\": \"MULTI_REGIONAL\",\n \"timeStorageClassUpdated\": \"2018-09-25T21:38:04.163Z\",\n \"size\": \"126\",\n \"md5Hash\": \"5M70xuJgN7z4FmkFIH6gmw==\",\n \"mediaLink\": \"https://www.googleapis.com/download/storage/v1/b/yactivestorage/o/FpBpNqdSB8S1XZYtF8A1z2rP?generation=1537911484163848&alt=media\",\n \"crc32c\": \"Gp+aiQ==\",\n \"etag\": \"CIjO1t2O190CEAE=\"\n}\n", @size=0, @positions=nil, @chunk_size=nil>, @previous=nil>
+Success - #<Google::Apis::StorageV1::Object:0x0000563f40fb3e68
+ @bucket="yactivestorage",
+ @content_type="application/octet-stream",
+ @crc32c="Gp+aiQ==",
+ @etag="CIjO1t2O190CEAE=",
+ @generation=1537911484163848,
+ @id="yactivestorage/FpBpNqdSB8S1XZYtF8A1z2rP/1537911484163848",
+ @kind="storage#object",
+ @md5_hash="5M70xuJgN7z4FmkFIH6gmw==",
+ @media_link=
+  "https://www.googleapis.com/download/storage/v1/b/yactivestorage/o/FpBpNqdSB8S1XZYtF8A1z2rP?generation=1537911484163848&alt=media",
+ @metageneration=1,
+ @name="FpBpNqdSB8S1XZYtF8A1z2rP",
+ @self_link=
+  "https://www.googleapis.com/storage/v1/b/yactivestorage/o/FpBpNqdSB8S1XZYtF8A1z2rP",
+ @size=126,
+ @storage_class="MULTI_REGIONAL",
+ @time_created=Tue, 25 Sep 2018 21:38:04 +0000,
+ @time_storage_class_updated=Tue, 25 Sep 2018 21:38:04 +0000,
+ @updated=Tue, 25 Sep 2018 21:38:04 +0000>
+
+Sending HTTP delete https://www.googleapis.com/storage/v1/b/yactivestorage/o/FpBpNqdSB8S1XZYtF8A1z2rP?
+204
+#<HTTP::Message:0x0000563f40fd7098 @http_header=#<HTTP::Message::Headers:0x0000563f40fd7070 @http_version="1.1", @body_size=0, @chunked=false, @request_method="DELETE", @request_uri=#<Addressable::URI:0x2b1fa07ebcfc URI:https://www.googleapis.com/storage/v1/b/yactivestorage/o/FpBpNqdSB8S1XZYtF8A1z2rP?>, @request_query=nil, @request_absolute_uri=nil, @status_code=204, @reason_phrase="No Content", @body_type=nil, @body_charset=nil, @body_date=nil, @body_encoding=#<Encoding:ASCII-8BIT>, @is_request=false, @header_item=[["X-GUploader-UploadID", "AEnB2UrEeSTLkEz7qIZWlem1WuY8fU3_7_QXHZqUyogtXbGEGw5-NIjJ-GPQG3wReuFQKeVBWLYguFRvLri4-WinAKXGUVu3Bg"], ["Vary", "Origin"], ["Vary", "X-Origin"], ["Content-Type", "application/json"], ["Cache-Control", "no-cache, no-store, max-age=0, must-revalidate"], ["Pragma", "no-cache"], ["Expires", "Mon, 01 Jan 1990 00:00:00 GMT"], ["Date", "Tue, 25 Sep 2018 21:38:04 GMT"], ["Content-Length", "0"], ["Server", "UploadServer"], ["Alt-Svc", "quic=\":443\"; ma=2592000; v=\"44,43,39,35\""]], @dumped=false>, @peer_cert=#<OpenSSL::X509::Certificate: subject=#<OpenSSL::X509::Name CN=*.googleapis.com,O=Google LLC,L=Mountain View,ST=California,C=US>, issuer=#<OpenSSL::X509::Name CN=Google Internet Authority G3,O=Google Trust Services,C=US>, serial=#<OpenSSL::BN:0x0000563f40feb070>, not_before=2018-08-28 18:23:00 UTC, not_after=2018-11-20 18:23:00 UTC>, @http_body=#<HTTP::Message::Body:0x0000563f40fd6ff8 @body="", @size=0, @positions=nil, @chunk_size=nil>, @previous=nil>
+Success - ""
+
+----------------------------------------------------------
+ActiveStorage::Service::GCSServiceTest: test_direct_upload
+----------------------------------------------------------
+Sending upload start command to https://www.googleapis.com/upload/storage/v1/b/yactivestorage/o?name=FpBpNqdSB8S1XZYtF8A1z2rP
+Upload status active
+Sending upload command to https://www.googleapis.com/upload/storage/v1/b/yactivestorage/o?name=FpBpNqdSB8S1XZYtF8A1z2rP&upload_id=AEnB2Uqrj6SNJ1ZjCsC0cGAmxW_l90dVpGFkBPm_HcBphTr8yrMpi56SLhvtwoFfH-UHhaFjGjny52Ct8veh92sqzC0i5XWhoA&upload_protocol=resumable
+Upload status final
+Success - #<Google::Apis::StorageV1::Object:0x0000563f41029e60
+ @bucket="yactivestorage",
+ @content_type="application/octet-stream",
+ @crc32c="Gp+aiQ==",
+ @etag="CO2wst6O190CEAE=",
+ @generation=1537911485667437,
+ @id="yactivestorage/FpBpNqdSB8S1XZYtF8A1z2rP/1537911485667437",
+ @kind="storage#object",
+ @md5_hash="5M70xuJgN7z4FmkFIH6gmw==",
+ @media_link=
+  "https://www.googleapis.com/download/storage/v1/b/yactivestorage/o/FpBpNqdSB8S1XZYtF8A1z2rP?generation=1537911485667437&alt=media",
+ @metageneration=1,
+ @name="FpBpNqdSB8S1XZYtF8A1z2rP",
+ @self_link=
+  "https://www.googleapis.com/storage/v1/b/yactivestorage/o/FpBpNqdSB8S1XZYtF8A1z2rP",
+ @size=126,
+ @storage_class="MULTI_REGIONAL",
+ @time_created=Tue, 25 Sep 2018 21:38:05 +0000,
+ @time_storage_class_updated=Tue, 25 Sep 2018 21:38:05 +0000,
+ @updated=Tue, 25 Sep 2018 21:38:05 +0000>
+
+Sending HTTP get https://www.googleapis.com/storage/v1/b/yactivestorage/o/fdVgfJYKuaivrJUi2EPCktsA?
+200
+#<HTTP::Message:0x0000563f41087358 @http_header=#<HTTP::Message::Headers:0x0000563f41087330 @http_version="1.1", @body_size=0, @chunked=false, @request_method="GET", @request_uri=#<Addressable::URI:0x2b1fa0843e5c URI:https://www.googleapis.com/storage/v1/b/yactivestorage/o/fdVgfJYKuaivrJUi2EPCktsA?>, @request_query=nil, @request_absolute_uri=nil, @status_code=200, @reason_phrase="OK", @body_type=nil, @body_charset=nil, @body_date=nil, @body_encoding=#<Encoding:UTF-8>, @is_request=false, @header_item=[["X-GUploader-UploadID", "AEnB2UpglMv8UdVINufpVED8pgDbUlf00MiUWQ4iSFzKD3DNHXQdpSrdgDQDkBMVMI8vUOnLcUVMy9HuAyIqPyDMEKtNAGUPdA"], ["ETag", "CMm11d6O190CEAE="], ["Vary", "Origin"], ["Vary", "X-Origin"], ["Content-Type", "application/json; charset=UTF-8"], ["Cache-Control", "no-cache, no-store, max-age=0, must-revalidate"], ["Pragma", "no-cache"], ["Expires", "Mon, 01 Jan 1990 00:00:00 GMT"], ["Date", "Tue, 25 Sep 2018 21:38:06 GMT"], ["Content-Length", "778"], ["Server", "UploadServer"], ["Alt-Svc", "quic=\":443\"; ma=2592000; v=\"44,43,39,35\""]], @dumped=false>, @peer_cert=#<OpenSSL::X509::Certificate: subject=#<OpenSSL::X509::Name CN=*.googleapis.com,O=Google LLC,L=Mountain View,ST=California,C=US>, issuer=#<OpenSSL::X509::Name CN=Google Internet Authority G3,O=Google Trust Services,C=US>, serial=#<OpenSSL::BN:0x0000563f4109ad90>, not_before=2018-08-28 18:23:00 UTC, not_after=2018-11-20 18:23:00 UTC>, @http_body=#<HTTP::Message::Body:0x0000563f410872b8 @body="{\n \"kind\": \"storage#object\",\n \"id\": \"yactivestorage/fdVgfJYKuaivrJUi2EPCktsA/1537911486241481\",\n \"selfLink\": \"https://www.googleapis.com/storage/v1/b/yactivestorage/o/fdVgfJYKuaivrJUi2EPCktsA\",\n \"name\": \"fdVgfJYKuaivrJUi2EPCktsA\",\n \"bucket\": \"yactivestorage\",\n \"generation\": \"1537911486241481\",\n \"metageneration\": \"1\",\n \"contentType\": \"text/plain\",\n \"timeCreated\": \"2018-09-25T21:38:06.241Z\",\n \"updated\": \"2018-09-25T21:38:06.241Z\",\n \"storageClass\": \"MULTI_REGIONAL\",\n \"timeStorageClassUpdated\": \"2018-09-25T21:38:06.241Z\",\n \"size\": \"24\",\n \"md5Hash\": \"sijgElrNmNQBpuz2xn8X7Q==\",\n \"mediaLink\": \"https://www.googleapis.com/download/storage/v1/b/yactivestorage/o/fdVgfJYKuaivrJUi2EPCktsA?generation=1537911486241481&alt=media\",\n \"crc32c\": \"rrXupA==\",\n \"etag\": \"CMm11d6O190CEAE=\"\n}\n", @size=0, @positions=nil, @chunk_size=nil>, @previous=nil>
+Success - #<Google::Apis::StorageV1::Object:0x0000563f4109a660
+ @bucket="yactivestorage",
+ @content_type="text/plain",
+ @crc32c="rrXupA==",
+ @etag="CMm11d6O190CEAE=",
+ @generation=1537911486241481,
+ @id="yactivestorage/fdVgfJYKuaivrJUi2EPCktsA/1537911486241481",
+ @kind="storage#object",
+ @md5_hash="sijgElrNmNQBpuz2xn8X7Q==",
+ @media_link=
+  "https://www.googleapis.com/download/storage/v1/b/yactivestorage/o/fdVgfJYKuaivrJUi2EPCktsA?generation=1537911486241481&alt=media",
+ @metageneration=1,
+ @name="fdVgfJYKuaivrJUi2EPCktsA",
+ @self_link=
+  "https://www.googleapis.com/storage/v1/b/yactivestorage/o/fdVgfJYKuaivrJUi2EPCktsA",
+ @size=24,
+ @storage_class="MULTI_REGIONAL",
+ @time_created=Tue, 25 Sep 2018 21:38:06 +0000,
+ @time_storage_class_updated=Tue, 25 Sep 2018 21:38:06 +0000,
+ @updated=Tue, 25 Sep 2018 21:38:06 +0000>
+
+Success - #<StringIO:0x0000563f410bf348>
+
+Sending HTTP get https://www.googleapis.com/storage/v1/b/yactivestorage/o/fdVgfJYKuaivrJUi2EPCktsA?
+200
+#<HTTP::Message:0x0000563f3ff75060 @http_header=#<HTTP::Message::Headers:0x0000563f3ff75038 @http_version="1.1", @body_size=0, @chunked=false, @request_method="GET", @request_uri=#<Addressable::URI:0x2b1f9ffbbf8c URI:https://www.googleapis.com/storage/v1/b/yactivestorage/o/fdVgfJYKuaivrJUi2EPCktsA?>, @request_query=nil, @request_absolute_uri=nil, @status_code=200, @reason_phrase="OK", @body_type=nil, @body_charset=nil, @body_date=nil, @body_encoding=#<Encoding:UTF-8>, @is_request=false, @header_item=[["X-GUploader-UploadID", "AEnB2Uoq1seUMB3ddife3ucOJ8ywdbDNnswXJEjvq1D-H1tWeeDB0aur4fUZWPyzGKUBzmVlHv5WzFw0kHF329LcnluO-cgEhQ"], ["ETag", "CMm11d6O190CEAE="], ["Vary", "Origin"], ["Vary", "X-Origin"], ["Content-Type", "application/json; charset=UTF-8"], ["Cache-Control", "no-cache, no-store, max-age=0, must-revalidate"], ["Pragma", "no-cache"], ["Expires", "Mon, 01 Jan 1990 00:00:00 GMT"], ["Date", "Tue, 25 Sep 2018 21:38:06 GMT"], ["Content-Length", "778"], ["Server", "UploadServer"], ["Alt-Svc", "quic=\":443\"; ma=2592000; v=\"44,43,39,35\""]], @dumped=false>, @peer_cert=#<OpenSSL::X509::Certificate: subject=#<OpenSSL::X509::Name CN=*.googleapis.com,O=Google LLC,L=Mountain View,ST=California,C=US>, issuer=#<OpenSSL::X509::Name CN=Google Internet Authority G3,O=Google Trust Services,C=US>, serial=#<OpenSSL::BN:0x0000563f410ff510>, not_before=2018-08-28 18:23:00 UTC, not_after=2018-11-20 18:23:00 UTC>, @http_body=#<HTTP::Message::Body:0x0000563f3ff74f70 @body="{\n \"kind\": \"storage#object\",\n \"id\": \"yactivestorage/fdVgfJYKuaivrJUi2EPCktsA/1537911486241481\",\n \"selfLink\": \"https://www.googleapis.com/storage/v1/b/yactivestorage/o/fdVgfJYKuaivrJUi2EPCktsA\",\n \"name\": \"fdVgfJYKuaivrJUi2EPCktsA\",\n \"bucket\": \"yactivestorage\",\n \"generation\": \"1537911486241481\",\n \"metageneration\": \"1\",\n \"contentType\": \"text/plain\",\n \"timeCreated\": \"2018-09-25T21:38:06.241Z\",\n \"updated\": \"2018-09-25T21:38:06.241Z\",\n \"storageClass\": \"MULTI_REGIONAL\",\n \"timeStorageClassUpdated\": \"2018-09-25T21:38:06.241Z\",\n \"size\": \"24\",\n \"md5Hash\": \"sijgElrNmNQBpuz2xn8X7Q==\",\n \"mediaLink\": \"https://www.googleapis.com/download/storage/v1/b/yactivestorage/o/fdVgfJYKuaivrJUi2EPCktsA?generation=1537911486241481&alt=media\",\n \"crc32c\": \"rrXupA==\",\n \"etag\": \"CMm11d6O190CEAE=\"\n}\n", @size=0, @positions=nil, @chunk_size=nil>, @previous=nil>
+Success - #<Google::Apis::StorageV1::Object:0x0000563f410fede0
+ @bucket="yactivestorage",
+ @content_type="text/plain",
+ @crc32c="rrXupA==",
+ @etag="CMm11d6O190CEAE=",
+ @generation=1537911486241481,
+ @id="yactivestorage/fdVgfJYKuaivrJUi2EPCktsA/1537911486241481",
+ @kind="storage#object",
+ @md5_hash="sijgElrNmNQBpuz2xn8X7Q==",
+ @media_link=
+  "https://www.googleapis.com/download/storage/v1/b/yactivestorage/o/fdVgfJYKuaivrJUi2EPCktsA?generation=1537911486241481&alt=media",
+ @metageneration=1,
+ @name="fdVgfJYKuaivrJUi2EPCktsA",
+ @self_link=
+  "https://www.googleapis.com/storage/v1/b/yactivestorage/o/fdVgfJYKuaivrJUi2EPCktsA",
+ @size=24,
+ @storage_class="MULTI_REGIONAL",
+ @time_created=Tue, 25 Sep 2018 21:38:06 +0000,
+ @time_storage_class_updated=Tue, 25 Sep 2018 21:38:06 +0000,
+ @updated=Tue, 25 Sep 2018 21:38:06 +0000>
+
+Sending HTTP delete https://www.googleapis.com/storage/v1/b/yactivestorage/o/fdVgfJYKuaivrJUi2EPCktsA?
+204
+#<HTTP::Message:0x0000563f4112f1c0 @http_header=#<HTTP::Message::Headers:0x0000563f4112f198 @http_version="1.1", @body_size=0, @chunked=false, @request_method="DELETE", @request_uri=#<Addressable::URI:0x2b1fa0897d90 URI:https://www.googleapis.com/storage/v1/b/yactivestorage/o/fdVgfJYKuaivrJUi2EPCktsA?>, @request_query=nil, @request_absolute_uri=nil, @status_code=204, @reason_phrase="No Content", @body_type=nil, @body_charset=nil, @body_date=nil, @body_encoding=#<Encoding:ASCII-8BIT>, @is_request=false, @header_item=[["X-GUploader-UploadID", "AEnB2UqXWlc4P76ejsvDNDStImOjXx3sEQiksgDEHAEoxawiXmAvNJC2FU1mU2A8toV2kU6Niu-c9D8-fH3CeTg9WsXbOCb8vA"], ["Vary", "Origin"], ["Vary", "X-Origin"], ["Content-Type", "application/json"], ["Cache-Control", "no-cache, no-store, max-age=0, must-revalidate"], ["Pragma", "no-cache"], ["Expires", "Mon, 01 Jan 1990 00:00:00 GMT"], ["Date", "Tue, 25 Sep 2018 21:38:06 GMT"], ["Content-Length", "0"], ["Server", "UploadServer"], ["Alt-Svc", "quic=\":443\"; ma=2592000; v=\"44,43,39,35\""]], @dumped=false>, @peer_cert=#<OpenSSL::X509::Certificate: subject=#<OpenSSL::X509::Name CN=*.googleapis.com,O=Google LLC,L=Mountain View,ST=California,C=US>, issuer=#<OpenSSL::X509::Name CN=Google Internet Authority G3,O=Google Trust Services,C=US>, serial=#<OpenSSL::BN:0x0000563f41143760>, not_before=2018-08-28 18:23:00 UTC, not_after=2018-11-20 18:23:00 UTC>, @http_body=#<HTTP::Message::Body:0x0000563f4112f120 @body="", @size=0, @positions=nil, @chunk_size=nil>, @previous=nil>
+Success - ""
+
+Sending HTTP get https://www.googleapis.com/storage/v1/b/yactivestorage/o/FpBpNqdSB8S1XZYtF8A1z2rP?
+200
+#<HTTP::Message:0x0000563f4114fda8 @http_header=#<HTTP::Message::Headers:0x0000563f4114fd80 @http_version="1.1", @body_size=0, @chunked=false, @request_method="GET", @request_uri=#<Addressable::URI:0x2b1f9ff9e5cc URI:https://www.googleapis.com/storage/v1/b/yactivestorage/o/FpBpNqdSB8S1XZYtF8A1z2rP?>, @request_query=nil, @request_absolute_uri=nil, @status_code=200, @reason_phrase="OK", @body_type=nil, @body_charset=nil, @body_date=nil, @body_encoding=#<Encoding:UTF-8>, @is_request=false, @header_item=[["X-GUploader-UploadID", "AEnB2Uo3ATq56hrcEtaLpu7gdUmd4-Z699IyVYQIMEtbtsgX3POeUIoPikORxyBErPAI_2gqaHXU92MuACEG1OEPD8jJYz1MtA"], ["ETag", "CO2wst6O190CEAE="], ["Vary", "Origin"], ["Vary", "X-Origin"], ["Content-Type", "application/json; charset=UTF-8"], ["Cache-Control", "no-cache, no-store, max-age=0, must-revalidate"], ["Pragma", "no-cache"], ["Expires", "Mon, 01 Jan 1990 00:00:00 GMT"], ["Date", "Tue, 25 Sep 2018 21:38:06 GMT"], ["Content-Length", "793"], ["Server", "UploadServer"], ["Alt-Svc", "quic=\":443\"; ma=2592000; v=\"44,43,39,35\""]], @dumped=false>, @peer_cert=#<OpenSSL::X509::Certificate: subject=#<OpenSSL::X509::Name CN=*.googleapis.com,O=Google LLC,L=Mountain View,ST=California,C=US>, issuer=#<OpenSSL::X509::Name CN=Google Internet Authority G3,O=Google Trust Services,C=US>, serial=#<OpenSSL::BN:0x0000563f411635d8>, not_before=2018-08-28 18:23:00 UTC, not_after=2018-11-20 18:23:00 UTC>, @http_body=#<HTTP::Message::Body:0x0000563f4114fd08 @body="{\n \"kind\": \"storage#object\",\n \"id\": \"yactivestorage/FpBpNqdSB8S1XZYtF8A1z2rP/1537911485667437\",\n \"selfLink\": \"https://www.googleapis.com/storage/v1/b/yactivestorage/o/FpBpNqdSB8S1XZYtF8A1z2rP\",\n \"name\": \"FpBpNqdSB8S1XZYtF8A1z2rP\",\n \"bucket\": \"yactivestorage\",\n \"generation\": \"1537911485667437\",\n \"metageneration\": \"1\",\n \"contentType\": \"application/octet-stream\",\n \"timeCreated\": \"2018-09-25T21:38:05.666Z\",\n \"updated\": \"2018-09-25T21:38:05.666Z\",\n \"storageClass\": \"MULTI_REGIONAL\",\n \"timeStorageClassUpdated\": \"2018-09-25T21:38:05.666Z\",\n \"size\": \"126\",\n \"md5Hash\": \"5M70xuJgN7z4FmkFIH6gmw==\",\n \"mediaLink\": \"https://www.googleapis.com/download/storage/v1/b/yactivestorage/o/FpBpNqdSB8S1XZYtF8A1z2rP?generation=1537911485667437&alt=media\",\n \"crc32c\": \"Gp+aiQ==\",\n \"etag\": \"CO2wst6O190CEAE=\"\n}\n", @size=0, @positions=nil, @chunk_size=nil>, @previous=nil>
+Success - #<Google::Apis::StorageV1::Object:0x0000563f41162ea8
+ @bucket="yactivestorage",
+ @content_type="application/octet-stream",
+ @crc32c="Gp+aiQ==",
+ @etag="CO2wst6O190CEAE=",
+ @generation=1537911485667437,
+ @id="yactivestorage/FpBpNqdSB8S1XZYtF8A1z2rP/1537911485667437",
+ @kind="storage#object",
+ @md5_hash="5M70xuJgN7z4FmkFIH6gmw==",
+ @media_link=
+  "https://www.googleapis.com/download/storage/v1/b/yactivestorage/o/FpBpNqdSB8S1XZYtF8A1z2rP?generation=1537911485667437&alt=media",
+ @metageneration=1,
+ @name="FpBpNqdSB8S1XZYtF8A1z2rP",
+ @self_link=
+  "https://www.googleapis.com/storage/v1/b/yactivestorage/o/FpBpNqdSB8S1XZYtF8A1z2rP",
+ @size=126,
+ @storage_class="MULTI_REGIONAL",
+ @time_created=Tue, 25 Sep 2018 21:38:05 +0000,
+ @time_storage_class_updated=Tue, 25 Sep 2018 21:38:05 +0000,
+ @updated=Tue, 25 Sep 2018 21:38:05 +0000>
+
+Sending HTTP delete https://www.googleapis.com/storage/v1/b/yactivestorage/o/FpBpNqdSB8S1XZYtF8A1z2rP?
+204
+#<HTTP::Message:0x0000563f3ff14eb8 @http_header=#<HTTP::Message::Headers:0x0000563f3ff14e68 @http_version="1.1", @body_size=0, @chunked=false, @request_method="DELETE", @request_uri=#<Addressable::URI:0x2b1f9ff8af68 URI:https://www.googleapis.com/storage/v1/b/yactivestorage/o/FpBpNqdSB8S1XZYtF8A1z2rP?>, @request_query=nil, @request_absolute_uri=nil, @status_code=204, @reason_phrase="No Content", @body_type=nil, @body_charset=nil, @body_date=nil, @body_encoding=#<Encoding:ASCII-8BIT>, @is_request=false, @header_item=[["X-GUploader-UploadID", "AEnB2UqbjEyN-g8iBXfFeXzxs-I_NeNd3uoU-KZKSc3uc1fA9X6BOMj-CDeNu02yf5dS0zuWSrcKqdNW6NMoAs4pyuXJO6H3qA"], ["Vary", "Origin"], ["Vary", "X-Origin"], ["Content-Type", "application/json"], ["Cache-Control", "no-cache, no-store, max-age=0, must-revalidate"], ["Pragma", "no-cache"], ["Expires", "Mon, 01 Jan 1990 00:00:00 GMT"], ["Date", "Tue, 25 Sep 2018 21:38:07 GMT"], ["Content-Length", "0"], ["Server", "UploadServer"], ["Alt-Svc", "quic=\":443\"; ma=2592000; v=\"44,43,39,35\""]], @dumped=false>, @peer_cert=#<OpenSSL::X509::Certificate: subject=#<OpenSSL::X509::Name CN=*.googleapis.com,O=Google LLC,L=Mountain View,ST=California,C=US>, issuer=#<OpenSSL::X509::Name CN=Google Internet Authority G3,O=Google Trust Services,C=US>, serial=#<OpenSSL::BN:0x0000563f3ff0f080>, not_before=2018-08-28 18:23:00 UTC, not_after=2018-11-20 18:23:00 UTC>, @http_body=#<HTTP::Message::Body:0x0000563f3ff14da0 @body="", @size=0, @positions=nil, @chunk_size=nil>, @previous=nil>
+Success - ""
+
+--------------------------------------------------------
+ActiveStorage::Service::GCSServiceTest: test_downloading
+--------------------------------------------------------
+Sending upload start command to https://www.googleapis.com/upload/storage/v1/b/yactivestorage/o?name=FpBpNqdSB8S1XZYtF8A1z2rP
+Upload status active
+Sending upload command to https://www.googleapis.com/upload/storage/v1/b/yactivestorage/o?name=FpBpNqdSB8S1XZYtF8A1z2rP&upload_id=AEnB2Urjqx7GoKRLmIAXpPmW5IEdnLaBX93kYNFGWlRmKRrjUMMyKQOGb-zlF_nNSH7Twllk02IuvaqssQ0QtTRwKVsyxtyIZg&upload_protocol=resumable
+Upload status final
+Success - #<Google::Apis::StorageV1::Object:0x0000563f411e6cd0
+ @bucket="yactivestorage",
+ @content_type="application/octet-stream",
+ @crc32c="Gp+aiQ==",
+ @etag="COXYtd+O190CEAE=",
+ @generation=1537911487818853,
+ @id="yactivestorage/FpBpNqdSB8S1XZYtF8A1z2rP/1537911487818853",
+ @kind="storage#object",
+ @md5_hash="5M70xuJgN7z4FmkFIH6gmw==",
+ @media_link=
+  "https://www.googleapis.com/download/storage/v1/b/yactivestorage/o/FpBpNqdSB8S1XZYtF8A1z2rP?generation=1537911487818853&alt=media",
+ @metageneration=1,
+ @name="FpBpNqdSB8S1XZYtF8A1z2rP",
+ @self_link=
+  "https://www.googleapis.com/storage/v1/b/yactivestorage/o/FpBpNqdSB8S1XZYtF8A1z2rP",
+ @size=126,
+ @storage_class="MULTI_REGIONAL",
+ @time_created=Tue, 25 Sep 2018 21:38:07 +0000,
+ @time_storage_class_updated=Tue, 25 Sep 2018 21:38:07 +0000,
+ @updated=Tue, 25 Sep 2018 21:38:07 +0000>
+
+Sending HTTP get https://www.googleapis.com/storage/v1/b/yactivestorage/o/FpBpNqdSB8S1XZYtF8A1z2rP?
+200
+#<HTTP::Message:0x0000563f4120eff0 @http_header=#<HTTP::Message::Headers:0x0000563f4120efc8 @http_version="1.1", @body_size=0, @chunked=false, @request_method="GET", @request_uri=#<Addressable::URI:0x2b1fa0907ca8 URI:https://www.googleapis.com/storage/v1/b/yactivestorage/o/FpBpNqdSB8S1XZYtF8A1z2rP?>, @request_query=nil, @request_absolute_uri=nil, @status_code=200, @reason_phrase="OK", @body_type=nil, @body_charset=nil, @body_date=nil, @body_encoding=#<Encoding:UTF-8>, @is_request=false, @header_item=[["X-GUploader-UploadID", "AEnB2Up8jyerd_NNuNS5xf7CEHzxw4YHrj3E5VWNBppt9pMq__HFT_Y3TNcqeYB2nkdlX9sbpUgocBz6sNrS5xZ-t_Dk3WOSoQ"], ["ETag", "COXYtd+O190CEAE="], ["Vary", "Origin"], ["Vary", "X-Origin"], ["Content-Type", "application/json; charset=UTF-8"], ["Cache-Control", "no-cache, no-store, max-age=0, must-revalidate"], ["Pragma", "no-cache"], ["Expires", "Mon, 01 Jan 1990 00:00:00 GMT"], ["Date", "Tue, 25 Sep 2018 21:38:07 GMT"], ["Content-Length", "793"], ["Server", "UploadServer"], ["Alt-Svc", "quic=\":443\"; ma=2592000; v=\"44,43,39,35\""]], @dumped=false>, @peer_cert=#<OpenSSL::X509::Certificate: subject=#<OpenSSL::X509::Name CN=*.googleapis.com,O=Google LLC,L=Mountain View,ST=California,C=US>, issuer=#<OpenSSL::X509::Name CN=Google Internet Authority G3,O=Google Trust Services,C=US>, serial=#<OpenSSL::BN:0x0000563f41225ed0>, not_before=2018-08-28 18:23:00 UTC, not_after=2018-11-20 18:23:00 UTC>, @http_body=#<HTTP::Message::Body:0x0000563f4120ef50 @body="{\n \"kind\": \"storage#object\",\n \"id\": \"yactivestorage/FpBpNqdSB8S1XZYtF8A1z2rP/1537911487818853\",\n \"selfLink\": \"https://www.googleapis.com/storage/v1/b/yactivestorage/o/FpBpNqdSB8S1XZYtF8A1z2rP\",\n \"name\": \"FpBpNqdSB8S1XZYtF8A1z2rP\",\n \"bucket\": \"yactivestorage\",\n \"generation\": \"1537911487818853\",\n \"metageneration\": \"1\",\n \"contentType\": \"application/octet-stream\",\n \"timeCreated\": \"2018-09-25T21:38:07.818Z\",\n \"updated\": \"2018-09-25T21:38:07.818Z\",\n \"storageClass\": \"MULTI_REGIONAL\",\n \"timeStorageClassUpdated\": \"2018-09-25T21:38:07.818Z\",\n \"size\": \"126\",\n \"md5Hash\": \"5M70xuJgN7z4FmkFIH6gmw==\",\n \"mediaLink\": \"https://www.googleapis.com/download/storage/v1/b/yactivestorage/o/FpBpNqdSB8S1XZYtF8A1z2rP?generation=1537911487818853&alt=media\",\n \"crc32c\": \"Gp+aiQ==\",\n \"etag\": \"COXYtd+O190CEAE=\"\n}\n", @size=0, @positions=nil, @chunk_size=nil>, @previous=nil>
+Success - #<Google::Apis::StorageV1::Object:0x0000563f412257a0
+ @bucket="yactivestorage",
+ @content_type="application/octet-stream",
+ @crc32c="Gp+aiQ==",
+ @etag="COXYtd+O190CEAE=",
+ @generation=1537911487818853,
+ @id="yactivestorage/FpBpNqdSB8S1XZYtF8A1z2rP/1537911487818853",
+ @kind="storage#object",
+ @md5_hash="5M70xuJgN7z4FmkFIH6gmw==",
+ @media_link=
+  "https://www.googleapis.com/download/storage/v1/b/yactivestorage/o/FpBpNqdSB8S1XZYtF8A1z2rP?generation=1537911487818853&alt=media",
+ @metageneration=1,
+ @name="FpBpNqdSB8S1XZYtF8A1z2rP",
+ @self_link=
+  "https://www.googleapis.com/storage/v1/b/yactivestorage/o/FpBpNqdSB8S1XZYtF8A1z2rP",
+ @size=126,
+ @storage_class="MULTI_REGIONAL",
+ @time_created=Tue, 25 Sep 2018 21:38:07 +0000,
+ @time_storage_class_updated=Tue, 25 Sep 2018 21:38:07 +0000,
+ @updated=Tue, 25 Sep 2018 21:38:07 +0000>
+
+Success - #<StringIO:0x0000563f412482f0>
+
+Sending HTTP get https://www.googleapis.com/storage/v1/b/yactivestorage/o/FpBpNqdSB8S1XZYtF8A1z2rP?
+200
+#<HTTP::Message:0x0000563f412741e8 @http_header=#<HTTP::Message::Headers:0x0000563f412741c0 @http_version="1.1", @body_size=0, @chunked=false, @request_method="GET", @request_uri=#<Addressable::URI:0x2b1fa093a5a4 URI:https://www.googleapis.com/storage/v1/b/yactivestorage/o/FpBpNqdSB8S1XZYtF8A1z2rP?>, @request_query=nil, @request_absolute_uri=nil, @status_code=200, @reason_phrase="OK", @body_type=nil, @body_charset=nil, @body_date=nil, @body_encoding=#<Encoding:UTF-8>, @is_request=false, @header_item=[["X-GUploader-UploadID", "AEnB2UqE2Bi1HooDpEiyPVo8cP9mHgJ5i9Tu8Iigm2XqjMwmVsLOHOocONHzfqXgEhff7HHWc4OR2HIHbrLuYhonoDU5iL_8Yg"], ["ETag", "COXYtd+O190CEAE="], ["Vary", "Origin"], ["Vary", "X-Origin"], ["Content-Type", "application/json; charset=UTF-8"], ["Cache-Control", "no-cache, no-store, max-age=0, must-revalidate"], ["Pragma", "no-cache"], ["Expires", "Mon, 01 Jan 1990 00:00:00 GMT"], ["Date", "Tue, 25 Sep 2018 21:38:08 GMT"], ["Content-Length", "793"], ["Server", "UploadServer"], ["Alt-Svc", "quic=\":443\"; ma=2592000; v=\"44,43,39,35\""]], @dumped=false>, @peer_cert=#<OpenSSL::X509::Certificate: subject=#<OpenSSL::X509::Name CN=*.googleapis.com,O=Google LLC,L=Mountain View,ST=California,C=US>, issuer=#<OpenSSL::X509::Name CN=Google Internet Authority G3,O=Google Trust Services,C=US>, serial=#<OpenSSL::BN:0x0000563f41297cd8>, not_before=2018-08-28 18:23:00 UTC, not_after=2018-11-20 18:23:00 UTC>, @http_body=#<HTTP::Message::Body:0x0000563f41274148 @body="{\n \"kind\": \"storage#object\",\n \"id\": \"yactivestorage/FpBpNqdSB8S1XZYtF8A1z2rP/1537911487818853\",\n \"selfLink\": \"https://www.googleapis.com/storage/v1/b/yactivestorage/o/FpBpNqdSB8S1XZYtF8A1z2rP\",\n \"name\": \"FpBpNqdSB8S1XZYtF8A1z2rP\",\n \"bucket\": \"yactivestorage\",\n \"generation\": \"1537911487818853\",\n \"metageneration\": \"1\",\n \"contentType\": \"application/octet-stream\",\n \"timeCreated\": \"2018-09-25T21:38:07.818Z\",\n \"updated\": \"2018-09-25T21:38:07.818Z\",\n \"storageClass\": \"MULTI_REGIONAL\",\n \"timeStorageClassUpdated\": \"2018-09-25T21:38:07.818Z\",\n \"size\": \"126\",\n \"md5Hash\": \"5M70xuJgN7z4FmkFIH6gmw==\",\n \"mediaLink\": \"https://www.googleapis.com/download/storage/v1/b/yactivestorage/o/FpBpNqdSB8S1XZYtF8A1z2rP?generation=1537911487818853&alt=media\",\n \"crc32c\": \"Gp+aiQ==\",\n \"etag\": \"COXYtd+O190CEAE=\"\n}\n", @size=0, @positions=nil, @chunk_size=nil>, @previous=nil>
+Success - #<Google::Apis::StorageV1::Object:0x0000563f412975a8
+ @bucket="yactivestorage",
+ @content_type="application/octet-stream",
+ @crc32c="Gp+aiQ==",
+ @etag="COXYtd+O190CEAE=",
+ @generation=1537911487818853,
+ @id="yactivestorage/FpBpNqdSB8S1XZYtF8A1z2rP/1537911487818853",
+ @kind="storage#object",
+ @md5_hash="5M70xuJgN7z4FmkFIH6gmw==",
+ @media_link=
+  "https://www.googleapis.com/download/storage/v1/b/yactivestorage/o/FpBpNqdSB8S1XZYtF8A1z2rP?generation=1537911487818853&alt=media",
+ @metageneration=1,
+ @name="FpBpNqdSB8S1XZYtF8A1z2rP",
+ @self_link=
+  "https://www.googleapis.com/storage/v1/b/yactivestorage/o/FpBpNqdSB8S1XZYtF8A1z2rP",
+ @size=126,
+ @storage_class="MULTI_REGIONAL",
+ @time_created=Tue, 25 Sep 2018 21:38:07 +0000,
+ @time_storage_class_updated=Tue, 25 Sep 2018 21:38:07 +0000,
+ @updated=Tue, 25 Sep 2018 21:38:07 +0000>
+
+Sending HTTP delete https://www.googleapis.com/storage/v1/b/yactivestorage/o/FpBpNqdSB8S1XZYtF8A1z2rP?
+204
+#<HTTP::Message:0x0000563f412c25c8 @http_header=#<HTTP::Message::Headers:0x0000563f412c25a0 @http_version="1.1", @body_size=0, @chunked=false, @request_method="DELETE", @request_uri=#<Addressable::URI:0x2b1fa0961794 URI:https://www.googleapis.com/storage/v1/b/yactivestorage/o/FpBpNqdSB8S1XZYtF8A1z2rP?>, @request_query=nil, @request_absolute_uri=nil, @status_code=204, @reason_phrase="No Content", @body_type=nil, @body_charset=nil, @body_date=nil, @body_encoding=#<Encoding:ASCII-8BIT>, @is_request=false, @header_item=[["X-GUploader-UploadID", "AEnB2Uo_IZ63F_mqDJC5AZtsquN0LXbv9Jaj6MVXajbsKFrutwOh03POahzQo0vQbNB1tbFAI_3LEnuvGLk8SbExfVcfk4QnUQ"], ["Vary", "Origin"], ["Vary", "X-Origin"], ["Content-Type", "application/json"], ["Cache-Control", "no-cache, no-store, max-age=0, must-revalidate"], ["Pragma", "no-cache"], ["Expires", "Mon, 01 Jan 1990 00:00:00 GMT"], ["Date", "Tue, 25 Sep 2018 21:38:08 GMT"], ["Content-Length", "0"], ["Server", "UploadServer"], ["Alt-Svc", "quic=\":443\"; ma=2592000; v=\"44,43,39,35\""]], @dumped=false>, @peer_cert=#<OpenSSL::X509::Certificate: subject=#<OpenSSL::X509::Name CN=*.googleapis.com,O=Google LLC,L=Mountain View,ST=California,C=US>, issuer=#<OpenSSL::X509::Name CN=Google Internet Authority G3,O=Google Trust Services,C=US>, serial=#<OpenSSL::BN:0x0000563f412d6640>, not_before=2018-08-28 18:23:00 UTC, not_after=2018-11-20 18:23:00 UTC>, @http_body=#<HTTP::Message::Body:0x0000563f412c2528 @body="", @size=0, @positions=nil, @chunk_size=nil>, @previous=nil>
+Success - ""
+
+------------------------------------------------------------------------
+ActiveStorage::Service::GCSServiceTest: test_uploading_without_integrity
+------------------------------------------------------------------------
+Sending upload start command to https://www.googleapis.com/upload/storage/v1/b/yactivestorage/o?name=FpBpNqdSB8S1XZYtF8A1z2rP
+Upload status active
+Sending upload command to https://www.googleapis.com/upload/storage/v1/b/yactivestorage/o?name=FpBpNqdSB8S1XZYtF8A1z2rP&upload_id=AEnB2UrsvQi5LWzzaxTC1yUwe82GUQzqaRoV75I6_pgUB_VMug8MfQn_fr2xAVHq5hgynSPE3D4fReBUlS0BlXQ3p09YWTQdVQ&upload_protocol=resumable
+Upload status final
+Success - #<Google::Apis::StorageV1::Object:0x0000563f4131e698
+ @bucket="yactivestorage",
+ @content_type="application/octet-stream",
+ @crc32c="Gp+aiQ==",
+ @etag="CP+4hOCO190CEAE=",
+ @generation=1537911489109119,
+ @id="yactivestorage/FpBpNqdSB8S1XZYtF8A1z2rP/1537911489109119",
+ @kind="storage#object",
+ @md5_hash="5M70xuJgN7z4FmkFIH6gmw==",
+ @media_link=
+  "https://www.googleapis.com/download/storage/v1/b/yactivestorage/o/FpBpNqdSB8S1XZYtF8A1z2rP?generation=1537911489109119&alt=media",
+ @metageneration=1,
+ @name="FpBpNqdSB8S1XZYtF8A1z2rP",
+ @self_link=
+  "https://www.googleapis.com/storage/v1/b/yactivestorage/o/FpBpNqdSB8S1XZYtF8A1z2rP",
+ @size=126,
+ @storage_class="MULTI_REGIONAL",
+ @time_created=Tue, 25 Sep 2018 21:38:09 +0000,
+ @time_storage_class_updated=Tue, 25 Sep 2018 21:38:09 +0000,
+ @updated=Tue, 25 Sep 2018 21:38:09 +0000>
+
+Sending upload start command to https://www.googleapis.com/upload/storage/v1/b/yactivestorage/o?name=BXDSFxur9GEEKwKaiLeWggjf
+Upload status active
+Sending upload command to https://www.googleapis.com/upload/storage/v1/b/yactivestorage/o?name=BXDSFxur9GEEKwKaiLeWggjf&upload_id=AEnB2Uo5KYdl85RneYEdggej21A0C7IUmhnljtMf7wKCHs9Hq7NSbdXNtmRL9LhpTFb8x_NxbZb3MGqemX6zB-Dewnk-SPzWmQ&upload_protocol=resumable
+Upload status final
+Error - #<Google::Apis::ClientError: invalid: Provided MD5 hash "H1yIugmHOto4ENGxvf9/Zw==" doesn't match calculated MD5 hash "sijgElrNmNQBpuz2xn8X7Q==".>
+
+Sending HTTP get https://www.googleapis.com/storage/v1/b/yactivestorage/o/BXDSFxur9GEEKwKaiLeWggjf?
+404
+#<HTTP::Message:0x0000563f41391580 @http_header=#<HTTP::Message::Headers:0x0000563f41391558 @http_version="1.1", @body_size=0, @chunked=false, @request_method="GET", @request_uri=#<Addressable::URI:0x2b1fa09c8f70 URI:https://www.googleapis.com/storage/v1/b/yactivestorage/o/BXDSFxur9GEEKwKaiLeWggjf?>, @request_query=nil, @request_absolute_uri=nil, @status_code=404, @reason_phrase="Not Found", @body_type=nil, @body_charset=nil, @body_date=nil, @body_encoding=#<Encoding:UTF-8>, @is_request=false, @header_item=[["X-GUploader-UploadID", "AEnB2UpKJUYpxQK1BmqCrkkA5ItpSPaJAj_T4PEJdD-cSAUg8DtHKq0NDV0dtFTAe2B77qCTkiNyh9QBo8WtOcdMrDEb0qeXmg"], ["Vary", "Origin"], ["Vary", "X-Origin"], ["Content-Type", "application/json; charset=UTF-8"], ["Date", "Tue, 25 Sep 2018 21:38:10 GMT"], ["Expires", "Tue, 25 Sep 2018 21:38:10 GMT"], ["Cache-Control", "private, max-age=0"], ["Content-Length", "257"], ["Server", "UploadServer"], ["Alt-Svc", "quic=\":443\"; ma=2592000; v=\"44,43,39,35\""]], @dumped=false>, @peer_cert=#<OpenSSL::X509::Certificate: subject=#<OpenSSL::X509::Name CN=*.googleapis.com,O=Google LLC,L=Mountain View,ST=California,C=US>, issuer=#<OpenSSL::X509::Name CN=Google Internet Authority G3,O=Google Trust Services,C=US>, serial=#<OpenSSL::BN:0x0000563f4139cb60>, not_before=2018-08-28 18:23:00 UTC, not_after=2018-11-20 18:23:00 UTC>, @http_body=#<HTTP::Message::Body:0x0000563f413914e0 @body="{\n \"error\": {\n  \"errors\": [\n   {\n    \"domain\": \"global\",\n    \"reason\": \"notFound\",\n    \"message\": \"No such object: yactivestorage/BXDSFxur9GEEKwKaiLeWggjf\"\n   }\n  ],\n  \"code\": 404,\n  \"message\": \"No such object: yactivestorage/BXDSFxur9GEEKwKaiLeWggjf\"\n }\n}\n", @size=0, @positions=nil, @chunk_size=nil>, @previous=nil>
+Caught error notFound: No such object: yactivestorage/BXDSFxur9GEEKwKaiLeWggjf
+Error - #<Google::Apis::ClientError: notFound: No such object: yactivestorage/BXDSFxur9GEEKwKaiLeWggjf>
+
+Sending HTTP get https://www.googleapis.com/storage/v1/b/yactivestorage/o/BXDSFxur9GEEKwKaiLeWggjf?
+404
+#<HTTP::Message:0x0000563f413c3328 @http_header=#<HTTP::Message::Headers:0x0000563f413c3300 @http_version="1.1", @body_size=0, @chunked=false, @request_method="GET", @request_uri=#<Addressable::URI:0x2b1fa09e1e44 URI:https://www.googleapis.com/storage/v1/b/yactivestorage/o/BXDSFxur9GEEKwKaiLeWggjf?>, @request_query=nil, @request_absolute_uri=nil, @status_code=404, @reason_phrase="Not Found", @body_type=nil, @body_charset=nil, @body_date=nil, @body_encoding=#<Encoding:UTF-8>, @is_request=false, @header_item=[["X-GUploader-UploadID", "AEnB2Uq_zbDg1uP2QCZEYduqk6MdQiuPwdIvJgbH4HMoXKwK_56sXgO3T-Nc38-CmgK50GKdEYBzhS61IY5h91b7p6jZTk__WQ"], ["Vary", "Origin"], ["Vary", "X-Origin"], ["Content-Type", "application/json; charset=UTF-8"], ["Date", "Tue, 25 Sep 2018 21:38:10 GMT"], ["Expires", "Tue, 25 Sep 2018 21:38:10 GMT"], ["Cache-Control", "private, max-age=0"], ["Content-Length", "257"], ["Server", "UploadServer"], ["Alt-Svc", "quic=\":443\"; ma=2592000; v=\"44,43,39,35\""]], @dumped=false>, @peer_cert=#<OpenSSL::X509::Certificate: subject=#<OpenSSL::X509::Name CN=*.googleapis.com,O=Google LLC,L=Mountain View,ST=California,C=US>, issuer=#<OpenSSL::X509::Name CN=Google Internet Authority G3,O=Google Trust Services,C=US>, serial=#<OpenSSL::BN:0x0000563f413d6c98>, not_before=2018-08-28 18:23:00 UTC, not_after=2018-11-20 18:23:00 UTC>, @http_body=#<HTTP::Message::Body:0x0000563f413c3288 @body="{\n \"error\": {\n  \"errors\": [\n   {\n    \"domain\": \"global\",\n    \"reason\": \"notFound\",\n    \"message\": \"No such object: yactivestorage/BXDSFxur9GEEKwKaiLeWggjf\"\n   }\n  ],\n  \"code\": 404,\n  \"message\": \"No such object: yactivestorage/BXDSFxur9GEEKwKaiLeWggjf\"\n }\n}\n", @size=0, @positions=nil, @chunk_size=nil>, @previous=nil>
+Caught error notFound: No such object: yactivestorage/BXDSFxur9GEEKwKaiLeWggjf
+Error - #<Google::Apis::ClientError: notFound: No such object: yactivestorage/BXDSFxur9GEEKwKaiLeWggjf>
+
+Sending HTTP get https://www.googleapis.com/storage/v1/b/yactivestorage/o/FpBpNqdSB8S1XZYtF8A1z2rP?
+200
+#<HTTP::Message:0x0000563f413e9f28 @http_header=#<HTTP::Message::Headers:0x0000563f413e9f00 @http_version="1.1", @body_size=0, @chunked=false, @request_method="GET", @request_uri=#<Addressable::URI:0x2b1fa09f5444 URI:https://www.googleapis.com/storage/v1/b/yactivestorage/o/FpBpNqdSB8S1XZYtF8A1z2rP?>, @request_query=nil, @request_absolute_uri=nil, @status_code=200, @reason_phrase="OK", @body_type=nil, @body_charset=nil, @body_date=nil, @body_encoding=#<Encoding:UTF-8>, @is_request=false, @header_item=[["X-GUploader-UploadID", "AEnB2Urftb7Orxk0vEUBtHg3XUsJoLkpE4OF3RPtiqwhXT5Z1KfzTRs_ukvMP1Ylkw6zsQ0nAf-BaNqGb_AVoe78BcXcunXv2Q"], ["ETag", "CP+4hOCO190CEAE="], ["Vary", "Origin"], ["Vary", "X-Origin"], ["Content-Type", "application/json; charset=UTF-8"], ["Cache-Control", "no-cache, no-store, max-age=0, must-revalidate"], ["Pragma", "no-cache"], ["Expires", "Mon, 01 Jan 1990 00:00:00 GMT"], ["Date", "Tue, 25 Sep 2018 21:38:10 GMT"], ["Content-Length", "793"], ["Server", "UploadServer"], ["Alt-Svc", "quic=\":443\"; ma=2592000; v=\"44,43,39,35\""]], @dumped=false>, @peer_cert=#<OpenSSL::X509::Certificate: subject=#<OpenSSL::X509::Name CN=*.googleapis.com,O=Google LLC,L=Mountain View,ST=California,C=US>, issuer=#<OpenSSL::X509::Name CN=Google Internet Authority G3,O=Google Trust Services,C=US>, serial=#<OpenSSL::BN:0x0000563f41401088>, not_before=2018-08-28 18:23:00 UTC, not_after=2018-11-20 18:23:00 UTC>, @http_body=#<HTTP::Message::Body:0x0000563f413e9e88 @body="{\n \"kind\": \"storage#object\",\n \"id\": \"yactivestorage/FpBpNqdSB8S1XZYtF8A1z2rP/1537911489109119\",\n \"selfLink\": \"https://www.googleapis.com/storage/v1/b/yactivestorage/o/FpBpNqdSB8S1XZYtF8A1z2rP\",\n \"name\": \"FpBpNqdSB8S1XZYtF8A1z2rP\",\n \"bucket\": \"yactivestorage\",\n \"generation\": \"1537911489109119\",\n \"metageneration\": \"1\",\n \"contentType\": \"application/octet-stream\",\n \"timeCreated\": \"2018-09-25T21:38:09.108Z\",\n \"updated\": \"2018-09-25T21:38:09.108Z\",\n \"storageClass\": \"MULTI_REGIONAL\",\n \"timeStorageClassUpdated\": \"2018-09-25T21:38:09.108Z\",\n \"size\": \"126\",\n \"md5Hash\": \"5M70xuJgN7z4FmkFIH6gmw==\",\n \"mediaLink\": \"https://www.googleapis.com/download/storage/v1/b/yactivestorage/o/FpBpNqdSB8S1XZYtF8A1z2rP?generation=1537911489109119&alt=media\",\n \"crc32c\": \"Gp+aiQ==\",\n \"etag\": \"CP+4hOCO190CEAE=\"\n}\n", @size=0, @positions=nil, @chunk_size=nil>, @previous=nil>
+Success - #<Google::Apis::StorageV1::Object:0x0000563f41400958
+ @bucket="yactivestorage",
+ @content_type="application/octet-stream",
+ @crc32c="Gp+aiQ==",
+ @etag="CP+4hOCO190CEAE=",
+ @generation=1537911489109119,
+ @id="yactivestorage/FpBpNqdSB8S1XZYtF8A1z2rP/1537911489109119",
+ @kind="storage#object",
+ @md5_hash="5M70xuJgN7z4FmkFIH6gmw==",
+ @media_link=
+  "https://www.googleapis.com/download/storage/v1/b/yactivestorage/o/FpBpNqdSB8S1XZYtF8A1z2rP?generation=1537911489109119&alt=media",
+ @metageneration=1,
+ @name="FpBpNqdSB8S1XZYtF8A1z2rP",
+ @self_link=
+  "https://www.googleapis.com/storage/v1/b/yactivestorage/o/FpBpNqdSB8S1XZYtF8A1z2rP",
+ @size=126,
+ @storage_class="MULTI_REGIONAL",
+ @time_created=Tue, 25 Sep 2018 21:38:09 +0000,
+ @time_storage_class_updated=Tue, 25 Sep 2018 21:38:09 +0000,
+ @updated=Tue, 25 Sep 2018 21:38:09 +0000>
+
+Sending HTTP delete https://www.googleapis.com/storage/v1/b/yactivestorage/o/FpBpNqdSB8S1XZYtF8A1z2rP?
+204
+#<HTTP::Message:0x0000563f4142c828 @http_header=#<HTTP::Message::Headers:0x0000563f4142c800 @http_version="1.1", @body_size=0, @chunked=false, @request_method="DELETE", @request_uri=#<Addressable::URI:0x2b1fa0a168c4 URI:https://www.googleapis.com/storage/v1/b/yactivestorage/o/FpBpNqdSB8S1XZYtF8A1z2rP?>, @request_query=nil, @request_absolute_uri=nil, @status_code=204, @reason_phrase="No Content", @body_type=nil, @body_charset=nil, @body_date=nil, @body_encoding=#<Encoding:ASCII-8BIT>, @is_request=false, @header_item=[["X-GUploader-UploadID", "AEnB2UppiWuvq8vgnufqx748LWwo1ksmD0s8Ivo1K0o4qUAfv4DsC_owwZM2iNsyOx13NeQ_TcrThEE0KvLiCGgcOd7WmioQcw"], ["Vary", "Origin"], ["Vary", "X-Origin"], ["Content-Type", "application/json"], ["Cache-Control", "no-cache, no-store, max-age=0, must-revalidate"], ["Pragma", "no-cache"], ["Expires", "Mon, 01 Jan 1990 00:00:00 GMT"], ["Date", "Tue, 25 Sep 2018 21:38:10 GMT"], ["Content-Length", "0"], ["Server", "UploadServer"], ["Alt-Svc", "quic=\":443\"; ma=2592000; v=\"44,43,39,35\""]], @dumped=false>, @peer_cert=#<OpenSSL::X509::Certificate: subject=#<OpenSSL::X509::Name CN=*.googleapis.com,O=Google LLC,L=Mountain View,ST=California,C=US>, issuer=#<OpenSSL::X509::Name CN=Google Internet Authority G3,O=Google Trust Services,C=US>, serial=#<OpenSSL::BN:0x0000563f4143c0e8>, not_before=2018-08-28 18:23:00 UTC, not_after=2018-11-20 18:23:00 UTC>, @http_body=#<HTTP::Message::Body:0x0000563f4142c788 @body="", @size=0, @positions=nil, @chunk_size=nil>, @previous=nil>
+Success - ""
+
+-----------------------------------------------------
+ActiveStorage::Service::GCSServiceTest: test_deleting
+-----------------------------------------------------
+Sending upload start command to https://www.googleapis.com/upload/storage/v1/b/yactivestorage/o?name=FpBpNqdSB8S1XZYtF8A1z2rP
+Upload status active
+Sending upload command to https://www.googleapis.com/upload/storage/v1/b/yactivestorage/o?name=FpBpNqdSB8S1XZYtF8A1z2rP&upload_id=AEnB2Upqo44xETIRnNWPqDIDJUGL_h3Hvg-BDgOVjNcll90q64y3POvNWterXVWia130v0mD1FhDPwW9zVbAPce3T_RZnp9e_A&upload_protocol=resumable
+Upload status final
+Success - #<Google::Apis::StorageV1::Object:0x0000563f4149fd50
+ @bucket="yactivestorage",
+ @content_type="application/octet-stream",
+ @crc32c="Gp+aiQ==",
+ @etag="CIrzk+GO190CEAE=",
+ @generation=1537911491459466,
+ @id="yactivestorage/FpBpNqdSB8S1XZYtF8A1z2rP/1537911491459466",
+ @kind="storage#object",
+ @md5_hash="5M70xuJgN7z4FmkFIH6gmw==",
+ @media_link=
+  "https://www.googleapis.com/download/storage/v1/b/yactivestorage/o/FpBpNqdSB8S1XZYtF8A1z2rP?generation=1537911491459466&alt=media",
+ @metageneration=1,
+ @name="FpBpNqdSB8S1XZYtF8A1z2rP",
+ @self_link=
+  "https://www.googleapis.com/storage/v1/b/yactivestorage/o/FpBpNqdSB8S1XZYtF8A1z2rP",
+ @size=126,
+ @storage_class="MULTI_REGIONAL",
+ @time_created=Tue, 25 Sep 2018 21:38:11 +0000,
+ @time_storage_class_updated=Tue, 25 Sep 2018 21:38:11 +0000,
+ @updated=Tue, 25 Sep 2018 21:38:11 +0000>
+
+Sending HTTP get https://www.googleapis.com/storage/v1/b/yactivestorage/o/FpBpNqdSB8S1XZYtF8A1z2rP?
+200
+#<HTTP::Message:0x0000563f414bf718 @http_header=#<HTTP::Message::Headers:0x0000563f414bf6f0 @http_version="1.1", @body_size=0, @chunked=false, @request_method="GET", @request_uri=#<Addressable::URI:0x2b1f9fe9610c URI:https://www.googleapis.com/storage/v1/b/yactivestorage/o/FpBpNqdSB8S1XZYtF8A1z2rP?>, @request_query=nil, @request_absolute_uri=nil, @status_code=200, @reason_phrase="OK", @body_type=nil, @body_charset=nil, @body_date=nil, @body_encoding=#<Encoding:UTF-8>, @is_request=false, @header_item=[["X-GUploader-UploadID", "AEnB2Uotp5YOEdF-f62XpBvMwDjFOp3aqzq4GzSNrvcQf4RaA_9Ylyh5w1SYZu98VvG7FvcK3D94ocQplK1iX9BcDOtJ9TD64Q"], ["ETag", "CIrzk+GO190CEAE="], ["Vary", "Origin"], ["Vary", "X-Origin"], ["Content-Type", "application/json; charset=UTF-8"], ["Cache-Control", "no-cache, no-store, max-age=0, must-revalidate"], ["Pragma", "no-cache"], ["Expires", "Mon, 01 Jan 1990 00:00:00 GMT"], ["Date", "Tue, 25 Sep 2018 21:38:11 GMT"], ["Content-Length", "793"], ["Server", "UploadServer"], ["Alt-Svc", "quic=\":443\"; ma=2592000; v=\"44,43,39,35\""]], @dumped=false>, @peer_cert=#<OpenSSL::X509::Certificate: subject=#<OpenSSL::X509::Name CN=*.googleapis.com,O=Google LLC,L=Mountain View,ST=California,C=US>, issuer=#<OpenSSL::X509::Name CN=Google Internet Authority G3,O=Google Trust Services,C=US>, serial=#<OpenSSL::BN:0x0000563f414d2a98>, not_before=2018-08-28 18:23:00 UTC, not_after=2018-11-20 18:23:00 UTC>, @http_body=#<HTTP::Message::Body:0x0000563f414bf678 @body="{\n \"kind\": \"storage#object\",\n \"id\": \"yactivestorage/FpBpNqdSB8S1XZYtF8A1z2rP/1537911491459466\",\n \"selfLink\": \"https://www.googleapis.com/storage/v1/b/yactivestorage/o/FpBpNqdSB8S1XZYtF8A1z2rP\",\n \"name\": \"FpBpNqdSB8S1XZYtF8A1z2rP\",\n \"bucket\": \"yactivestorage\",\n \"generation\": \"1537911491459466\",\n \"metageneration\": \"1\",\n \"contentType\": \"application/octet-stream\",\n \"timeCreated\": \"2018-09-25T21:38:11.459Z\",\n \"updated\": \"2018-09-25T21:38:11.459Z\",\n \"storageClass\": \"MULTI_REGIONAL\",\n \"timeStorageClassUpdated\": \"2018-09-25T21:38:11.459Z\",\n \"size\": \"126\",\n \"md5Hash\": \"5M70xuJgN7z4FmkFIH6gmw==\",\n \"mediaLink\": \"https://www.googleapis.com/download/storage/v1/b/yactivestorage/o/FpBpNqdSB8S1XZYtF8A1z2rP?generation=1537911491459466&alt=media\",\n \"crc32c\": \"Gp+aiQ==\",\n \"etag\": \"CIrzk+GO190CEAE=\"\n}\n", @size=0, @positions=nil, @chunk_size=nil>, @previous=nil>
+Success - #<Google::Apis::StorageV1::Object:0x0000563f414d2368
+ @bucket="yactivestorage",
+ @content_type="application/octet-stream",
+ @crc32c="Gp+aiQ==",
+ @etag="CIrzk+GO190CEAE=",
+ @generation=1537911491459466,
+ @id="yactivestorage/FpBpNqdSB8S1XZYtF8A1z2rP/1537911491459466",
+ @kind="storage#object",
+ @md5_hash="5M70xuJgN7z4FmkFIH6gmw==",
+ @media_link=
+  "https://www.googleapis.com/download/storage/v1/b/yactivestorage/o/FpBpNqdSB8S1XZYtF8A1z2rP?generation=1537911491459466&alt=media",
+ @metageneration=1,
+ @name="FpBpNqdSB8S1XZYtF8A1z2rP",
+ @self_link=
+  "https://www.googleapis.com/storage/v1/b/yactivestorage/o/FpBpNqdSB8S1XZYtF8A1z2rP",
+ @size=126,
+ @storage_class="MULTI_REGIONAL",
+ @time_created=Tue, 25 Sep 2018 21:38:11 +0000,
+ @time_storage_class_updated=Tue, 25 Sep 2018 21:38:11 +0000,
+ @updated=Tue, 25 Sep 2018 21:38:11 +0000>
+
+Sending HTTP delete https://www.googleapis.com/storage/v1/b/yactivestorage/o/FpBpNqdSB8S1XZYtF8A1z2rP?
+204
+#<HTTP::Message:0x0000563f415023d8 @http_header=#<HTTP::Message::Headers:0x0000563f415023b0 @http_version="1.1", @body_size=0, @chunked=false, @request_method="DELETE", @request_uri=#<Addressable::URI:0x2b1fa0a8169c URI:https://www.googleapis.com/storage/v1/b/yactivestorage/o/FpBpNqdSB8S1XZYtF8A1z2rP?>, @request_query=nil, @request_absolute_uri=nil, @status_code=204, @reason_phrase="No Content", @body_type=nil, @body_charset=nil, @body_date=nil, @body_encoding=#<Encoding:ASCII-8BIT>, @is_request=false, @header_item=[["X-GUploader-UploadID", "AEnB2UqN26qpxflQzyVDlqoTjRSFobr1WZ06HGUnCg_ZtMsFWDTAWpwsJUSjRyxpNGg-OegHBj-mOsk0g7yLOynfCka7TpZfRw"], ["Vary", "Origin"], ["Vary", "X-Origin"], ["Content-Type", "application/json"], ["Cache-Control", "no-cache, no-store, max-age=0, must-revalidate"], ["Pragma", "no-cache"], ["Expires", "Mon, 01 Jan 1990 00:00:00 GMT"], ["Date", "Tue, 25 Sep 2018 21:38:11 GMT"], ["Content-Length", "0"], ["Server", "UploadServer"], ["Alt-Svc", "quic=\":443\"; ma=2592000; v=\"44,43,39,35\""]], @dumped=false>, @peer_cert=#<OpenSSL::X509::Certificate: subject=#<OpenSSL::X509::Name CN=*.googleapis.com,O=Google LLC,L=Mountain View,ST=California,C=US>, issuer=#<OpenSSL::X509::Name CN=Google Internet Authority G3,O=Google Trust Services,C=US>, serial=#<OpenSSL::BN:0x0000563f41516a90>, not_before=2018-08-28 18:23:00 UTC, not_after=2018-11-20 18:23:00 UTC>, @http_body=#<HTTP::Message::Body:0x0000563f41502338 @body="", @size=0, @positions=nil, @chunk_size=nil>, @previous=nil>
+Success - ""
+
+Sending HTTP get https://www.googleapis.com/storage/v1/b/yactivestorage/o/FpBpNqdSB8S1XZYtF8A1z2rP?
+404
+#<HTTP::Message:0x0000563f415230d8 @http_header=#<HTTP::Message::Headers:0x0000563f415230b0 @http_version="1.1", @body_size=0, @chunked=false, @request_method="GET", @request_uri=#<Addressable::URI:0x2b1fa0a91d1c URI:https://www.googleapis.com/storage/v1/b/yactivestorage/o/FpBpNqdSB8S1XZYtF8A1z2rP?>, @request_query=nil, @request_absolute_uri=nil, @status_code=404, @reason_phrase="Not Found", @body_type=nil, @body_charset=nil, @body_date=nil, @body_encoding=#<Encoding:UTF-8>, @is_request=false, @header_item=[["X-GUploader-UploadID", "AEnB2UoRXU0CVJw-shS_altk9XoGaI7YDbXsn-uyp8VXD5SIlsoi1qX8aAwS_7fmoZDbianJhDofc7Zc0SoTef4ybdm5mpgfEA"], ["Vary", "Origin"], ["Vary", "X-Origin"], ["Content-Type", "application/json; charset=UTF-8"], ["Date", "Tue, 25 Sep 2018 21:38:12 GMT"], ["Expires", "Tue, 25 Sep 2018 21:38:12 GMT"], ["Cache-Control", "private, max-age=0"], ["Content-Length", "257"], ["Server", "UploadServer"], ["Alt-Svc", "quic=\":443\"; ma=2592000; v=\"44,43,39,35\""]], @dumped=false>, @peer_cert=#<OpenSSL::X509::Certificate: subject=#<OpenSSL::X509::Name CN=*.googleapis.com,O=Google LLC,L=Mountain View,ST=California,C=US>, issuer=#<OpenSSL::X509::Name CN=Google Internet Authority G3,O=Google Trust Services,C=US>, serial=#<OpenSSL::BN:0x0000563f41537498>, not_before=2018-08-28 18:23:00 UTC, not_after=2018-11-20 18:23:00 UTC>, @http_body=#<HTTP::Message::Body:0x0000563f41523038 @body="{\n \"error\": {\n  \"errors\": [\n   {\n    \"domain\": \"global\",\n    \"reason\": \"notFound\",\n    \"message\": \"No such object: yactivestorage/FpBpNqdSB8S1XZYtF8A1z2rP\"\n   }\n  ],\n  \"code\": 404,\n  \"message\": \"No such object: yactivestorage/FpBpNqdSB8S1XZYtF8A1z2rP\"\n }\n}\n", @size=0, @positions=nil, @chunk_size=nil>, @previous=nil>
+Caught error notFound: No such object: yactivestorage/FpBpNqdSB8S1XZYtF8A1z2rP
+Error - #<Google::Apis::ClientError: notFound: No such object: yactivestorage/FpBpNqdSB8S1XZYtF8A1z2rP>
+
+Sending HTTP get https://www.googleapis.com/storage/v1/b/yactivestorage/o/FpBpNqdSB8S1XZYtF8A1z2rP?
+404
+#<HTTP::Message:0x0000563f4154abb0 @http_header=#<HTTP::Message::Headers:0x0000563f4154ab88 @http_version="1.1", @body_size=0, @chunked=false, @request_method="GET", @request_uri=#<Addressable::URI:0x2b1fa0aa5a88 URI:https://www.googleapis.com/storage/v1/b/yactivestorage/o/FpBpNqdSB8S1XZYtF8A1z2rP?>, @request_query=nil, @request_absolute_uri=nil, @status_code=404, @reason_phrase="Not Found", @body_type=nil, @body_charset=nil, @body_date=nil, @body_encoding=#<Encoding:UTF-8>, @is_request=false, @header_item=[["X-GUploader-UploadID", "AEnB2Ur0d5NIzqodjcmcfB112Fs_7WkVR_cTCQM-Dg22XX77GDvgTV3B-UNCpymQcJAtLju8kLw84NUjNoIrwEVAJjrmxS3ACg"], ["Vary", "Origin"], ["Vary", "X-Origin"], ["Content-Type", "application/json; charset=UTF-8"], ["Date", "Tue, 25 Sep 2018 21:38:12 GMT"], ["Expires", "Tue, 25 Sep 2018 21:38:12 GMT"], ["Cache-Control", "private, max-age=0"], ["Content-Length", "257"], ["Server", "UploadServer"], ["Alt-Svc", "quic=\":443\"; ma=2592000; v=\"44,43,39,35\""]], @dumped=false>, @peer_cert=#<OpenSSL::X509::Certificate: subject=#<OpenSSL::X509::Name CN=*.googleapis.com,O=Google LLC,L=Mountain View,ST=California,C=US>, issuer=#<OpenSSL::X509::Name CN=Google Internet Authority G3,O=Google Trust Services,C=US>, serial=#<OpenSSL::BN:0x0000563f4155e6b0>, not_before=2018-08-28 18:23:00 UTC, not_after=2018-11-20 18:23:00 UTC>, @http_body=#<HTTP::Message::Body:0x0000563f4154ab10 @body="{\n \"error\": {\n  \"errors\": [\n   {\n    \"domain\": \"global\",\n    \"reason\": \"notFound\",\n    \"message\": \"No such object: yactivestorage/FpBpNqdSB8S1XZYtF8A1z2rP\"\n   }\n  ],\n  \"code\": 404,\n  \"message\": \"No such object: yactivestorage/FpBpNqdSB8S1XZYtF8A1z2rP\"\n }\n}\n", @size=0, @positions=nil, @chunk_size=nil>, @previous=nil>
+Caught error notFound: No such object: yactivestorage/FpBpNqdSB8S1XZYtF8A1z2rP
+Error - #<Google::Apis::ClientError: notFound: No such object: yactivestorage/FpBpNqdSB8S1XZYtF8A1z2rP>
+
+-----------------------------------------------------
+ActiveStorage::Service::GCSServiceTest: test_existing
+-----------------------------------------------------
+Sending upload start command to https://www.googleapis.com/upload/storage/v1/b/yactivestorage/o?name=FpBpNqdSB8S1XZYtF8A1z2rP
+Upload status active
+Sending upload command to https://www.googleapis.com/upload/storage/v1/b/yactivestorage/o?name=FpBpNqdSB8S1XZYtF8A1z2rP&upload_id=AEnB2UpXjSq0vwiSh265QKBqUkVaNICnvGlRZIBkHh6u6U7w5BFbUYZ1WEEVM8o-xX1gSDN6RG9f-C6l0jKmKINI3iGu3XXj0g&upload_protocol=resumable
+Upload status final
+Success - #<Google::Apis::StorageV1::Object:0x0000563f415a8c60
+ @bucket="yactivestorage",
+ @content_type="application/octet-stream",
+ @crc32c="Gp+aiQ==",
+ @etag="COL2kOKO190CEAE=",
+ @generation=1537911493507938,
+ @id="yactivestorage/FpBpNqdSB8S1XZYtF8A1z2rP/1537911493507938",
+ @kind="storage#object",
+ @md5_hash="5M70xuJgN7z4FmkFIH6gmw==",
+ @media_link=
+  "https://www.googleapis.com/download/storage/v1/b/yactivestorage/o/FpBpNqdSB8S1XZYtF8A1z2rP?generation=1537911493507938&alt=media",
+ @metageneration=1,
+ @name="FpBpNqdSB8S1XZYtF8A1z2rP",
+ @self_link=
+  "https://www.googleapis.com/storage/v1/b/yactivestorage/o/FpBpNqdSB8S1XZYtF8A1z2rP",
+ @size=126,
+ @storage_class="MULTI_REGIONAL",
+ @time_created=Tue, 25 Sep 2018 21:38:13 +0000,
+ @time_storage_class_updated=Tue, 25 Sep 2018 21:38:13 +0000,
+ @updated=Tue, 25 Sep 2018 21:38:13 +0000>
+
+Sending HTTP get https://www.googleapis.com/storage/v1/b/yactivestorage/o/FpBpNqdSB8S1XZYtF8A1z2rP?
+200
+#<HTTP::Message:0x0000563f415d0dc8 @http_header=#<HTTP::Message::Headers:0x0000563f415d0da0 @http_version="1.1", @body_size=0, @chunked=false, @request_method="GET", @request_uri=#<Addressable::URI:0x2b1fa0ae8b94 URI:https://www.googleapis.com/storage/v1/b/yactivestorage/o/FpBpNqdSB8S1XZYtF8A1z2rP?>, @request_query=nil, @request_absolute_uri=nil, @status_code=200, @reason_phrase="OK", @body_type=nil, @body_charset=nil, @body_date=nil, @body_encoding=#<Encoding:UTF-8>, @is_request=false, @header_item=[["X-GUploader-UploadID", "AEnB2UprMKe-ICG7SrwnyUoc27zsMmiJ9FhYgd0ccjBpOx7sJrEqee_86Wxvd-eaavd2W_4d4VZYwBEgV2AnVb79JrM-jGkAHA"], ["ETag", "COL2kOKO190CEAE="], ["Vary", "Origin"], ["Vary", "X-Origin"], ["Content-Type", "application/json; charset=UTF-8"], ["Cache-Control", "no-cache, no-store, max-age=0, must-revalidate"], ["Pragma", "no-cache"], ["Expires", "Mon, 01 Jan 1990 00:00:00 GMT"], ["Date", "Tue, 25 Sep 2018 21:38:13 GMT"], ["Content-Length", "793"], ["Server", "UploadServer"], ["Alt-Svc", "quic=\":443\"; ma=2592000; v=\"44,43,39,35\""]], @dumped=false>, @peer_cert=#<OpenSSL::X509::Certificate: subject=#<OpenSSL::X509::Name CN=*.googleapis.com,O=Google LLC,L=Mountain View,ST=California,C=US>, issuer=#<OpenSSL::X509::Name CN=Google Internet Authority G3,O=Google Trust Services,C=US>, serial=#<OpenSSL::BN:0x0000563f415fbe38>, not_before=2018-08-28 18:23:00 UTC, not_after=2018-11-20 18:23:00 UTC>, @http_body=#<HTTP::Message::Body:0x0000563f415d0d28 @body="{\n \"kind\": \"storage#object\",\n \"id\": \"yactivestorage/FpBpNqdSB8S1XZYtF8A1z2rP/1537911493507938\",\n \"selfLink\": \"https://www.googleapis.com/storage/v1/b/yactivestorage/o/FpBpNqdSB8S1XZYtF8A1z2rP\",\n \"name\": \"FpBpNqdSB8S1XZYtF8A1z2rP\",\n \"bucket\": \"yactivestorage\",\n \"generation\": \"1537911493507938\",\n \"metageneration\": \"1\",\n \"contentType\": \"application/octet-stream\",\n \"timeCreated\": \"2018-09-25T21:38:13.507Z\",\n \"updated\": \"2018-09-25T21:38:13.507Z\",\n \"storageClass\": \"MULTI_REGIONAL\",\n \"timeStorageClassUpdated\": \"2018-09-25T21:38:13.507Z\",\n \"size\": \"126\",\n \"md5Hash\": \"5M70xuJgN7z4FmkFIH6gmw==\",\n \"mediaLink\": \"https://www.googleapis.com/download/storage/v1/b/yactivestorage/o/FpBpNqdSB8S1XZYtF8A1z2rP?generation=1537911493507938&alt=media\",\n \"crc32c\": \"Gp+aiQ==\",\n \"etag\": \"COL2kOKO190CEAE=\"\n}\n", @size=0, @positions=nil, @chunk_size=nil>, @previous=nil>
+Success - #<Google::Apis::StorageV1::Object:0x0000563f415fb708
+ @bucket="yactivestorage",
+ @content_type="application/octet-stream",
+ @crc32c="Gp+aiQ==",
+ @etag="COL2kOKO190CEAE=",
+ @generation=1537911493507938,
+ @id="yactivestorage/FpBpNqdSB8S1XZYtF8A1z2rP/1537911493507938",
+ @kind="storage#object",
+ @md5_hash="5M70xuJgN7z4FmkFIH6gmw==",
+ @media_link=
+  "https://www.googleapis.com/download/storage/v1/b/yactivestorage/o/FpBpNqdSB8S1XZYtF8A1z2rP?generation=1537911493507938&alt=media",
+ @metageneration=1,
+ @name="FpBpNqdSB8S1XZYtF8A1z2rP",
+ @self_link=
+  "https://www.googleapis.com/storage/v1/b/yactivestorage/o/FpBpNqdSB8S1XZYtF8A1z2rP",
+ @size=126,
+ @storage_class="MULTI_REGIONAL",
+ @time_created=Tue, 25 Sep 2018 21:38:13 +0000,
+ @time_storage_class_updated=Tue, 25 Sep 2018 21:38:13 +0000,
+ @updated=Tue, 25 Sep 2018 21:38:13 +0000>
+
+Sending HTTP get https://www.googleapis.com/storage/v1/b/yactivestorage/o/FpBpNqdSB8S1XZYtF8A1z2rPnonsense?
+404
+#<HTTP::Message:0x0000563f4161ccc8 @http_header=#<HTTP::Message::Headers:0x0000563f4161cca0 @http_version="1.1", @body_size=0, @chunked=false, @request_method="GET", @request_uri=#<Addressable::URI:0x2b1fa0b0eb14 URI:https://www.googleapis.com/storage/v1/b/yactivestorage/o/FpBpNqdSB8S1XZYtF8A1z2rPnonsense?>, @request_query=nil, @request_absolute_uri=nil, @status_code=404, @reason_phrase="Not Found", @body_type=nil, @body_charset=nil, @body_date=nil, @body_encoding=#<Encoding:UTF-8>, @is_request=false, @header_item=[["X-GUploader-UploadID", "AEnB2Uob83DO88xO4xXX-MyCTyc48Y_6GeWW1bUfHiN_v6k6KFeYKhJaSRufPSTYz0zoHwcPc0NbJ5LixslGdBvI4aiKPC83Kw"], ["Vary", "Origin"], ["Vary", "X-Origin"], ["Content-Type", "application/json; charset=UTF-8"], ["Date", "Tue, 25 Sep 2018 21:38:13 GMT"], ["Expires", "Tue, 25 Sep 2018 21:38:13 GMT"], ["Cache-Control", "private, max-age=0"], ["Content-Length", "273"], ["Server", "UploadServer"], ["Alt-Svc", "quic=\":443\"; ma=2592000; v=\"44,43,39,35\""]], @dumped=false>, @peer_cert=#<OpenSSL::X509::Certificate: subject=#<OpenSSL::X509::Name CN=*.googleapis.com,O=Google LLC,L=Mountain View,ST=California,C=US>, issuer=#<OpenSSL::X509::Name CN=Google Internet Authority G3,O=Google Trust Services,C=US>, serial=#<OpenSSL::BN:0x0000563f41628280>, not_before=2018-08-28 18:23:00 UTC, not_after=2018-11-20 18:23:00 UTC>, @http_body=#<HTTP::Message::Body:0x0000563f4161cc28 @body="{\n \"error\": {\n  \"errors\": [\n   {\n    \"domain\": \"global\",\n    \"reason\": \"notFound\",\n    \"message\": \"No such object: yactivestorage/FpBpNqdSB8S1XZYtF8A1z2rPnonsense\"\n   }\n  ],\n  \"code\": 404,\n  \"message\": \"No such object: yactivestorage/FpBpNqdSB8S1XZYtF8A1z2rPnonsense\"\n }\n}\n", @size=0, @positions=nil, @chunk_size=nil>, @previous=nil>
+Caught error notFound: No such object: yactivestorage/FpBpNqdSB8S1XZYtF8A1z2rPnonsense
+Error - #<Google::Apis::ClientError: notFound: No such object: yactivestorage/FpBpNqdSB8S1XZYtF8A1z2rPnonsense>
+
+Sending HTTP get https://www.googleapis.com/storage/v1/b/yactivestorage/o/FpBpNqdSB8S1XZYtF8A1z2rP?
+200
+#<HTTP::Message:0x0000563f4164f150 @http_header=#<HTTP::Message::Headers:0x0000563f4164f128 @http_version="1.1", @body_size=0, @chunked=false, @request_method="GET", @request_uri=#<Addressable::URI:0x2b1fa0b27d58 URI:https://www.googleapis.com/storage/v1/b/yactivestorage/o/FpBpNqdSB8S1XZYtF8A1z2rP?>, @request_query=nil, @request_absolute_uri=nil, @status_code=200, @reason_phrase="OK", @body_type=nil, @body_charset=nil, @body_date=nil, @body_encoding=#<Encoding:UTF-8>, @is_request=false, @header_item=[["X-GUploader-UploadID", "AEnB2Urlt9RBlgLHnKJxuDZ-Xt8dyUU_Bm2pdilYYknyQZYo8V-zi8srhp0HwmdbNbgq5lvJVIMw69f9xfBzVSdIp70dz1_R4w"], ["ETag", "COL2kOKO190CEAE="], ["Vary", "Origin"], ["Vary", "X-Origin"], ["Content-Type", "application/json; charset=UTF-8"], ["Cache-Control", "no-cache, no-store, max-age=0, must-revalidate"], ["Pragma", "no-cache"], ["Expires", "Mon, 01 Jan 1990 00:00:00 GMT"], ["Date", "Tue, 25 Sep 2018 21:38:14 GMT"], ["Content-Length", "793"], ["Server", "UploadServer"], ["Alt-Svc", "quic=\":443\"; ma=2592000; v=\"44,43,39,35\""]], @dumped=false>, @peer_cert=#<OpenSSL::X509::Certificate: subject=#<OpenSSL::X509::Name CN=*.googleapis.com,O=Google LLC,L=Mountain View,ST=California,C=US>, issuer=#<OpenSSL::X509::Name CN=Google Internet Authority G3,O=Google Trust Services,C=US>, serial=#<OpenSSL::BN:0x0000563f41662930>, not_before=2018-08-28 18:23:00 UTC, not_after=2018-11-20 18:23:00 UTC>, @http_body=#<HTTP::Message::Body:0x0000563f4164f0b0 @body="{\n \"kind\": \"storage#object\",\n \"id\": \"yactivestorage/FpBpNqdSB8S1XZYtF8A1z2rP/1537911493507938\",\n \"selfLink\": \"https://www.googleapis.com/storage/v1/b/yactivestorage/o/FpBpNqdSB8S1XZYtF8A1z2rP\",\n \"name\": \"FpBpNqdSB8S1XZYtF8A1z2rP\",\n \"bucket\": \"yactivestorage\",\n \"generation\": \"1537911493507938\",\n \"metageneration\": \"1\",\n \"contentType\": \"application/octet-stream\",\n \"timeCreated\": \"2018-09-25T21:38:13.507Z\",\n \"updated\": \"2018-09-25T21:38:13.507Z\",\n \"storageClass\": \"MULTI_REGIONAL\",\n \"timeStorageClassUpdated\": \"2018-09-25T21:38:13.507Z\",\n \"size\": \"126\",\n \"md5Hash\": \"5M70xuJgN7z4FmkFIH6gmw==\",\n \"mediaLink\": \"https://www.googleapis.com/download/storage/v1/b/yactivestorage/o/FpBpNqdSB8S1XZYtF8A1z2rP?generation=1537911493507938&alt=media\",\n \"crc32c\": \"Gp+aiQ==\",\n \"etag\": \"COL2kOKO190CEAE=\"\n}\n", @size=0, @positions=nil, @chunk_size=nil>, @previous=nil>
+Success - #<Google::Apis::StorageV1::Object:0x0000563f41662200
+ @bucket="yactivestorage",
+ @content_type="application/octet-stream",
+ @crc32c="Gp+aiQ==",
+ @etag="COL2kOKO190CEAE=",
+ @generation=1537911493507938,
+ @id="yactivestorage/FpBpNqdSB8S1XZYtF8A1z2rP/1537911493507938",
+ @kind="storage#object",
+ @md5_hash="5M70xuJgN7z4FmkFIH6gmw==",
+ @media_link=
+  "https://www.googleapis.com/download/storage/v1/b/yactivestorage/o/FpBpNqdSB8S1XZYtF8A1z2rP?generation=1537911493507938&alt=media",
+ @metageneration=1,
+ @name="FpBpNqdSB8S1XZYtF8A1z2rP",
+ @self_link=
+  "https://www.googleapis.com/storage/v1/b/yactivestorage/o/FpBpNqdSB8S1XZYtF8A1z2rP",
+ @size=126,
+ @storage_class="MULTI_REGIONAL",
+ @time_created=Tue, 25 Sep 2018 21:38:13 +0000,
+ @time_storage_class_updated=Tue, 25 Sep 2018 21:38:13 +0000,
+ @updated=Tue, 25 Sep 2018 21:38:13 +0000>
+
+Sending HTTP delete https://www.googleapis.com/storage/v1/b/yactivestorage/o/FpBpNqdSB8S1XZYtF8A1z2rP?
+204
+#<HTTP::Message:0x0000563f41691ca8 @http_header=#<HTTP::Message::Headers:0x0000563f41691c80 @http_version="1.1", @body_size=0, @chunked=false, @request_method="DELETE", @request_uri=#<Addressable::URI:0x2b1fa0b49304 URI:https://www.googleapis.com/storage/v1/b/yactivestorage/o/FpBpNqdSB8S1XZYtF8A1z2rP?>, @request_query=nil, @request_absolute_uri=nil, @status_code=204, @reason_phrase="No Content", @body_type=nil, @body_charset=nil, @body_date=nil, @body_encoding=#<Encoding:ASCII-8BIT>, @is_request=false, @header_item=[["X-GUploader-UploadID", "AEnB2Uoc6gTvFx6nqAtwKtcQLYQq6xrzQfNwMQPgZES2yYUGtpgmzlE-ppxypW8nWZh7DUhFRGswEKtfkWaqfOL1B0iJ_ybfxQ"], ["Vary", "Origin"], ["Vary", "X-Origin"], ["Content-Type", "application/json"], ["Cache-Control", "no-cache, no-store, max-age=0, must-revalidate"], ["Pragma", "no-cache"], ["Expires", "Mon, 01 Jan 1990 00:00:00 GMT"], ["Date", "Tue, 25 Sep 2018 21:38:14 GMT"], ["Content-Length", "0"], ["Server", "UploadServer"], ["Alt-Svc", "quic=\":443\"; ma=2592000; v=\"44,43,39,35\""]], @dumped=false>, @peer_cert=#<OpenSSL::X509::Certificate: subject=#<OpenSSL::X509::Name CN=*.googleapis.com,O=Google LLC,L=Mountain View,ST=California,C=US>, issuer=#<OpenSSL::X509::Name CN=Google Internet Authority G3,O=Google Trust Services,C=US>, serial=#<OpenSSL::BN:0x0000563f416a56b8>, not_before=2018-08-28 18:23:00 UTC, not_after=2018-11-20 18:23:00 UTC>, @http_body=#<HTTP::Message::Body:0x0000563f41691c08 @body="", @size=0, @positions=nil, @chunk_size=nil>, @previous=nil>
+Success - ""
+
+------------------------------------------------------------------
+ActiveStorage::Service::GCSServiceTest: test_signed_URL_generation
+------------------------------------------------------------------
+Sending upload start command to https://www.googleapis.com/upload/storage/v1/b/yactivestorage/o?name=FpBpNqdSB8S1XZYtF8A1z2rP
+Upload status active
+Sending upload command to https://www.googleapis.com/upload/storage/v1/b/yactivestorage/o?name=FpBpNqdSB8S1XZYtF8A1z2rP&upload_id=AEnB2Ur8KI83huHMDgFF0HGJequJM5-TWm_zewO4v41lEdGvCVE2pv5VUwBxIhphUaG80WCAQueGu_-cM3WCucO0OSri6U3J3w&upload_protocol=resumable
+Upload status final
+Success - #<Google::Apis::StorageV1::Object:0x0000563f416ed530
+ @bucket="yactivestorage",
+ @content_type="application/octet-stream",
+ @crc32c="Gp+aiQ==",
+ @etag="CKry6+KO190CEAE=",
+ @generation=1537911494998314,
+ @id="yactivestorage/FpBpNqdSB8S1XZYtF8A1z2rP/1537911494998314",
+ @kind="storage#object",
+ @md5_hash="5M70xuJgN7z4FmkFIH6gmw==",
+ @media_link=
+  "https://www.googleapis.com/download/storage/v1/b/yactivestorage/o/FpBpNqdSB8S1XZYtF8A1z2rP?generation=1537911494998314&alt=media",
+ @metageneration=1,
+ @name="FpBpNqdSB8S1XZYtF8A1z2rP",
+ @self_link=
+  "https://www.googleapis.com/storage/v1/b/yactivestorage/o/FpBpNqdSB8S1XZYtF8A1z2rP",
+ @size=126,
+ @storage_class="MULTI_REGIONAL",
+ @time_created=Tue, 25 Sep 2018 21:38:14 +0000,
+ @time_storage_class_updated=Tue, 25 Sep 2018 21:38:14 +0000,
+ @updated=Tue, 25 Sep 2018 21:38:14 +0000>
+
+Sending HTTP get https://www.googleapis.com/storage/v1/b/yactivestorage/o/FpBpNqdSB8S1XZYtF8A1z2rP?
+200
+#<HTTP::Message:0x0000563f41723f18 @http_header=#<HTTP::Message::Headers:0x0000563f41723ef0 @http_version="1.1", @body_size=0, @chunked=false, @request_method="GET", @request_uri=#<Addressable::URI:0x2b1f9fa57014 URI:https://www.googleapis.com/storage/v1/b/yactivestorage/o/FpBpNqdSB8S1XZYtF8A1z2rP?>, @request_query=nil, @request_absolute_uri=nil, @status_code=200, @reason_phrase="OK", @body_type=nil, @body_charset=nil, @body_date=nil, @body_encoding=#<Encoding:UTF-8>, @is_request=false, @header_item=[["X-GUploader-UploadID", "AEnB2Urdc8uW4EPaTBROI5xkwf-1ovecvNcynGA58kfps7vG7z23WoVxbw9u8vn-MjCPsSbQOgyWfPnYB_ScgPY-WdE-iJnZ8g"], ["ETag", "CKry6+KO190CEAE="], ["Vary", "Origin"], ["Vary", "X-Origin"], ["Content-Type", "application/json; charset=UTF-8"], ["Cache-Control", "no-cache, no-store, max-age=0, must-revalidate"], ["Pragma", "no-cache"], ["Expires", "Mon, 01 Jan 1990 00:00:00 GMT"], ["Date", "Tue, 25 Sep 2018 21:38:15 GMT"], ["Content-Length", "793"], ["Server", "UploadServer"], ["Alt-Svc", "quic=\":443\"; ma=2592000; v=\"44,43,39,35\""]], @dumped=false>, @peer_cert=#<OpenSSL::X509::Certificate: subject=#<OpenSSL::X509::Name CN=*.googleapis.com,O=Google LLC,L=Mountain View,ST=California,C=US>, issuer=#<OpenSSL::X509::Name CN=Google Internet Authority G3,O=Google Trust Services,C=US>, serial=#<OpenSSL::BN:0x0000563f41736a78>, not_before=2018-08-28 18:23:00 UTC, not_after=2018-11-20 18:23:00 UTC>, @http_body=#<HTTP::Message::Body:0x0000563f41723e78 @body="{\n \"kind\": \"storage#object\",\n \"id\": \"yactivestorage/FpBpNqdSB8S1XZYtF8A1z2rP/1537911494998314\",\n \"selfLink\": \"https://www.googleapis.com/storage/v1/b/yactivestorage/o/FpBpNqdSB8S1XZYtF8A1z2rP\",\n \"name\": \"FpBpNqdSB8S1XZYtF8A1z2rP\",\n \"bucket\": \"yactivestorage\",\n \"generation\": \"1537911494998314\",\n \"metageneration\": \"1\",\n \"contentType\": \"application/octet-stream\",\n \"timeCreated\": \"2018-09-25T21:38:14.997Z\",\n \"updated\": \"2018-09-25T21:38:14.997Z\",\n \"storageClass\": \"MULTI_REGIONAL\",\n \"timeStorageClassUpdated\": \"2018-09-25T21:38:14.997Z\",\n \"size\": \"126\",\n \"md5Hash\": \"5M70xuJgN7z4FmkFIH6gmw==\",\n \"mediaLink\": \"https://www.googleapis.com/download/storage/v1/b/yactivestorage/o/FpBpNqdSB8S1XZYtF8A1z2rP?generation=1537911494998314&alt=media\",\n \"crc32c\": \"Gp+aiQ==\",\n \"etag\": \"CKry6+KO190CEAE=\"\n}\n", @size=0, @positions=nil, @chunk_size=nil>, @previous=nil>
+Success - #<Google::Apis::StorageV1::Object:0x0000563f417362f8
+ @bucket="yactivestorage",
+ @content_type="application/octet-stream",
+ @crc32c="Gp+aiQ==",
+ @etag="CKry6+KO190CEAE=",
+ @generation=1537911494998314,
+ @id="yactivestorage/FpBpNqdSB8S1XZYtF8A1z2rP/1537911494998314",
+ @kind="storage#object",
+ @md5_hash="5M70xuJgN7z4FmkFIH6gmw==",
+ @media_link=
+  "https://www.googleapis.com/download/storage/v1/b/yactivestorage/o/FpBpNqdSB8S1XZYtF8A1z2rP?generation=1537911494998314&alt=media",
+ @metageneration=1,
+ @name="FpBpNqdSB8S1XZYtF8A1z2rP",
+ @self_link=
+  "https://www.googleapis.com/storage/v1/b/yactivestorage/o/FpBpNqdSB8S1XZYtF8A1z2rP",
+ @size=126,
+ @storage_class="MULTI_REGIONAL",
+ @time_created=Tue, 25 Sep 2018 21:38:14 +0000,
+ @time_storage_class_updated=Tue, 25 Sep 2018 21:38:14 +0000,
+ @updated=Tue, 25 Sep 2018 21:38:14 +0000>
+
+Sending HTTP get https://www.googleapis.com/storage/v1/b/yactivestorage/o/FpBpNqdSB8S1XZYtF8A1z2rP?
+200
+#<HTTP::Message:0x0000563f41764798 @http_header=#<HTTP::Message::Headers:0x0000563f41764770 @http_version="1.1", @body_size=0, @chunked=false, @request_method="GET", @request_uri=#<Addressable::URI:0x2b1fa0bb287c URI:https://www.googleapis.com/storage/v1/b/yactivestorage/o/FpBpNqdSB8S1XZYtF8A1z2rP?>, @request_query=nil, @request_absolute_uri=nil, @status_code=200, @reason_phrase="OK", @body_type=nil, @body_charset=nil, @body_date=nil, @body_encoding=#<Encoding:UTF-8>, @is_request=false, @header_item=[["X-GUploader-UploadID", "AEnB2UopvObyxzOPSsSKXM68jfphtPLiY8NGAdHFeE0O55f6UTsC4V9ndk21B1M-hdZl9Z8Q5Yv7zQl3-ZlLuUiy6HjfoO7rqw"], ["ETag", "CKry6+KO190CEAE="], ["Vary", "Origin"], ["Vary", "X-Origin"], ["Content-Type", "application/json; charset=UTF-8"], ["Cache-Control", "no-cache, no-store, max-age=0, must-revalidate"], ["Pragma", "no-cache"], ["Expires", "Mon, 01 Jan 1990 00:00:00 GMT"], ["Date", "Tue, 25 Sep 2018 21:38:15 GMT"], ["Content-Length", "793"], ["Server", "UploadServer"], ["Alt-Svc", "quic=\":443\"; ma=2592000; v=\"44,43,39,35\""]], @dumped=false>, @peer_cert=#<OpenSSL::X509::Certificate: subject=#<OpenSSL::X509::Name CN=*.googleapis.com,O=Google LLC,L=Mountain View,ST=California,C=US>, issuer=#<OpenSSL::X509::Name CN=Google Internet Authority G3,O=Google Trust Services,C=US>, serial=#<OpenSSL::BN:0x0000563f4178fb28>, not_before=2018-08-28 18:23:00 UTC, not_after=2018-11-20 18:23:00 UTC>, @http_body=#<HTTP::Message::Body:0x0000563f417646f8 @body="{\n \"kind\": \"storage#object\",\n \"id\": \"yactivestorage/FpBpNqdSB8S1XZYtF8A1z2rP/1537911494998314\",\n \"selfLink\": \"https://www.googleapis.com/storage/v1/b/yactivestorage/o/FpBpNqdSB8S1XZYtF8A1z2rP\",\n \"name\": \"FpBpNqdSB8S1XZYtF8A1z2rP\",\n \"bucket\": \"yactivestorage\",\n \"generation\": \"1537911494998314\",\n \"metageneration\": \"1\",\n \"contentType\": \"application/octet-stream\",\n \"timeCreated\": \"2018-09-25T21:38:14.997Z\",\n \"updated\": \"2018-09-25T21:38:14.997Z\",\n \"storageClass\": \"MULTI_REGIONAL\",\n \"timeStorageClassUpdated\": \"2018-09-25T21:38:14.997Z\",\n \"size\": \"126\",\n \"md5Hash\": \"5M70xuJgN7z4FmkFIH6gmw==\",\n \"mediaLink\": \"https://www.googleapis.com/download/storage/v1/b/yactivestorage/o/FpBpNqdSB8S1XZYtF8A1z2rP?generation=1537911494998314&alt=media\",\n \"crc32c\": \"Gp+aiQ==\",\n \"etag\": \"CKry6+KO190CEAE=\"\n}\n", @size=0, @positions=nil, @chunk_size=nil>, @previous=nil>
+Success - #<Google::Apis::StorageV1::Object:0x0000563f4178f3f8
+ @bucket="yactivestorage",
+ @content_type="application/octet-stream",
+ @crc32c="Gp+aiQ==",
+ @etag="CKry6+KO190CEAE=",
+ @generation=1537911494998314,
+ @id="yactivestorage/FpBpNqdSB8S1XZYtF8A1z2rP/1537911494998314",
+ @kind="storage#object",
+ @md5_hash="5M70xuJgN7z4FmkFIH6gmw==",
+ @media_link=
+  "https://www.googleapis.com/download/storage/v1/b/yactivestorage/o/FpBpNqdSB8S1XZYtF8A1z2rP?generation=1537911494998314&alt=media",
+ @metageneration=1,
+ @name="FpBpNqdSB8S1XZYtF8A1z2rP",
+ @self_link=
+  "https://www.googleapis.com/storage/v1/b/yactivestorage/o/FpBpNqdSB8S1XZYtF8A1z2rP",
+ @size=126,
+ @storage_class="MULTI_REGIONAL",
+ @time_created=Tue, 25 Sep 2018 21:38:14 +0000,
+ @time_storage_class_updated=Tue, 25 Sep 2018 21:38:14 +0000,
+ @updated=Tue, 25 Sep 2018 21:38:14 +0000>
+
+Sending HTTP delete https://www.googleapis.com/storage/v1/b/yactivestorage/o/FpBpNqdSB8S1XZYtF8A1z2rP?
+204
+#<HTTP::Message:0x0000563f417b2330 @http_header=#<HTTP::Message::Headers:0x0000563f417b2308 @http_version="1.1", @body_size=0, @chunked=false, @request_method="DELETE", @request_uri=#<Addressable::URI:0x2b1fa0bd9648 URI:https://www.googleapis.com/storage/v1/b/yactivestorage/o/FpBpNqdSB8S1XZYtF8A1z2rP?>, @request_query=nil, @request_absolute_uri=nil, @status_code=204, @reason_phrase="No Content", @body_type=nil, @body_charset=nil, @body_date=nil, @body_encoding=#<Encoding:ASCII-8BIT>, @is_request=false, @header_item=[["X-GUploader-UploadID", "AEnB2UpnwfuE45Ms4NPX5HkJbZF5LSqJ2yZRQJeXlwdHAqY5ZR19-_YZa94R4a6xet5QA0AUqAw2ejtodvahZxaxzu7pdFI6nA"], ["Vary", "Origin"], ["Vary", "X-Origin"], ["Content-Type", "application/json"], ["Cache-Control", "no-cache, no-store, max-age=0, must-revalidate"], ["Pragma", "no-cache"], ["Expires", "Mon, 01 Jan 1990 00:00:00 GMT"], ["Date", "Tue, 25 Sep 2018 21:38:15 GMT"], ["Content-Length", "0"], ["Server", "UploadServer"], ["Alt-Svc", "quic=\":443\"; ma=2592000; v=\"44,43,39,35\""]], @dumped=false>, @peer_cert=#<OpenSSL::X509::Certificate: subject=#<OpenSSL::X509::Name CN=*.googleapis.com,O=Google LLC,L=Mountain View,ST=California,C=US>, issuer=#<OpenSSL::X509::Name CN=Google Internet Authority G3,O=Google Trust Services,C=US>, serial=#<OpenSSL::BN:0x0000563f417c5de0>, not_before=2018-08-28 18:23:00 UTC, not_after=2018-11-20 18:23:00 UTC>, @http_body=#<HTTP::Message::Body:0x0000563f417b2290 @body="", @size=0, @positions=nil, @chunk_size=nil>, @previous=nil>
+Success - ""
+
+--------------------------------------------------------------------
+ActiveStorage::Service::S3ServiceTest: test_deleting_nonexistent_key
+--------------------------------------------------------------------
+----------------------------------------------------
+ActiveStorage::Service::S3ServiceTest: test_deleting
+----------------------------------------------------
+-----------------------------------------------------------------------
+ActiveStorage::Service::S3ServiceTest: test_uploading_without_integrity
+-----------------------------------------------------------------------
+----------------------------------------------------
+ActiveStorage::Service::S3ServiceTest: test_existing
+----------------------------------------------------
+---------------------------------------------------------
+ActiveStorage::Service::S3ServiceTest: test_direct_upload
+---------------------------------------------------------
+-----------------------------------------------------------------
+ActiveStorage::Service::S3ServiceTest: test_signed_URL_generation
+-----------------------------------------------------------------
+--------------------------------------------------------------------
+ActiveStorage::Service::S3ServiceTest: test_uploading_with_integrity
+--------------------------------------------------------------------
+-------------------------------------------------------
+ActiveStorage::Service::S3ServiceTest: test_downloading
+-------------------------------------------------------
+---------------------------------------------------------------------------------
+ActiveStorage::Service::S3ServiceTest: test_uploading_with_server-side_encryption
+---------------------------------------------------------------------------------
+------------------------------------------------------------------------------
+ActiveStorage::DiskControllerTest: test_directly_uploading_blob_with_integrity
+------------------------------------------------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "byte_size", "checksum", "created_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["key", "geLE2Btea25ywFZNQb3EeC5K"], ["filename", "hello.txt"], ["content_type", "text/plain"], ["byte_size", 24], ["checksum", "sijgElrNmNQBpuz2xn8X7Q=="], ["created_at", "2018-09-25 21:38:20.153893"]]
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+Started PUT "/rails/active_storage/disk/BAh7B0kiCnZhbHVlBjoGRVR7CToIa2V5SSIdZ2VMRTJCdGVhMjV5d0ZaTlFiM0VlQzVLBjsAVDoRY29udGVudF90eXBlSSIPdGV4dC9wbGFpbgY7AFQ6E2NvbnRlbnRfbGVuZ3RoaR06DWNoZWNrc3VtSSIdc2lqZ0Vsck5tTlFCcHV6MnhuOFg3UT09BjsARkkiC19yYWlscwY7AFR7B0kiCGV4cAY7AFRJIh0yMDE4LTA5LTI1VDIxOjQzOjIwLjE2NVoGOwBUSSIIcHVyBjsAVDoPYmxvYl90b2tlbg==--578a55b504c48fc568f316928893d6092df087d0" for 127.0.0.1 at 2018-09-26 06:38:20 +0900
+Processing by ActiveStorage::DiskController#update as HTML
+  Parameters: {"encoded_token"=>"BAh7B0kiCnZhbHVlBjoGRVR7CToIa2V5SSIdZ2VMRTJCdGVhMjV5d0ZaTlFiM0VlQzVLBjsAVDoRY29udGVudF90eXBlSSIPdGV4dC9wbGFpbgY7AFQ6E2NvbnRlbnRfbGVuZ3RoaR06DWNoZWNrc3VtSSIdc2lqZ0Vsck5tTlFCcHV6MnhuOFg3UT09BjsARkkiC19yYWlscwY7AFR7B0kiCGV4cAY7AFRJIh0yMDE4LTA5LTI1VDIxOjQzOjIwLjE2NVoGOwBUSSIIcHVyBjsAVDoPYmxvYl90b2tlbg==--578a55b504c48fc568f316928893d6092df087d0"}
+No template found for ActiveStorage::DiskController#update, rendering head :no_content
+Completed 204 No Content in 4ms (ActiveRecord: 0.0ms)
+
+
+----------------------------------------------------------------------------------------------
+ActiveStorage::DiskControllerTest: test_directly_uploading_blob_with_mismatched_content_length
+----------------------------------------------------------------------------------------------
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "byte_size", "checksum", "created_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["key", "4q84vfLmnGafQLAcCskkaGcY"], ["filename", "hello.txt"], ["content_type", "text/plain"], ["byte_size", 23], ["checksum", "sijgElrNmNQBpuz2xn8X7Q=="], ["created_at", "2018-09-25 21:38:20.228000"]]
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+Started PUT "/rails/active_storage/disk/BAh7B0kiCnZhbHVlBjoGRVR7CToIa2V5SSIdNHE4NHZmTG1uR2FmUUxBY0Nza2thR2NZBjsAVDoRY29udGVudF90eXBlSSIPdGV4dC9wbGFpbgY7AFQ6E2NvbnRlbnRfbGVuZ3RoaRw6DWNoZWNrc3VtSSIdc2lqZ0Vsck5tTlFCcHV6MnhuOFg3UT09BjsARkkiC19yYWlscwY7AFR7B0kiCGV4cAY7AFRJIh0yMDE4LTA5LTI1VDIxOjQzOjIwLjIyOFoGOwBUSSIIcHVyBjsAVDoPYmxvYl90b2tlbg==--fc02e3a22b61aa42b803a9867cd0873018b77fbe" for 127.0.0.1 at 2018-09-26 06:38:20 +0900
+Processing by ActiveStorage::DiskController#update as HTML
+  Parameters: {"encoded_token"=>"BAh7B0kiCnZhbHVlBjoGRVR7CToIa2V5SSIdNHE4NHZmTG1uR2FmUUxBY0Nza2thR2NZBjsAVDoRY29udGVudF90eXBlSSIPdGV4dC9wbGFpbgY7AFQ6E2NvbnRlbnRfbGVuZ3RoaRw6DWNoZWNrc3VtSSIdc2lqZ0Vsck5tTlFCcHV6MnhuOFg3UT09BjsARkkiC19yYWlscwY7AFR7B0kiCGV4cAY7AFRJIh0yMDE4LTA5LTI1VDIxOjQzOjIwLjIyOFoGOwBUSSIIcHVyBjsAVDoPYmxvYl90b2tlbg==--fc02e3a22b61aa42b803a9867cd0873018b77fbe"}
+Completed 422 Unprocessable Entity in 0ms (ActiveRecord: 0.0ms)
+
+
+------------------------------------------------------------------
+ActiveStorage::DiskControllerTest: test_showing_blob_as_attachment
+------------------------------------------------------------------
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "byte_size", "checksum", "created_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["key", "M51wQYGRbtAhYjDdszwsuhd7"], ["filename", "hello.txt"], ["content_type", "text/plain"], ["byte_size", 12], ["checksum", "hvsmnRkNLIX24EaM7KQqIA=="], ["created_at", "2018-09-25 21:38:20.231619"]]
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/rails/active_storage/disk/BAh7B0kiCnZhbHVlBjoGRVRJIh1NNTF3UVlHUmJ0QWhZakRkc3p3c3VoZDcGOwBUSSILX3JhaWxzBjsAVHsHSSIIZXhwBjsAVEkiHTIwMTgtMDktMjVUMjE6NDM6MjAuMjMyWgY7AFRJIghwdXIGOwBUOg1ibG9iX2tleQ==--de2631f8cb70f13a7ae0579a7f8172351db9ad6e/hello.txt?content_type=text%2Fplain&disposition=attachment" for 127.0.0.1 at 2018-09-26 06:38:20 +0900
+Processing by ActiveStorage::DiskController#show as TEXT
+  Parameters: {"content_type"=>"text/plain", "disposition"=>"attachment", "encoded_key"=>"BAh7B0kiCnZhbHVlBjoGRVRJIh1NNTF3UVlHUmJ0QWhZakRkc3p3c3VoZDcGOwBUSSILX3JhaWxzBjsAVHsHSSIIZXhwBjsAVEkiHTIwMTgtMDktMjVUMjE6NDM6MjAuMjMyWgY7AFRJIghwdXIGOwBUOg1ibG9iX2tleQ==--de2631f8cb70f13a7ae0579a7f8172351db9ad6e", "filename"=>"hello"}
+  Rendering text template
+  Rendered text template (0.0ms)
+Sent data hello (1.8ms)
+Completed 200 OK in 2ms (Views: 1.7ms | ActiveRecord: 0.0ms)
+
+
+-----------------------------------------------------------
+ActiveStorage::DiskControllerTest: test_showing_blob_inline
+-----------------------------------------------------------
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "byte_size", "checksum", "created_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["key", "8tk5kPYyJf3mjsRyrMWRymHi"], ["filename", "hello.txt"], ["content_type", "text/plain"], ["byte_size", 12], ["checksum", "hvsmnRkNLIX24EaM7KQqIA=="], ["created_at", "2018-09-25 21:38:20.237648"]]
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/rails/active_storage/disk/BAh7B0kiCnZhbHVlBjoGRVRJIh04dGs1a1BZeUpmM21qc1J5ck1XUnltSGkGOwBUSSILX3JhaWxzBjsAVHsHSSIIZXhwBjsAVEkiHTIwMTgtMDktMjVUMjE6NDM6MjAuMjM4WgY7AFRJIghwdXIGOwBUOg1ibG9iX2tleQ==--f97ef9276bf212b7bf6e4f42eb9ee1043b62e2c9/hello.txt?content_type=text%2Fplain&disposition=inline" for 127.0.0.1 at 2018-09-26 06:38:20 +0900
+Processing by ActiveStorage::DiskController#show as TEXT
+  Parameters: {"content_type"=>"text/plain", "disposition"=>"inline", "encoded_key"=>"BAh7B0kiCnZhbHVlBjoGRVRJIh04dGs1a1BZeUpmM21qc1J5ck1XUnltSGkGOwBUSSILX3JhaWxzBjsAVHsHSSIIZXhwBjsAVEkiHTIwMTgtMDktMjVUMjE6NDM6MjAuMjM4WgY7AFRJIghwdXIGOwBUOg1ibG9iX2tleQ==--f97ef9276bf212b7bf6e4f42eb9ee1043b62e2c9", "filename"=>"hello"}
+  Rendering text template
+  Rendered text template (0.0ms)
+Sent data hello (0.3ms)
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+--------------------------------------------------------------------------------------------
+ActiveStorage::DiskControllerTest: test_directly_uploading_blob_with_mismatched_content_type
+--------------------------------------------------------------------------------------------
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "byte_size", "checksum", "created_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["key", "9uGu3Z8r2Em4zzMegcKQhzjJ"], ["filename", "hello.txt"], ["content_type", "text/plain"], ["byte_size", 24], ["checksum", "sijgElrNmNQBpuz2xn8X7Q=="], ["created_at", "2018-09-25 21:38:20.241583"]]
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+Started PUT "/rails/active_storage/disk/BAh7B0kiCnZhbHVlBjoGRVR7CToIa2V5SSIdOXVHdTNaOHIyRW00enpNZWdjS1FoempKBjsAVDoRY29udGVudF90eXBlSSIPdGV4dC9wbGFpbgY7AFQ6E2NvbnRlbnRfbGVuZ3RoaR06DWNoZWNrc3VtSSIdc2lqZ0Vsck5tTlFCcHV6MnhuOFg3UT09BjsARkkiC19yYWlscwY7AFR7B0kiCGV4cAY7AFRJIh0yMDE4LTA5LTI1VDIxOjQzOjIwLjI0MloGOwBUSSIIcHVyBjsAVDoPYmxvYl90b2tlbg==--7905575f528586f76679a4c8db514166c4555841" for 127.0.0.1 at 2018-09-26 06:38:20 +0900
+Processing by ActiveStorage::DiskController#update as HTML
+  Parameters: {"encoded_token"=>"BAh7B0kiCnZhbHVlBjoGRVR7CToIa2V5SSIdOXVHdTNaOHIyRW00enpNZWdjS1FoempKBjsAVDoRY29udGVudF90eXBlSSIPdGV4dC9wbGFpbgY7AFQ6E2NvbnRlbnRfbGVuZ3RoaR06DWNoZWNrc3VtSSIdc2lqZ0Vsck5tTlFCcHV6MnhuOFg3UT09BjsARkkiC19yYWlscwY7AFR7B0kiCGV4cAY7AFRJIh0yMDE4LTA5LTI1VDIxOjQzOjIwLjI0MloGOwBUSSIIcHVyBjsAVDoPYmxvYl90b2tlbg==--7905575f528586f76679a4c8db514166c4555841"}
+Completed 422 Unprocessable Entity in 0ms (ActiveRecord: 0.0ms)
+
+
+---------------------------------------------------------------------------------
+ActiveStorage::DiskControllerTest: test_directly_uploading_blob_without_integrity
+---------------------------------------------------------------------------------
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "byte_size", "checksum", "created_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["key", "VmjM7SfanU66sxy8vWerMis6"], ["filename", "hello.txt"], ["content_type", "text/plain"], ["byte_size", 24], ["checksum", "H1yIugmHOto4ENGxvf9/Zw=="], ["created_at", "2018-09-25 21:38:20.245524"]]
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+Started PUT "/rails/active_storage/disk/BAh7B0kiCnZhbHVlBjoGRVR7CToIa2V5SSIdVm1qTTdTZmFuVTY2c3h5OHZXZXJNaXM2BjsAVDoRY29udGVudF90eXBlSSIPdGV4dC9wbGFpbgY7AFQ6E2NvbnRlbnRfbGVuZ3RoaR06DWNoZWNrc3VtSSIdSDF5SXVnbUhPdG80RU5HeHZmOS9adz09BjsARkkiC19yYWlscwY7AFR7B0kiCGV4cAY7AFRJIh0yMDE4LTA5LTI1VDIxOjQzOjIwLjI0NloGOwBUSSIIcHVyBjsAVDoPYmxvYl90b2tlbg==--a04314b4eb88cd69971de185bb26c2002da34cdd" for 127.0.0.1 at 2018-09-26 06:38:20 +0900
+Processing by ActiveStorage::DiskController#update as HTML
+  Parameters: {"Something else entirely!"=>nil, "encoded_token"=>"BAh7B0kiCnZhbHVlBjoGRVR7CToIa2V5SSIdVm1qTTdTZmFuVTY2c3h5OHZXZXJNaXM2BjsAVDoRY29udGVudF90eXBlSSIPdGV4dC9wbGFpbgY7AFQ6E2NvbnRlbnRfbGVuZ3RoaR06DWNoZWNrc3VtSSIdSDF5SXVnbUhPdG80RU5HeHZmOS9adz09BjsARkkiC19yYWlscwY7AFR7B0kiCGV4cAY7AFRJIh0yMDE4LTA5LTI1VDIxOjQzOjIwLjI0NloGOwBUSSIIcHVyBjsAVDoPYmxvYl90b2tlbg==--a04314b4eb88cd69971de185bb26c2002da34cdd"}
+Completed 422 Unprocessable Entity in 0ms (ActiveRecord: 0.0ms)
+
+
+-------------------------------------------------------------------------------
+ActiveStorage::DiskDirectUploadsControllerTest: test_creating_new_direct_upload
+-------------------------------------------------------------------------------
+Started POST "/rails/active_storage/direct_uploads" for 127.0.0.1 at 2018-09-26 06:38:20 +0900
+Processing by ActiveStorage::DirectUploadsController#create as HTML
+  Parameters: {"blob"=>{"filename"=>"hello.txt", "byte_size"=>"6", "checksum"=>"ixqZU8RhEpaoJ6v4xHgE1w==", "content_type"=>"text/plain"}}
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "byte_size", "checksum", "created_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["key", "79QM2vfnGU5T8BUjEkApoe3R"], ["filename", "hello.txt"], ["content_type", "text/plain"], ["byte_size", 6], ["checksum", "ixqZU8RhEpaoJ6v4xHgE1w=="], ["created_at", "2018-09-25 21:38:20.256655"]]
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.2ms)
+
+
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+-----------------------------------------------------
+ActiveStorage::AttachmentsTest: test_attach_new_blobs
+-----------------------------------------------------
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "users" ("name") VALUES (?)[0m  [["name", "DHH"]]
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "byte_size", "checksum", "created_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["key", "HqwpDHBbcN6kCJuxQdNvhbS3"], ["filename", "town.jpg"], ["content_type", "image/jpg"], ["byte_size", 5], ["checksum", "vckNNU4TN7zbzl+o3tjXPQ=="], ["created_at", "2018-09-25 21:38:20.270377"]]
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("name", "record_type", "record_id", "blob_id", "created_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "highlights"], ["record_type", "User"], ["record_id", 1], ["blob_id", 8], ["created_at", "2018-09-25 21:38:20.281938"]]
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "byte_size", "checksum", "created_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["key", "73Hp549rYvHRGViLuBV4Tm4C"], ["filename", "country.jpg"], ["content_type", "image/jpg"], ["byte_size", 2], ["checksum", "zTIQa8tt4yGTDPNFdOo4jA=="], ["created_at", "2018-09-25 21:38:20.283680"]]
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("name", "record_type", "record_id", "blob_id", "created_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "highlights"], ["record_type", "User"], ["record_id", 1], ["blob_id", 9], ["created_at", "2018-09-25 21:38:20.287308"]]
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? ORDER BY "active_storage_attachments"."id" ASC LIMIT ?[0m  [["record_id", 1], ["record_type", "User"], ["name", "highlights"], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Blob Load (0.0ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? ORDER BY "active_storage_attachments"."id" ASC LIMIT ? OFFSET ?[0m  [["record_id", 1], ["record_type", "User"], ["name", "highlights"], ["LIMIT", 1], ["OFFSET", 1]]
+  [1m[36mActiveStorage::Blob Load (0.0ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs"[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[31mDELETE FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ?[0m  [["id", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[31mDELETE FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ?[0m  [["id", 2]]
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[31mDELETE FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ?[0m  [["id", 3]]
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[31mDELETE FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ?[0m  [["id", 4]]
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[31mDELETE FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ?[0m  [["id", 5]]
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[31mDELETE FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ?[0m  [["id", 6]]
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[31mDELETE FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ?[0m  [["id", 7]]
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[31mDELETE FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ?[0m  [["id", 8]]
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[31mDELETE FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ?[0m  [["id", 9]]
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+--------------------------------------------------------------
+ActiveStorage::AttachmentsTest: test_attach_existing_sgid_blob
+--------------------------------------------------------------
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "users" ("name") VALUES (?)[0m  [["name", "DHH"]]
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "byte_size", "checksum", "created_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["key", "oUUu7Sto4nLgxnvX45EtXyL9"], ["filename", "funky.jpg"], ["content_type", "text/plain"], ["byte_size", 12], ["checksum", "hvsmnRkNLIX24EaM7KQqIA=="], ["created_at", "2018-09-25 21:38:20.298392"]]
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveStorage::Blob Load (0.0ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("name", "record_type", "record_id", "blob_id", "created_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "avatar"], ["record_type", "User"], ["record_id", 2], ["blob_id", 10], ["created_at", "2018-09-25 21:38:20.300851"]]
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 2], ["record_type", "User"], ["name", "avatar"], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Blob Load (0.0ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs"[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[31mDELETE FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ?[0m  [["id", 10]]
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+-------------------------------------------------------------------------------------------
+ActiveStorage::AttachmentsTest: test_purge_attached_blob_later_when_the_record_is_destroyed
+-------------------------------------------------------------------------------------------
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "users" ("name") VALUES (?)[0m  [["name", "DHH"]]
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "byte_size", "checksum", "created_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["key", "XLY7cZcWbQbViuyidjdeia9Z"], ["filename", "funky.jpg"], ["content_type", "text/plain"], ["byte_size", 12], ["checksum", "hvsmnRkNLIX24EaM7KQqIA=="], ["created_at", "2018-09-25 21:38:20.305445"]]
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("name", "record_type", "record_id", "blob_id", "created_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "avatar"], ["record_type", "User"], ["record_id", 3], ["blob_id", 11], ["created_at", "2018-09-25 21:38:20.307549"]]
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveStorage::Attachment Load (0.0ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 3], ["record_type", "User"], ["name", "avatar"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[35mSQL (0.1ms)[0m  [1m[31mDELETE FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ?[0m  [["id", 11]]
+  [1m[35mSQL (0.1ms)[0m  [1m[31mDELETE FROM "active_storage_attachments" WHERE "active_storage_attachments"."id" = ?[0m  [["id", 4]]
+  [1m[36mActiveStorage::Attachment Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 3], ["record_type", "User"], ["name", "highlights"], ["LIMIT", 1]]
+  [1m[35mSQL (0.1ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 3]]
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."key" = ? LIMIT ?[0m  [["key", "XLY7cZcWbQbViuyidjdeia9Z"], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Blob Load (0.0ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs"[0m
+--------------------------------------------------------------------------------
+ActiveStorage::AttachmentsTest: test_access_underlying_associations_of_new_blobs
+--------------------------------------------------------------------------------
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "users" ("name") VALUES (?)[0m  [["name", "DHH"]]
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "byte_size", "checksum", "created_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["key", "K7PbvXY7P96bynrCUUyz6Rkb"], ["filename", "town.jpg"], ["content_type", "image/jpg"], ["byte_size", 5], ["checksum", "vckNNU4TN7zbzl+o3tjXPQ=="], ["created_at", "2018-09-25 21:38:20.320330"]]
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("name", "record_type", "record_id", "blob_id", "created_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "highlights"], ["record_type", "User"], ["record_id", 4], ["blob_id", 12], ["created_at", "2018-09-25 21:38:20.323968"]]
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "byte_size", "checksum", "created_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["key", "cZoBGVxgXy5FpEz7kGA8GhS3"], ["filename", "country.jpg"], ["content_type", "image/jpg"], ["byte_size", 2], ["checksum", "zTIQa8tt4yGTDPNFdOo4jA=="], ["created_at", "2018-09-25 21:38:20.325130"]]
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("name", "record_type", "record_id", "blob_id", "created_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "highlights"], ["record_type", "User"], ["record_id", 4], ["blob_id", 13], ["created_at", "2018-09-25 21:38:20.328836"]]
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? ORDER BY "active_storage_attachments"."id" ASC LIMIT ?[0m  [["record_id", 4], ["record_type", "User"], ["name", "highlights"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 4], ["record_type", "User"], ["name", "highlights"]]
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" INNER JOIN "active_storage_attachments" ON "active_storage_blobs"."id" = "active_storage_attachments"."blob_id" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 4], ["record_type", "User"], ["name", "highlights"]]
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs"[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[31mDELETE FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ?[0m  [["id", 12]]
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[31mDELETE FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ?[0m  [["id", 13]]
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+---------------------------------------------------------
+ActiveStorage::AttachmentsTest: test_attach_existing_blob
+---------------------------------------------------------
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "users" ("name") VALUES (?)[0m  [["name", "DHH"]]
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "byte_size", "checksum", "created_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["key", "PHu74oZaYxP7QGEdhJMd9AHG"], ["filename", "funky.jpg"], ["content_type", "text/plain"], ["byte_size", 12], ["checksum", "hvsmnRkNLIX24EaM7KQqIA=="], ["created_at", "2018-09-25 21:38:20.341272"]]
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("name", "record_type", "record_id", "blob_id", "created_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "avatar"], ["record_type", "User"], ["record_id", 5], ["blob_id", 14], ["created_at", "2018-09-25 21:38:20.343519"]]
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 5], ["record_type", "User"], ["name", "avatar"], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Blob Load (0.0ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs"[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[31mDELETE FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ?[0m  [["id", 14]]
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+----------------------------------------------------------
+ActiveStorage::AttachmentsTest: test_attach_existing_blobs
+----------------------------------------------------------
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "users" ("name") VALUES (?)[0m  [["name", "DHH"]]
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "byte_size", "checksum", "created_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["key", "fWmbneJmbKoNAKkMMwmTNrvQ"], ["filename", "funky.jpg"], ["content_type", "text/plain"], ["byte_size", 12], ["checksum", "hvsmnRkNLIX24EaM7KQqIA=="], ["created_at", "2018-09-25 21:38:20.348347"]]
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "byte_size", "checksum", "created_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["key", "An6AMGJpdDNESGGT9Ueu5mEs"], ["filename", "wonky.jpg"], ["content_type", "text/plain"], ["byte_size", 12], ["checksum", "hvsmnRkNLIX24EaM7KQqIA=="], ["created_at", "2018-09-25 21:38:20.349621"]]
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("name", "record_type", "record_id", "blob_id", "created_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "highlights"], ["record_type", "User"], ["record_id", 6], ["blob_id", 15], ["created_at", "2018-09-25 21:38:20.353448"]]
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("name", "record_type", "record_id", "blob_id", "created_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "highlights"], ["record_type", "User"], ["record_id", 6], ["blob_id", 16], ["created_at", "2018-09-25 21:38:20.356412"]]
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? ORDER BY "active_storage_attachments"."id" ASC LIMIT ?[0m  [["record_id", 6], ["record_type", "User"], ["name", "highlights"], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? ORDER BY "active_storage_attachments"."id" ASC LIMIT ? OFFSET ?[0m  [["record_id", 6], ["record_type", "User"], ["name", "highlights"], ["LIMIT", 1], ["OFFSET", 1]]
+  [1m[36mActiveStorage::Blob Load (0.0ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Blob Load (0.0ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs"[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[31mDELETE FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ?[0m  [["id", 15]]
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[31mDELETE FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ?[0m  [["id", 16]]
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+----------------------------------------------------
+ActiveStorage::AttachmentsTest: test_attach_new_blob
+----------------------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "users" ("name") VALUES (?)[0m  [["name", "DHH"]]
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "byte_size", "checksum", "created_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["key", "4rYaXs5vToCFLBmFUwUJWUjr"], ["filename", "town.jpg"], ["content_type", "image/jpg"], ["byte_size", 5], ["checksum", "vckNNU4TN7zbzl+o3tjXPQ=="], ["created_at", "2018-09-25 21:38:20.363486"]]
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("name", "record_type", "record_id", "blob_id", "created_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "avatar"], ["record_type", "User"], ["record_id", 7], ["blob_id", 17], ["created_at", "2018-09-25 21:38:20.365750"]]
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveStorage::Attachment Load (0.0ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 7], ["record_type", "User"], ["name", "avatar"], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Blob Load (0.0ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs"[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[31mDELETE FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ?[0m  [["id", 17]]
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+---------------------------------------------------------
+ActiveStorage::AttachmentsTest: test_purge_attached_blobs
+---------------------------------------------------------
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "users" ("name") VALUES (?)[0m  [["name", "DHH"]]
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "byte_size", "checksum", "created_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["key", "8rzDhtn7aRpUAMtNXNBPfhFG"], ["filename", "funky.jpg"], ["content_type", "text/plain"], ["byte_size", 12], ["checksum", "hvsmnRkNLIX24EaM7KQqIA=="], ["created_at", "2018-09-25 21:38:20.370950"]]
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "byte_size", "checksum", "created_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["key", "U9ymHh1Wnq7wrpee2Wt2e6P7"], ["filename", "wonky.jpg"], ["content_type", "text/plain"], ["byte_size", 12], ["checksum", "hvsmnRkNLIX24EaM7KQqIA=="], ["created_at", "2018-09-25 21:38:20.372413"]]
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("name", "record_type", "record_id", "blob_id", "created_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "highlights"], ["record_type", "User"], ["record_id", 8], ["blob_id", 18], ["created_at", "2018-09-25 21:38:20.377549"]]
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("name", "record_type", "record_id", "blob_id", "created_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "highlights"], ["record_type", "User"], ["record_id", 8], ["blob_id", 19], ["created_at", "2018-09-25 21:38:20.381285"]]
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveStorage::Attachment Load (0.0ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 8], ["record_type", "User"], ["name", "highlights"]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[31mDELETE FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ?[0m  [["id", 18]]
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[31mDELETE FROM "active_storage_attachments" WHERE "active_storage_attachments"."id" = ?[0m  [["id", 11]]
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[31mDELETE FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ?[0m  [["id", 19]]
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[31mDELETE FROM "active_storage_attachments" WHERE "active_storage_attachments"."id" = ?[0m  [["id", 12]]
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveStorage::Attachment Load (0.0ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 8], ["record_type", "User"], ["name", "highlights"]]
+  [1m[36mActiveStorage::Blob Load (0.0ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs"[0m
+-------------------------------------------------------------------------------
+ActiveStorage::AttachmentsTest: test_access_underlying_associations_of_new_blob
+-------------------------------------------------------------------------------
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "users" ("name") VALUES (?)[0m  [["name", "DHH"]]
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "byte_size", "checksum", "created_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["key", "gTfUPaUCaCBCuLevr22au9fD"], ["filename", "funky.jpg"], ["content_type", "text/plain"], ["byte_size", 12], ["checksum", "hvsmnRkNLIX24EaM7KQqIA=="], ["created_at", "2018-09-25 21:38:20.390750"]]
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("name", "record_type", "record_id", "blob_id", "created_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "avatar"], ["record_type", "User"], ["record_id", 9], ["blob_id", 20], ["created_at", "2018-09-25 21:38:20.393388"]]
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 9], ["record_type", "User"], ["name", "avatar"], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" INNER JOIN "active_storage_attachments" ON "active_storage_blobs"."id" = "active_storage_attachments"."blob_id" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 9], ["record_type", "User"], ["name", "avatar"], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Blob Load (0.0ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs"[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[31mDELETE FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ?[0m  [["id", 20]]
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+--------------------------------------------------------
+ActiveStorage::AttachmentsTest: test_find_attached_blobs
+--------------------------------------------------------
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "users" ("name") VALUES (?)[0m  [["name", "DHH"]]
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "byte_size", "checksum", "created_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["key", "3U2PQm8jY6SPh3ZffcCiJJb2"], ["filename", "town.jpg"], ["content_type", "image/jpg"], ["byte_size", 5], ["checksum", "vckNNU4TN7zbzl+o3tjXPQ=="], ["created_at", "2018-09-25 21:38:20.400635"]]
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("name", "record_type", "record_id", "blob_id", "created_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "highlights"], ["record_type", "User"], ["record_id", 10], ["blob_id", 21], ["created_at", "2018-09-25 21:38:20.404461"]]
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "byte_size", "checksum", "created_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["key", "4QMBk2oHt3kn4T4xCcS8WrDH"], ["filename", "country.jpg"], ["content_type", "image/jpg"], ["byte_size", 2], ["checksum", "zTIQa8tt4yGTDPNFdOo4jA=="], ["created_at", "2018-09-25 21:38:20.405576"]]
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("name", "record_type", "record_id", "blob_id", "created_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "highlights"], ["record_type", "User"], ["record_id", 10], ["blob_id", 22], ["created_at", "2018-09-25 21:38:20.409492"]]
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? AND "active_storage_attachments"."record_id" = ?[0m  [["record_type", "User"], ["name", "highlights"], ["record_id", 10]]
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" IN (21, 22)[0m
+  [1m[36mActiveStorage::Blob Load (0.0ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs"[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[31mDELETE FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ?[0m  [["id", 21]]
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[31mDELETE FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ?[0m  [["id", 22]]
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+--------------------------------------------------------
+ActiveStorage::AttachmentsTest: test_purge_attached_blob
+--------------------------------------------------------
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "users" ("name") VALUES (?)[0m  [["name", "DHH"]]
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "byte_size", "checksum", "created_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["key", "UuKZCDSvK5dTbUduv77wj7wv"], ["filename", "funky.jpg"], ["content_type", "text/plain"], ["byte_size", 12], ["checksum", "hvsmnRkNLIX24EaM7KQqIA=="], ["created_at", "2018-09-25 21:38:20.419923"]]
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("name", "record_type", "record_id", "blob_id", "created_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "avatar"], ["record_type", "User"], ["record_id", 11], ["blob_id", 23], ["created_at", "2018-09-25 21:38:20.422041"]]
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 11], ["record_type", "User"], ["name", "avatar"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[31mDELETE FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ?[0m  [["id", 23]]
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[31mDELETE FROM "active_storage_attachments" WHERE "active_storage_attachments"."id" = ?[0m  [["id", 16]]
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveStorage::Blob Load (0.0ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs"[0m
+--------------------------------------------------------------------------------------------
+ActiveStorage::AttachmentsTest: test_purge_attached_blobs_later_when_the_record_is_destroyed
+--------------------------------------------------------------------------------------------
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "users" ("name") VALUES (?)[0m  [["name", "DHH"]]
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "byte_size", "checksum", "created_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["key", "fyPxY4btGW2n4f1baApwREhJ"], ["filename", "funky.jpg"], ["content_type", "text/plain"], ["byte_size", 12], ["checksum", "hvsmnRkNLIX24EaM7KQqIA=="], ["created_at", "2018-09-25 21:38:20.427189"]]
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "byte_size", "checksum", "created_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["key", "NQsBTcHQCpMhdU4FBvLo4SYG"], ["filename", "wonky.jpg"], ["content_type", "text/plain"], ["byte_size", 12], ["checksum", "hvsmnRkNLIX24EaM7KQqIA=="], ["created_at", "2018-09-25 21:38:20.428711"]]
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("name", "record_type", "record_id", "blob_id", "created_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "highlights"], ["record_type", "User"], ["record_id", 12], ["blob_id", 24], ["created_at", "2018-09-25 21:38:20.432680"]]
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("name", "record_type", "record_id", "blob_id", "created_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "highlights"], ["record_type", "User"], ["record_id", 12], ["blob_id", 25], ["created_at", "2018-09-25 21:38:20.435768"]]
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveStorage::Attachment Load (0.0ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 12], ["record_type", "User"], ["name", "highlights"]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 12], ["record_type", "User"], ["name", "avatar"], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."id" = ? LIMIT ?[0m  [["id", 17], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 24], ["LIMIT", 1]]
+  [1m[35mSQL (0.1ms)[0m  [1m[31mDELETE FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ?[0m  [["id", 24]]
+  [1m[35mSQL (0.1ms)[0m  [1m[31mDELETE FROM "active_storage_attachments" WHERE "active_storage_attachments"."id" = ?[0m  [["id", 17]]
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."id" = ? LIMIT ?[0m  [["id", 18], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 25], ["LIMIT", 1]]
+  [1m[35mSQL (0.1ms)[0m  [1m[31mDELETE FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ?[0m  [["id", 25]]
+  [1m[35mSQL (0.1ms)[0m  [1m[31mDELETE FROM "active_storage_attachments" WHERE "active_storage_attachments"."id" = ?[0m  [["id", 18]]
+  [1m[35mSQL (0.1ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 12]]
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveStorage::Blob Load (0.0ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."key" = ? LIMIT ?[0m  [["key", "fyPxY4btGW2n4f1baApwREhJ"], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Blob Load (0.0ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."key" = ? LIMIT ?[0m  [["key", "NQsBTcHQCpMhdU4FBvLo4SYG"], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Blob Load (0.0ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs"[0m
+-----------------------------------------------------------------
+ActiveStorage::VariantTest: test_resized_and_monochrome_variation
+-----------------------------------------------------------------
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "byte_size", "checksum", "created_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["key", "sqd33M9vK3JV3jABo3zADgaL"], ["filename", "racecar.jpg"], ["content_type", "image/jpeg"], ["byte_size", 1124062], ["checksum", "7GjDDNEQb4mzMzsW+MS0JQ=="], ["created_at", "2018-09-25 21:38:20.453809"]]
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+--------------------------------------------------
+ActiveStorage::VariantTest: test_resized_variation
+--------------------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "byte_size", "checksum", "created_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["key", "Pb6phu9CwAhV2jTvZR9T3RkS"], ["filename", "racecar.jpg"], ["content_type", "image/jpeg"], ["byte_size", 1124062], ["checksum", "7GjDDNEQb4mzMzsW+MS0JQ=="], ["created_at", "2018-09-25 21:38:20.765575"]]
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+------------------------------------------------------------------------------
+ActiveStorage::GCSDirectUploadsControllerTest: test_creating_new_direct_upload
+------------------------------------------------------------------------------
+Sending HTTP get https://www.googleapis.com/storage/v1/b/yactivestorage?
+200
+#<HTTP::Message:0x0000563f4149d780 @http_header=#<HTTP::Message::Headers:0x0000563f4149d758 @http_version="1.1", @body_size=0, @chunked=false, @request_method="GET", @request_uri=#<Addressable::URI:0x2b1fa0a4f174 URI:https://www.googleapis.com/storage/v1/b/yactivestorage?>, @request_query=nil, @request_absolute_uri=nil, @status_code=200, @reason_phrase="OK", @body_type=nil, @body_charset=nil, @body_date=nil, @body_encoding=#<Encoding:UTF-8>, @is_request=false, @header_item=[["X-GUploader-UploadID", "AEnB2Ur9puJd2MF72oHpQ3EFSbYeZhX9wmI1W-PtZqEgVwXQcrVG-RrS2CHAhrVzZq-LmTN-E7j16pRshYabhtKGI-hMw_GU3g"], ["ETag", "CAE="], ["Vary", "Origin"], ["Vary", "X-Origin"], ["Content-Type", "application/json; charset=UTF-8"], ["Expires", "Tue, 25 Sep 2018 21:38:21 GMT"], ["Date", "Tue, 25 Sep 2018 21:38:21 GMT"], ["Cache-Control", "private, max-age=0, must-revalidate, no-transform"], ["Content-Length", "368"], ["Server", "UploadServer"], ["Alt-Svc", "quic=\":443\"; ma=2592000; v=\"44,43,39,35\""]], @dumped=false>, @peer_cert=#<OpenSSL::X509::Certificate: subject=#<OpenSSL::X509::Name CN=*.googleapis.com,O=Google LLC,L=Mountain View,ST=California,C=US>, issuer=#<OpenSSL::X509::Name CN=Google Internet Authority G3,O=Google Trust Services,C=US>, serial=#<OpenSSL::BN:0x0000563f41476ea0>, not_before=2018-08-28 18:23:00 UTC, not_after=2018-11-20 18:23:00 UTC>, @http_body=#<HTTP::Message::Body:0x0000563f4149d6e0 @body="{\n \"kind\": \"storage#bucket\",\n \"id\": \"yactivestorage\",\n \"selfLink\": \"https://www.googleapis.com/storage/v1/b/yactivestorage\",\n \"projectNumber\": \"392169281946\",\n \"name\": \"yactivestorage\",\n \"timeCreated\": \"2018-08-22T07:28:27.436Z\",\n \"updated\": \"2018-08-22T07:28:27.436Z\",\n \"metageneration\": \"1\",\n \"location\": \"ASIA\",\n \"storageClass\": \"MULTI_REGIONAL\",\n \"etag\": \"CAE=\"\n}\n", @size=0, @positions=nil, @chunk_size=nil>, @previous=nil>
+Success - #<Google::Apis::StorageV1::Bucket:0x0000563f41476658
+ @etag="CAE=",
+ @id="yactivestorage",
+ @kind="storage#bucket",
+ @location="ASIA",
+ @metageneration=1,
+ @name="yactivestorage",
+ @project_number=392169281946,
+ @self_link="https://www.googleapis.com/storage/v1/b/yactivestorage",
+ @storage_class="MULTI_REGIONAL",
+ @time_created=Wed, 22 Aug 2018 07:28:27 +0000,
+ @updated=Wed, 22 Aug 2018 07:28:27 +0000>
+
+Started POST "/rails/active_storage/direct_uploads" for 127.0.0.1 at 2018-09-26 06:38:21 +0900
+Processing by ActiveStorage::DirectUploadsController#create as HTML
+  Parameters: {"blob"=>{"filename"=>"hello.txt", "byte_size"=>"6", "checksum"=>"ixqZU8RhEpaoJ6v4xHgE1w==", "content_type"=>"text/plain"}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "byte_size", "checksum", "created_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["key", "UAWYKUwFMVw3nWqri85XbJ6q"], ["filename", "hello.txt"], ["content_type", "text/plain"], ["byte_size", 6], ["checksum", "ixqZU8RhEpaoJ6v4xHgE1w=="], ["created_at", "2018-09-25 21:38:21.720029"]]
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+Completed 200 OK in 9ms (Views: 0.5ms | ActiveRecord: 0.6ms)
+
+
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 28], ["LIMIT", 1]]
+-----------------------------------------------------------------------------
+ActiveStorage::BlobTest: test_create_after_upload_sets_byte_size_and_checksum
+-----------------------------------------------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "byte_size", "checksum", "created_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["key", "qT4Yf7wfmtZNxaLPR8gYj8Jw"], ["filename", "hello.txt"], ["content_type", "text/plain"], ["byte_size", 12], ["checksum", "hvsmnRkNLIX24EaM7KQqIA=="], ["created_at", "2018-09-25 21:38:21.732459"]]
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+----------------------------------------------------
+ActiveStorage::BlobTest: test_download_yields_chunks
+----------------------------------------------------
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "byte_size", "checksum", "created_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["key", "Gmou3itdhnjLbauARbPWAwWX"], ["filename", "hello.txt"], ["content_type", "text/plain"], ["byte_size", 76800], ["checksum", "IEmTH0qhD/Iwc/f7jtX0EA=="], ["created_at", "2018-09-25 21:38:21.738644"]]
+  [1m[35m (0.2ms)[0m  [1m[36mcommit transaction[0m
+------------------------------------------
+ActiveStorage::BlobTest: test_inquery_type
+------------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "byte_size", "checksum", "created_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["key", "jnL64zYZRUqYA5HhoMCKc97w"], ["filename", "hello.txt"], ["content_type", "text/plain"], ["byte_size", 12], ["checksum", "hvsmnRkNLIX24EaM7KQqIA=="], ["created_at", "2018-09-25 21:38:21.743681"]]
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+--------------------------------------------------------
+ActiveStorage::BlobTest: test_urls_expiring_in_5_minutes
+--------------------------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "byte_size", "checksum", "created_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["key", "uikDtibYmMB2VcKgc4uP1M1m"], ["filename", "hello.txt"], ["content_type", "text/plain"], ["byte_size", 12], ["checksum", "hvsmnRkNLIX24EaM7KQqIA=="], ["created_at", "2018-09-25 21:38:21.747269"]]
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+------------------------------------------
+ActiveStorage::FilenameTest: test_sanitize
+------------------------------------------
+------------------------------------------------------------
+ActiveStorage::FilenameTest: test_compare_case-insensitively
+------------------------------------------------------------
+----------------------------------------------------------------------------------------------------
+ActiveStorage::FilenameTest: test_strips_RTL_override_chars_used_to_spoof_unsafe_executables_as_docs
+----------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------
+ActiveStorage::FilenameTest: test_sanitize_transcodes_to_valid_UTF-8
+--------------------------------------------------------------------
+---------------------------------------------------
+ActiveStorage::FilenameTest: test_compare_sanitized
+---------------------------------------------------
+------------------------------------------------------
+ActiveStorage::Service::DiskServiceTest: test_existing
+------------------------------------------------------
+------------------------------------------------------------
+ActiveStorage::Service::DiskServiceTest: test_url_generation
+------------------------------------------------------------
+---------------------------------------------------------
+ActiveStorage::Service::DiskServiceTest: test_downloading
+---------------------------------------------------------
+----------------------------------------------------------------------
+ActiveStorage::Service::DiskServiceTest: test_deleting_nonexistent_key
+----------------------------------------------------------------------
+-------------------------------------------------------------------------
+ActiveStorage::Service::DiskServiceTest: test_uploading_without_integrity
+-------------------------------------------------------------------------
+------------------------------------------------------
+ActiveStorage::Service::DiskServiceTest: test_deleting
+------------------------------------------------------
+----------------------------------------------------------------------
+ActiveStorage::Service::DiskServiceTest: test_uploading_with_integrity
+----------------------------------------------------------------------
+-----------------------------------------------------------------------------
+ActiveStorage::S3DirectUploadsControllerTest: test_creating_new_direct_upload
+-----------------------------------------------------------------------------
+Started POST "/rails/active_storage/direct_uploads" for 127.0.0.1 at 2018-09-26 06:38:21 +0900
+Processing by ActiveStorage::DirectUploadsController#create as HTML
+  Parameters: {"blob"=>{"filename"=>"hello.txt", "byte_size"=>"6", "checksum"=>"ixqZU8RhEpaoJ6v4xHgE1w==", "content_type"=>"text/plain"}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "byte_size", "checksum", "created_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["key", "qS6uppMKHR9qcKnoNNENV7tZ"], ["filename", "hello.txt"], ["content_type", "text/plain"], ["byte_size", 6], ["checksum", "ixqZU8RhEpaoJ6v4xHgE1w=="], ["created_at", "2018-09-25 21:38:21.762874"]]
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+Completed 200 OK in 4ms (Views: 0.2ms | ActiveRecord: 0.4ms)
+
+
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 33], ["LIMIT", 1]]
+------------------------------------------------------------------
+ActiveStorage::VariantsControllerTest: test_showing_variant_inline
+------------------------------------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "byte_size", "checksum", "created_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["key", "5DfANhx5Srr3NNn8tQ5LsFzs"], ["filename", "racecar.jpg"], ["content_type", "image/jpeg"], ["byte_size", 1124062], ["checksum", "7GjDDNEQb4mzMzsW+MS0JQ=="], ["created_at", "2018-09-25 21:38:21.774527"]]
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/rails/active_storage/variants/BAh7B0kiCnZhbHVlBjoGRVRpJ0kiC19yYWlscwY7AFR7B0kiCGV4cAY7AFQwSSIIcHVyBjsAVDoMYmxvYl9pZA==--fed637f69772a3a887e62c45a1638a28fa6dbb4b/BAh7B0kiCnZhbHVlBjoGRVR7BjoLcmVzaXplSSIMMTAweDEwMAY7AFRJIgtfcmFpbHMGOwBUewdJIghleHAGOwBUMEkiCHB1cgY7AFQ6DnZhcmlhdGlvbg==--e83c86a97fcfde19b8e30415e71cc3756a6d045a/racecar.jpg" for 127.0.0.1 at 2018-09-26 06:38:21 +0900
+Processing by ActiveStorage::VariantsController#show as JPEG
+  Parameters: {"signed_blob_id"=>"BAh7B0kiCnZhbHVlBjoGRVRpJ0kiC19yYWlscwY7AFR7B0kiCGV4cAY7AFQwSSIIcHVyBjsAVDoMYmxvYl9pZA==--fed637f69772a3a887e62c45a1638a28fa6dbb4b", "variation_key"=>"BAh7B0kiCnZhbHVlBjoGRVR7BjoLcmVzaXplSSIMMTAweDEwMAY7AFRJIgtfcmFpbHMGOwBUewdJIghleHAGOwBUMEkiCHB1cgY7AFQ6DnZhcmlhdGlvbg==--e83c86a97fcfde19b8e30415e71cc3756a6d045a", "filename"=>"racecar"}
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 34], ["LIMIT", 1]]
+Redirected to http://www.example.com/rails/active_storage/disk/BAh7B0kiCnZhbHVlBjoGRVRJIgHEdmFyaWFudHMvNURmQU5oeDVTcnIzTk5uOHRRNUxzRnpzL0JBaDdCMGtpQ25aaGJIVmxCam9HUlZSN0Jqb0xjbVZ6YVhwbFNTSU1NVEF3ZURFd01BWTdBRlJKSWd0ZmNtRnBiSE1HT3dCVWV3ZEpJZ2hsZUhBR093QlVNRWtpQ0hCMWNnWTdBRlE2RG5aaGNtbGhkR2x2Ymc9PS0tZTgzYzg2YTk3ZmNmZGUxOWI4ZTMwNDE1ZTcxY2MzNzU2YTZkMDQ1YQY7AFRJIgtfcmFpbHMGOwBUewdJIghleHAGOwBUSSIdMjAxOC0wOS0yNVQyMTo0MzoyMS45OThaBjsAVEkiCHB1cgY7AFQ6DWJsb2Jfa2V5--7d65472add94231765ffacca810ab10b0c6d3305/racecar.jpg?content_type=image%2Fjpeg&disposition=inline
+Completed 302 Found in 219ms (ActiveRecord: 0.1ms)
+
+
+------------------------------------------------------------------------
+ActiveStorage::Service::MirrorServiceTest: test_deleting_nonexistent_key
+------------------------------------------------------------------------
+-----------------------------------------------------------
+ActiveStorage::Service::MirrorServiceTest: test_downloading
+-----------------------------------------------------------
+--------------------------------------------------------------------------------
+ActiveStorage::Service::MirrorServiceTest: test_downloading_from_primary_service
+--------------------------------------------------------------------------------
+------------------------------------------------------------------------
+ActiveStorage::Service::MirrorServiceTest: test_uploading_with_integrity
+------------------------------------------------------------------------
+--------------------------------------------------------
+ActiveStorage::Service::MirrorServiceTest: test_existing
+--------------------------------------------------------
+---------------------------------------------------------------------------------
+ActiveStorage::Service::MirrorServiceTest: test_URL_generation_in_primary_service
+---------------------------------------------------------------------------------
+-------------------------------------------------------------------------
+ActiveStorage::Service::MirrorServiceTest: test_uploading_to_all_services
+-------------------------------------------------------------------------
+--------------------------------------------------------
+ActiveStorage::Service::MirrorServiceTest: test_deleting
+--------------------------------------------------------
+--------------------------------------------------------------------------
+ActiveStorage::Service::MirrorServiceTest: test_deleting_from_all_services
+--------------------------------------------------------------------------
+---------------------------------------------------------------------------
+ActiveStorage::Service::MirrorServiceTest: test_uploading_without_integrity
+---------------------------------------------------------------------------

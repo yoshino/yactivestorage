@@ -1,10 +1,10 @@
 require "service/shared_service_tests"
 
 if SERVICE_CONFIGURATIONS[:gcs]
-  class Yactivestorage::Service::GCSServiceTest < ActiveSupport::TestCase
-    SERVICE   = Yactivestorage::Service.configure(:gcs, SERVICE_CONFIGURATIONS)
+  class ActiveStorage::Service::GCSServiceTest < ActiveSupport::TestCase
+    SERVICE = ActiveStorage::Service.configure(:gcs, SERVICE_CONFIGURATIONS)
 
-    include Yactivestorage::Service::SharedServiceTests
+    include ActiveStorage::Service::SharedServiceTests
 
     test "signed URL generation" do
       travel_to Time.now do

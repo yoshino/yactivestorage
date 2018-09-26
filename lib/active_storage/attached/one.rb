@@ -1,5 +1,5 @@
 # Representation of a single attachment to a model.
-class Yactivestorage::Attached::One < Yactivestorage::Attached
+class ActiveStorage::Attached::One < ActiveStorage::Attached
   delegate_missing_to :attachment
 
   # Returns the associated attachment record.
@@ -7,13 +7,13 @@ class Yactivestorage::Attached::One < Yactivestorage::Attached
   # You don't have to call this method to access the attachment's methods as
   # they are all available at the model level.
   def attachment
-    @attachment ||= Yactivestorage::Attachment.find_by(record_gid: record.to_gid.to_s, name: name)
+    @attachment ||= ActiveStorage::Attachment.find_by(record_gid: record.to_gid.to_s, name: name)
   end
 
   # Associates a given attachment with the current record, saving it to the
   # database.
   def attach(attachable)
-    @attachment = Yactivestorage::Attachment.create!(record_gid: record.to_gid.to_s, name: name, blob: create_blob_from(attachable))
+    @attachment = ActiveStorage::Attachment.create!(record_gid: record.to_gid.to_s, name: name, blob: create_blob_from(attachable))
   end
 
   # Checks the presence of the attachment.

@@ -1,4 +1,4 @@
-class YactivestorageCreateUsers < ActiveRecord::Migration[5.2]
+class ActiveStorageCreateUsers < ActiveRecord::Migration[5.1]
   def change
     create_table :users do |t|
       t.string :name

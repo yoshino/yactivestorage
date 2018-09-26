@@ -1,6 +1,6 @@
 require "active_support/core_ext/module/delegation"
 
-class Yactivestorage::Service::MirrorService < Yactivestorage::Service
+class ActiveStorage::Service::MirrorService < ActiveStorage::Service
   attr_reader :primary, :mirrors
 
   delegate :download, :exist?, :url, to: :primary

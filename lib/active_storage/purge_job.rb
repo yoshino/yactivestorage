@@ -1,7 +1,7 @@
 require "active_job"
 
-class Yactivestorage::PurgeJob < ActiveJob::Base
-  # FIXME: Limit this to a custom Yactivestorage error
+class ActiveStorage::PurgeJob < ActiveJob::Base
+  # FIXME: Limit this to a custom ActiveStorage error
   retry_on StandardError
 
   def perform(attachment_or_blob)

@@ -1,6 +1,6 @@
 require "action_controller"
-require "yactivestorage/blob"
-require "yactivestorage/verified_key_with_expiration"
+require "active_storage/blob"
+require "active_storage/verified_key_with_expiration"
 
 require "active_support/core_ext/object/inclusion"
 
@@ -14,10 +14,10 @@ require "active_support/core_ext/object/inclusion"
 #
 # A URL for an attachment can be generated through its +#url+ method, that
 # will use the aforementioned route.
-class Yactivestorage::DiskController < ActionController::Base
+class ActiveStorage::DiskController < ActionController::Base
   def show
     if key = decode_verified_key
-      blob = Yactivestorage::Blob.find_by!(key: key)
+      blob = ActiveStorage::Blob.find_by!(key: key)
 
       if stale?(etag: blob.checksum)
         send_data blob.download, filename: blob.filename, type: blob.content_type, disposition: disposition_param
@@ -29,7 +29,7 @@ class Yactivestorage::DiskController < ActionController::Base
 
   private
     def decode_verified_key
-      Yactivestorage::VerifiedKeyWithExpiration.decode(params[:encoded_key])
+      ActiveStorage::VerifiedKeyWithExpiration.decode(params[:encoded_key])
     end
 
     def disposition_param
