@@ -74,7 +74,6 @@ end
 
 - Document all the classes
 - Strip Download of its responsibilities and delete class
-- Proper logging
 - Convert MirrorService to use threading
 - Read metadata via Marcel?
 - Add Migrator to copy/move between services
@@ -83,7 +82,7 @@ end
 
 ## Roadmap
 
-This separate repository is a staging ground for eventual inclusion in rails/rails prior to the Rails 5.2 release. It is not intended to be a long-term stand-alone repository. Compatibility with prior versions of Rails is not a development priority either. 
+This separate repository is a staging ground for eventual inclusion in rails/rails prior to the Rails 5.2 release. It is not intended to be a long-term stand-alone repository. Compatibility with prior versions of Rails is not a development priority either.
 
 ## License
 
