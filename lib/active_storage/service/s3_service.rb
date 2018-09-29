@@ -65,7 +65,7 @@ class ActiveStorage::Service::S3Service < ActiveStorage::Service
 
       generated_url
     end
-  end 
+  end
 
   private
     def object_for(key)

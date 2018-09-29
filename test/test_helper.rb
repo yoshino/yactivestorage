@@ -9,13 +9,13 @@ require "active_storage"
 
 require "active_storage/service"
 require "yaml"
-
 SERVICE_CONFIGURATIONS = begin
   YAML.load_file(File.expand_path("../service/configurations.yml", __FILE__)).deep_symbolize_keys
 rescue Errno::ENOENT
   puts "Missing service configuration file in test/service/configurations.yml"
   {}
 end
+
 
 require "active_storage/service/disk_service"
 require "tmpdir"
