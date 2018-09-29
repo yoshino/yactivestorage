@@ -25,6 +25,11 @@ class ActiveStorage::AttachmentsTest < ActiveSupport::TestCase
     assert_equal "funky.jpg", @user.avatar.filename.to_s
   end
 
+  test "attach existing sgid blob" do
+    @user.avatar.attach create_blob(filename: "funky.jpg").to_sgid.to_s
+    assert_equal "funky.jpg", @user.avatar.filename.to_s
+  end
+
   test "attach new blob" do
     @user.avatar.attach io: StringIO.new("STUFF"), filename: "town.jpg", content_type: "image/jpg"
     assert_equal "town.jpg", @user.avatar.filename.to_s
@@ -61,7 +66,7 @@ class ActiveStorage::AttachmentsTest < ActiveSupport::TestCase
 
   test "attach new blobs" do
     @user.highlights.attach(
-      { io: StringIO.new("STUFF"), filename: "town.jpg", content_type: "image/jpg" }, 
+      { io: StringIO.new("STUFF"), filename: "town.jpg", content_type: "image/jpg" },
       { io: StringIO.new("IT"), filename: "country.jpg", content_type: "image/jpg" })
 
     assert_equal "town.jpg", @user.highlights.first.filename.to_s
@@ -71,7 +76,7 @@ class ActiveStorage::AttachmentsTest < ActiveSupport::TestCase
   test "purge attached blobs" do
     @user.highlights.attach create_blob(filename: "funky.jpg"), create_blob(filename: "wonky.jpg")
     highlight_keys = @user.highlights.collect(&:key)
-    
+
     @user.highlights.purge
     assert_not @user.highlights.attached?
     assert_not ActiveStorage::Blob.service.exist?(highlight_keys.first)
