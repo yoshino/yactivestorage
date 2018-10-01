@@ -1,4 +1,3 @@
-require "tmpdir"
 require "service/shared_service_tests"
 
 class ActiveStorage::Service::MirrorServiceTest < ActiveSupport::TestCase
@@ -10,7 +9,7 @@ class ActiveStorage::Service::MirrorServiceTest < ActiveSupport::TestCase
 
   config = mirror_config.merge \
     mirror:   { service: "Mirror", primary: 'primary', mirrors: mirror_config.keys },
-    primary:  { service: "Disk", root:Dir.mktmpdir("active_storage_tests_primary") }
+    primary:  { service: "Disk", root: Dir.mktmpdir("active_storage_tests_primary") }
 
   SERVICE = ActiveStorage::Service.configure :mirror, config
 

@@ -48,6 +48,7 @@ class ActiveStorage::Blob < ActiveRecord::Base
     service.url_for_direct_upload key, expires_in: expires_in, content_type: content_type, content_length: byte_size
   end
 
+
   def upload(io)
     self.checksum  = compute_checksum_in_chunks(io)
     self.byte_size = io.size

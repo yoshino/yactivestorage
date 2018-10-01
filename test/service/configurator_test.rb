@@ -6,9 +6,10 @@ class ActiveStorage::Service::ConfiguratorTest < ActiveSupport::TestCase
     assert_instance_of ActiveStorage::Service::DiskService, service
   end
 
-  test "raise error when passing non-extent service name" do
+  test "raises error when passing non-existent service name" do
     assert_raise RuntimeError do
       ActiveStorage::Service::Configurator.build(:bigfoot, {})
     end
   end
 end
+

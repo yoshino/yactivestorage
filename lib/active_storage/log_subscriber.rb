@@ -3,7 +3,7 @@ require "active_support/log_subscriber"
 class ActiveStorage::LogSubscriber < ActiveSupport::LogSubscriber
   def service_upload(event)
     message = color("Uploaded file to key: #{key_in(event)}", GREEN)
-    #message << color(" (checksum: #{event.payload[:checksu m]})", GREEN) if event.payload[:checksum] # forzenErrorが出てしまうので一旦回避。
+    # message << color(" (checksum: #{event.payload[:checksum]})", GREEN) if event.payload[:checksum]
     info event, message
   end
 

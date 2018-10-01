@@ -3,7 +3,6 @@ require "active_support"
 require "active_support/test_case"
 require "active_support/testing/autorun"
 require "byebug"
-require "pry"
 
 require "active_storage"
 
@@ -24,9 +23,6 @@ ActiveStorage::Service.logger = ActiveSupport::Logger.new(STDOUT)
 
 require "active_storage/verified_key_with_expiration"
 ActiveStorage::VerifiedKeyWithExpiration.verifier = ActiveSupport::MessageVerifier.new("Testing")
-
-require "active_storage/variant"
-ActiveStorage::Variant.verifier = ActiveSupport::MessageVerifier.new("Testing")
 
 class ActiveSupport::TestCase
   private
