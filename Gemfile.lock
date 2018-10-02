@@ -1,3 +1,34 @@
+GIT
+  remote: https://github.com/rails/rails.git
+  revision: 92fece96da28d9f641bc8a8db1187b91c94cabfb
+  specs:
+    actionpack (6.0.0.alpha)
+      actionview (= 6.0.0.alpha)
+      activesupport (= 6.0.0.alpha)
+      rack (~> 2.0)
+      rack-test (>= 0.6.3)
+      rails-dom-testing (~> 2.0)
+      rails-html-sanitizer (~> 1.0, >= 1.0.2)
+    actionview (6.0.0.alpha)
+      activesupport (= 6.0.0.alpha)
+      builder (~> 3.1)
+      erubi (~> 1.4)
+      rails-dom-testing (~> 2.0)
+      rails-html-sanitizer (~> 1.0, >= 1.0.3)
+    activejob (6.0.0.alpha)
+      activesupport (= 6.0.0.alpha)
+      globalid (>= 0.3.6)
+    activemodel (6.0.0.alpha)
+      activesupport (= 6.0.0.alpha)
+    activerecord (6.0.0.alpha)
+      activemodel (= 6.0.0.alpha)
+      activesupport (= 6.0.0.alpha)
+    activesupport (6.0.0.alpha)
+      concurrent-ruby (~> 1.0, >= 1.0.2)
+      i18n (>= 0.7, < 2)
+      minitest (~> 5.1)
+      tzinfo (~> 1.1)
+
 PATH
   remote: .
   specs:
@@ -10,36 +41,8 @@ PATH
 GEM
   remote: https://rubygems.org/
   specs:
-    actionpack (5.2.1)
-      actionview (= 5.2.1)
-      activesupport (= 5.2.1)
-      rack (~> 2.0)
-      rack-test (>= 0.6.3)
-      rails-dom-testing (~> 2.0)
-      rails-html-sanitizer (~> 1.0, >= 1.0.2)
-    actionview (5.2.1)
-      activesupport (= 5.2.1)
-      builder (~> 3.1)
-      erubi (~> 1.4)
-      rails-dom-testing (~> 2.0)
-      rails-html-sanitizer (~> 1.0, >= 1.0.3)
-    activejob (5.2.1)
-      activesupport (= 5.2.1)
-      globalid (>= 0.3.6)
-    activemodel (5.2.1)
-      activesupport (= 5.2.1)
-    activerecord (5.2.1)
-      activemodel (= 5.2.1)
-      activesupport (= 5.2.1)
-      arel (>= 9.0)
-    activesupport (5.2.1)
-      concurrent-ruby (~> 1.0, >= 1.0.2)
-      i18n (>= 0.7, < 2)
-      minitest (~> 5.1)
-      tzinfo (~> 1.1)
     addressable (2.5.2)
       public_suffix (>= 2.0.2, < 4.0)
-    arel (9.0.0)
     ast (2.4.0)
     aws-sdk (2.11.140)
       aws-sdk-resources (= 2.11.140)
@@ -153,7 +156,11 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  actionpack!
+  activejob!
+  activerecord!
   activestorage!
+  activesupport!
   aws-sdk (~> 2)
   bundler (~> 1.15)
   byebug
