@@ -9,19 +9,15 @@ if SERVICE_CONFIGURATIONS[:s3]
     include ActiveStorage::Service::SharedServiceTests
 
     test "direct upload" do
-      # FIXME: This test is failing because of a mismatched request signature, but it works in the browser.
-      skip
-
       begin
         key  = SecureRandom.base58(24)
         data = "Something else entirely!"
+        url  = @service.url_for_direct_upload(key, expires_in: 5.minutes, content_type: "text/plain", content_length: data.size)
 
-	url = @service.url_for_direct_upload(key, expires_in: 5.minutes, content_type:  "text/plain", content_length: data.size)
         HTTParty.put(
           url,
-          query: query,
           body: data,
-          headers: { "Content-Type": "text/plain" },
+          headers: { "Content-Type" => "text/plain" },
           debug_output: STDOUT
         )
 
@@ -32,7 +28,7 @@ if SERVICE_CONFIGURATIONS[:s3]
     end
 
     test "signed URL generation" do
-      assert_match /.s3\.amazonaws\.com.*response-content-disposition=inline.*avatar\.png/,
+      assert_match /.+s3.+amazonaws.com.*response-content-disposition=inline.*avatar\.png/,
         @service.url(FIXTURE_KEY, expires_in: 5.minutes, disposition: :inline, filename: "avatar.png")
     end
   end
