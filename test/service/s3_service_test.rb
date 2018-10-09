@@ -32,22 +32,22 @@ if SERVICE_CONFIGURATIONS[:s3]
     end
 
     test "uploading with server-side encryption" do
-      config = {}
+      config      = {}
       config[:s3] = SERVICE_CONFIGURATIONS[:s3].merge \
         upload: { server_side_encryption: "AES256" }
 
       sse_service = ActiveStorage::Service.configure(:s3, config)
 
-      begin 
-        key = SecureRandom.base58(24)
-        data = "Something else entirely"
+      begin
+        key  = SecureRandom.base58(24)
+        data = "Something else entirely!"
         sse_service.upload(key, StringIO.new(data), checksum: Digest::MD5.base64digest(data))
 
-        assert_equal "AES256", sse_service.bucket.object(key).server_side_encryption 
-      ensure 
-        sse_service.delete key 
-      end 
-    end 
+        assert_equal "AES256", sse_service.bucket.object(key).server_side_encryption
+      ensure
+        sse_service.delete key
+      end
+    end
   end
 else
   puts "Skipping S3 Service tests because no S3 configuration was supplied"
