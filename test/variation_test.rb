@@ -9,7 +9,7 @@ class ActiveStorage::VariationTest < ActiveSupport::TestCase
 
     variation_key = ActiveStorage::Variant.encode_key(resize: "500x500")
 
-    variant = ActiveStorage::Variant.lookup(blob_key: blob.key, variation_key: variation_key)
+    variant = ActiveStorage::Variant.find_or_create_by(blob_key: blob.key, variation_key: variation_key)
 
     assert_match /racecar.jpg/, variant.url
   end
