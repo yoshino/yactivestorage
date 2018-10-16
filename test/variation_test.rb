@@ -9,6 +9,6 @@ class ActiveStorage::VariationTest < ActiveSupport::TestCase
 
     variant = blob.variant(resize: "100×100")
 
-    assert_match /racecar.jpg/, variant.url
+    assert_match /racecar.jpg/, blob.variant.(resize: "100×100").processed.url
   end
 end
