@@ -6,7 +6,7 @@ class ActiveStorage::Variant
   class_attribute :verifier
 
   ALLOWED_TRANSFORMATIONS = %i(
-    resize rotate format flip fill monochrome orient quality roll scale sharphen sharpen shave shear size thumbnail
+    resize rotate format flip fill monochrome orient quality roll scale sharpen shave shear size thumbnail
     transparent transpose transverse trim background bordercolor compress crop
   )
 
@@ -14,20 +14,20 @@ class ActiveStorage::Variant
   delegate :service, to: :blob
 
   def self.find_or_process_by!(blob_key:, encoded_variant_key:)
-    new(ActiveStorage::Blob.find_by!(key: blob_key), encoded: verifier.verify(encoded_variant_key)).processed
+    new(ActiveStorage::Blob.find_by!(key: blob_key), variation: verifier.verify(encoded_variant_key)).processed
   end
 
   def self.encode_key(variation)
     verifier.generate(variation)
   end
 
+  def initialize(blob, variation:)
+    @blob, @variation = blob, variation
+  end
+
   def processed
     process unless processed?
     self
-  end
-
-  def initialize(blob, variation:)
-    @blob, @variation = blob, variation
   end
 
   def url(expires_in: 5.minutes, disposition: :inline)
@@ -37,6 +37,7 @@ class ActiveStorage::Variant
   def key
     verifier.generate(variation)
   end
+
 
   private
     def processed?
@@ -67,15 +68,15 @@ class ActiveStorage::Variant
               if argument.blank? || argument == true
                 transforming_image.public_send(method)
               else
+                # FIXME: Consider whitelisting allowed arguments as well?
                 transforming_image.public_send(method, argument)
               end
             end
           end
-      }.path
+        }.path
     end
 
     def allowed_transformational_method(method)
       method.presence_in(ALLOWED_TRANSFORMATIONS)
-      service.exist?(key)
     end
 end
