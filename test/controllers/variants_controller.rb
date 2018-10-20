@@ -18,6 +18,7 @@ class ActiveStorage::VariantCollectorTest < ActionController::TestCase
       variation_key: ActiveStorage::Variation.encode(resize: "100×100") }
 
     assert_required_to /rececar.jpg\?disposition=inline/
+    assert_same_image "racecar-100×100.jpg", @blob.variant(resize: "100×100")
   end
 end
 
