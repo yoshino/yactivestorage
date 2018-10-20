@@ -15,7 +15,6 @@ rescue Errno::ENOENT
   {}
 end
 
-
 require "active_storage/service/disk_service"
 require "tmpdir"
 ActiveStorage::Blob.service = ActiveStorage::Service::DiskService.new(root: Dir.mktmpdir("active_storage_tests"))
@@ -24,8 +23,8 @@ ActiveStorage::Service.logger = ActiveSupport::Logger.new(STDOUT)
 require "active_storage/verified_key_with_expiration"
 ActiveStorage::VerifiedKeyWithExpiration.verifier = ActiveSupport::MessageVerifier.new("Testing")
 
-require "active_storage/variant"
-ActiveStorage::Variant.verifier = ActiveSupport::MessageVerifier.new("Testing")
+require "active_storage/variation"
+ActiveStorage::Variation.verifier = ActiveSupport::MessageVerifier.new("Testing")
 
 class ActiveSupport::TestCase
   private
@@ -39,7 +38,7 @@ require "action_controller/test_case"
 class ActionController::TestCase
   Routes = ActionDispatch::Routing::RouteSet.new.tap do |routes|
     routes.draw do
-      # FIXME Hacky way to avoid having to instantiate the real engine
+      # FIXME: Hacky way to avoid having to instantiate the real engine
       eval(File.readlines(File.expand_path("../../config/routes.rb", __FILE__)).slice(1..-2).join("\n"))
     end
   end
