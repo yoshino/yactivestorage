@@ -2,7 +2,6 @@ require "test_helper"
 require "database/setup"
 
 require "active_storage/variants_controller"
-require "active_storage/verified_key_with_expiration"
 
 class ActiveStorage::VariantCollectorTest < ActionController::TestCase
   setup do
