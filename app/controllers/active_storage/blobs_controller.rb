@@ -2,8 +2,7 @@
 # Note: These URLs are publicly accessible. If you need to enforce access protection beyond the
 # security-through-obscurity factor of the signed blob references, you'll need to implement your own
 # authenticated redirection controller.
-
-class ActiveStorage::BlobController < ActionController::Base
+class ActiveStorage::BlobsController < ActionController::Base
   def show
     if blob = find_signed_blob
       redirect_to blob.url(disposition: disposition_param)
@@ -13,12 +12,11 @@ class ActiveStorage::BlobController < ActionController::Base
   end
 
   private
-    def find_sine
+    def find_signed_blob
       ActiveStorage::Blob.find_signed(params[:signed_id])
     end
 
-    def dispos
-      param[:disposition].presence_in(%w( inline attachment )) || "inline"
+    def disposition_param
+      params[:disposition].presence_in(%w( inline attachment )) || "inline"
     end
 end
-
