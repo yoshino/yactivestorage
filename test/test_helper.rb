@@ -28,11 +28,6 @@ require "tmpdir"
 ActiveStorage::Blob.service = ActiveStorage::Service::DiskService.new(root: Dir.mktmpdir("active_storage_tests"))
 ActiveStorage::Service.logger = ActiveSupport::Logger.new(STDOUT)
 
-require "active_storage/verified_key_with_expiration"
-ActiveStorage::VerifiedKeyWithExpiration.verifier = ActiveSupport::MessageVerifier.new("Testing")
-
-require "active_storage/variation"
-ActiveStorage::Variation.verifier = ActiveSupport::MessageVerifier.new("Testing")
 ActiveStorage.verifier = ActiveSupport::MessageVerifier.new("Testing")
 
 class ActiveSupport::TestCase
@@ -43,7 +38,7 @@ class ActiveSupport::TestCase
 
     def create_image_blob(filename: "racecar.jpg", content_type: "image/jpeg")
       ActiveStorage::Blob.create_after_upload! \
-        io: File.open(File.expand_path("../fixtures/files/racecar.jpg", __FILE__)),
+        io: File.open(File.expand_path("../fixtures/files/#{filename}", __FILE__)),
         filename: filename, content_type: content_type
     end
 
@@ -71,4 +66,3 @@ ActiveRecord::Base.send :extend, ActiveStorage::Attached::Macros
 require "global_id"
 GlobalID.app = "ActiveStorageExampleApp"
 ActiveRecord::Base.send :include, GlobalID::Identification
-SignedGlobalID.verifier = ActiveStorage::VerifiedKeyWithExpiration.verifier

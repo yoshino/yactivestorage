@@ -11,7 +11,6 @@
 class ActiveStorage::DiskController < ActionController::Base
   def show
     if key = decode_verified_key
-      blob = ActiveStorage::Blob.find_by!(key: key)
       # FIXME: Find a way to set the correct content type
       send_data disk_service.download(key), filename: params[:filename], disposition: disposition_param
     else

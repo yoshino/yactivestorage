@@ -23,7 +23,6 @@ module ActiveStorage
     end
 
     initializer "active_storage.verifier" do
-
       config.after_initialize do |app|
         ActiveStorage.verifier = Rails.application.message_verifier("ActiveStorage")
       end
