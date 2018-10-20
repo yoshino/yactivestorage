@@ -21,8 +21,3 @@ class ActiveStorage::VariantCollectorTest < ActionController::TestCase
     assert_same_image "racecar-100×100.jpg", @blob.variant(resize: "100×100")
   end
 end
-
-
-
-
-
