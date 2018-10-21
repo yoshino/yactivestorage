@@ -41,7 +41,6 @@ class ActiveStorage::Attached::One < ActiveStorage::Attached
   def purge_later
     if attached?
       attachment.purge_later
-      @attachment = nil
     end
   end
 

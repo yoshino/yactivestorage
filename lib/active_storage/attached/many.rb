@@ -34,7 +34,7 @@ class ActiveStorage::Attached::Many < ActiveStorage::Attached
   def purge
     if attached?
       attachments.each(&:purge)
-      attachment.reload
+      attachments.reload
     end
   end
 
@@ -42,7 +42,6 @@ class ActiveStorage::Attached::Many < ActiveStorage::Attached
   def purge_later
     if attached?
       attachments.each(&:purge_later)
-      @attachments = nil
     end
   end
 end
